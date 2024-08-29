@@ -1,0 +1,7 @@
+test-case:
+  name: Positive test for resource is referenced
+  description: This test case validates the behavior of constraint resource-is-referenced
+  content: ../content/gr-ssp-all-VALID.xml
+  expectations:
+    - constraint-id: resource-is-referenced
+      result: pass

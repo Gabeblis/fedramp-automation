@@ -1,0 +1,7 @@
+test-case:
+  name: Negative test for resource is referenced
+  description: This test case validates the behavior of constraint resource-is-referenced
+  content: ../content/gr-ssp-all-INVALID.xml
+  expectations:
+    - constraint-id: resource-is-referenced
+      result: fail

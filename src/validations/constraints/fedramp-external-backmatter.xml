@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metaschema-meta-constraints xmlns="http://csrc.nist.gov/ns/oscal/metaschema/1.0">
+<!-- ================== -->
+<!-- FedRAMP Extensions -->
+<!-- ================== -->
+	<context>
+		<metapath target="/catalog"/>
+		<metapath target="/profile"/>
+		<metapath target="/component-definition"/>
+		<metapath target="/system-security-plan"/>
+		<metapath target="/assessment-plan"/>
+		<metapath target="/assessment-results"/>
+		<metapath target="/plan-of-action-and-milestones"/>
+		<constraints>
+			<expect id="resource-is-referenced" target="back-matter/resource" test="@uuid = (//@href[matches(., '^#')] ! substring-after(., '#'))" level="INFORMATIONAL">
+				<message>Every supporting artifact found in a citation should be referenced from within the document.</message>
+			</expect>
+			<!-- <expect id="resource-is-referenced-test" target="//link" test="count(@href eq '#ace2963d-ecb4-4be5-bdd0-1f6fd7610f41') gt 0" level="INFORMATIONAL">
+				<message>looking for href</message>
+			</expect> -->
+		</constraints>
+	</context>
+</metaschema-meta-constraints>

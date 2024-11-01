@@ -659,7 +659,7 @@ Then('I should verify that all constraints follow the style guide constraint', a
   const constraintDir = join(baseDir, 'src', 'validations', 'constraints');
   const styleGuidePath = join(baseDir, 'src', 'validations', 'styleguides', 'fedramp-constraint-style.xml');
 
-  const constraint_files = readdirSync(constraintDir).filter((file) => file.startsWith('style-guide'));
+  const constraint_files = readdirSync(constraintDir).filter((file) => file.startsWith('fedramp'));
   const errors = [];
 
   function filterOutBrackets(input) {

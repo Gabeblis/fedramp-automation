@@ -8,6 +8,11 @@
     <context>
         <metapath target="/metaschema-meta-constraints"/>
         <constraints>
+            <!-- <expect id="constraints-are-sorted" target="//expect | //allowed-values | //index-has-key" test="" level="ERROR">
+                <formal-name>Constraints Are Sorted</formal-name>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://github.com/GSA/fedramp-automation/blob/feature-constraints-style-guide/src/validations/constraints/STYLE.md#frr103"/>
+                <message>A FedRAMP constraint MUST be sorted lexicographically within it's specific context block.</message>
+            </expect> -->
             <expect id="constraint-has-help-url" target="//expect | //index-has-key" test="count(prop[@namespace = 'https://docs.oasis-open.org/sarif/sarif/v2.1.0' and @name = 'help-url']) eq 1" level="ERROR">
                 <formal-name>Constraint Has Help URL</formal-name>
                 <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://github.com/GSA/fedramp-automation/blob/feature-constraints-style-guide/src/validations/constraints/STYLE.md#frr104"/>
@@ -23,6 +28,11 @@
                 <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://github.com/GSA/fedramp-automation/blob/feature-constraints-style-guide/src/validations/constraints/STYLE.md#frr106"/>
                 <message>A FedRAMP constraint id MUST only consist of lowercase letters, numbers 0-9, or "-" characters.</message>
             </expect>
+            <!-- <expect id="constraint-id-is-unique" target="//expect | //allowed-values | //index-has-key" test="" level="ERROR">
+                <formal-name>Constraint Has Unique ID</formal-name>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://github.com/GSA/fedramp-automation/blob/feature-constraints-style-guide/src/validations/constraints/STYLE.md#frr106"/>
+                <message>A FedRAMP constraint MUST have a unique id.</message>
+            </expect> -->
             <expect id="constraint-has-severity-level" target="//expect | //allowed-values | //index-has-key" test="@level" level="ERROR">
                 <formal-name>Constraint Has Severity Level</formal-name>
                 <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://github.com/GSA/fedramp-automation/blob/feature-constraints-style-guide/src/validations/constraints/STYLE.md#frr107"/>

@@ -657,18 +657,20 @@ Then("I should have both FAIL and PASS tests for constraint ID {string}", functi
 Then('I should verify that all constraints follow the style guide constraint', async function () {
   const baseDir = join(__dirname, '..', '..');
   const constraintDir = join(baseDir, 'src', 'validations', 'constraints');
-  const styleGuidePath = join(baseDir, 'src', 'validations', 'styleguides', 'fedramp_constraint_style.xml');
+  const styleGuidePath = join(baseDir, 'src', 'validations', 'styleguides', 'fedramp-constraint-style.xml');
 
-  const constraint_files = Array.from(new Set(getConstraintFiles().split("|").join("").split(" ").join("").trim().split("\n")));
+  const constraint_files = readdirSync(constraintDir).filter((file) => file.startsWith('style-guide'));
   const errors = [];
 
   function filterOutBrackets(input) {
     return input.replace(/\[.*?\]/g, '');
   }
 
-  for (const file_name of constraint_files.filter(x=>!x.includes("oscal"))) {
+  for (const file_name of constraint_files) {
     const filePath = join(constraintDir, file_name.trim());
+    console.log(filePath);
     try {
+      console.log(filePath);
       const [result, error] = await executeOscalCliCommand('metaschema', [
         'validate',
         filePath,

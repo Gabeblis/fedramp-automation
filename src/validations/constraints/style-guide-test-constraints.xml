@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metaschema-meta-constraints xmlns="http://csrc.nist.gov/ns/oscal/metaschema/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://csrc.nist.gov/ns/oscal/metaschema/1.0 https://raw.githubusercontent.com/metaschema-framework/metaschema/refs/heads/develop/schema/xml/metaschema-meta-constraints.xsd">
+    <!-- ================== -->
+    <!-- FedRAMP Extensions -->
+    <!-- ================== -->
+
+    <context>
+        <metapath target="/system-security-plan/control-implementation"/>
+        <constraints>
+            <expect id="missing-response-components" target="implemented-requirement" test="count(./by-component) gt 0">
+                <formal-name>Missing Response Components</formal-name>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/6-security-controls/#response-overview"/>
+                <message>Each implemented requirement MUST have at least one by-component reference to the source component implementing it.</message>
+            </expect>
+        </constraints>
+    </context>
+
+    <context>
+        <metapath target="/system-security-plan/metadata"/>
+        <constraints>
+            <expect id="data-center-alternate" target="." test="count(/location/prop[@name eq 'type'][@value eq 'data-center'][@class eq 'alternate']) &gt; 0">
+                <formal-name>Data Center Alternate</formal-name>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0"  name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#data-centers"/>
+                <message>There MUST be one or more alternate data center(s).</message>
+            </expect>
+            <expect id="data-center-count" target="." test="count(/location/prop[@name eq 'type'][@value eq 'data-center']) &gt; 1">
+                <formal-name>Data Center Count</formal-name>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0"  name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#data-centers"/>
+                <message>There MUST be at least two (2) data centers listed.</message>
+            </expect>
+            <expect id="data-center-primary" target="." test="count(/location/prop[@name eq 'type'][@value eq 'data-center'][@class eq 'primary']) = 1">
+                <formal-name>Data Center Primary</formal-name>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0"  name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#data-centers"/>
+                <message>There MUST be a single primary data center.</message>
+            </expect>
+            <index name="index-person-party-uuid" target="map:merge(party[@type='person'] ! map:entry(@uuid,.))?*">
+            	<formal-name>Index of parties of type "person".</formal-name>
+            	<description>This index is a list of the UUIDs of all of the parties that are type "person" in the document.</description>
+                <key-field target="@uuid"/>
+            </index>
+            <index-has-key id="responsible-party-is-person" name="index-person-party-uuid" target="./responsible-party[(@role-id='system-owner') or (@role-id='information-system-security-officer')]" level="ERROR">
+                <formal-name>Reponsible Party Is Person</formal-name>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#summary-of-ssp-roles-requirements"/>
+                <key-field target="party-uuid"/>
+                <message>For roles 'system-owner' and 'information-system-security-officer', the responsible-role party MUST be a party of type 'person'.</message>
+            </index-has-key>
+            <expect id="role-defined-information-system-security-officer" target="." test="role[@id eq 'information-system-security-officer']" level="ERROR">
+                <formal-name>Role Defined Information System Security Officer</formal-name>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#assignment-of-security-responsibilities"/>
+                <message>A FedRAMP SSP MUST define a role for the point of contact for an information system security officer.</message>
+            </expect>
+            <expect id="role-defined-system-owner" target="." test="role[@id eq 'system-owner']" level="ERROR">
+                <formal-name>Role Defined System Owner</formal-name>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#information-system-owner"/>
+                <message>A FedRAMP SSP MUST define the system owner role.</message>
+            </expect>
+        </constraints>
+    </context>
+
+    <context>
+        <metapath target="/system-security-plan/metadata/location"/>
+        <constraints>
+            <expect id="data-center-country-code" target="." test="count(address/country) eq 1">
+                <formal-name>Data Center Country Code</formal-name>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0"  name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#data-centers"/>
+                <message>Each data center address MUST contain a country code.</message>
+            </expect>
+        </constraints>
+    </context>
+
+    <context>
+        <metapath target="/system-security-plan/system-characteristics/security-sensitivity-level"/>
+        <metapath target="/system-security-plan/system-characteristics/security-impact-level/(security-objective-confidentiality|security-objective-integrity|security-objective-availability)"/>
+        <metapath target="/system-security-plan/system-characteristics/system-information/information-type/(confidentiality-impact|integrity-impact|availability-impact)/(base|selected)"/> 
+        <constraints>
+
+            <allowed-values id="security-level" target="." allow-other="no" level="ERROR">
+                <formal-name>Security Impact Level</formal-name>
+                <description>The security objective level as defined by <a href="https://doi.org/10.6028/NIST.SP.800-60v1r1">NIST SP 800-60</a>.</description>
+                <enum value="fips-199-low">Low</enum>
+                <enum value="fips-199-moderate">Moderate</enum>
+                <enum value="fips-199-high">High</enum>
+            </allowed-values>
+
+        </constraints>
+    </context>   
+    
+</metaschema-meta-constraints>

@@ -45,22 +45,6 @@
     </context>
 
     <context>
-        <metapath target="/catalog//control"/>
-        <metapath target="/assessment-plan/local-definitions/objectives-and-methods"/>
-        <metapath target="/assessment-results/local-definitions/objectives-and-methods"/>
-        <constraints>
-            <expect id="prop-response-point-has-cardinality-one" target=".//part" test="count(prop[@ns='https://fedramp.gov/ns/oscal' and @name='response-point']) &lt;= 1">
-                <message>Duplicate response point at '{ path(.) }'.</message>
-            </expect>
-            <remarks>
-                <p>This appears in FedRAMP profiles and resolved profile catalogs.</p>
-                <p>For control statements, it signals to the CSP which statements require a response in the SSP.</p>
-                <p>For control objectives, it signals to the assessor which control objectives must appear in the assessment results, which aligns with the FedRAMP test case workbook.</p>
-             </remarks>
-        </constraints>
-    </context>
-
-    <context>
         <metapath target="/system-security-plan"/>
         <constraints>
             <let var="import-profile-href" expression="import-profile/@href"/>
@@ -204,12 +188,12 @@
                 <message>A FedRAMP SSP MUST have Rules of Behavior.</message>
             </expect>
             <expect id="has-security-impact-level" target="system-characteristics" test="security-impact-level" level="ERROR">
-                <message>A FedRAMP SSP document MUST specify a security impact level.</message>
                 <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#system-sensitivity-level"/>
+                <message>A FedRAMP SSP document MUST specify a security impact level.</message>
             </expect>
             <expect id="has-security-sensitivity-level" target="system-characteristics" test="security-sensitivity-level" level="ERROR">
-                <message>A FedRAMP SSP document MUST specify a FIPS 199 categorization.</message>
                 <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#system-sensitivity-level"/>
+                <message>A FedRAMP SSP document MUST specify a FIPS 199 categorization.</message>
             </expect>
             <expect id="has-separation-of-duties-matrix" target="back-matter" test="resource[prop[@name eq 'type' and @value eq 'separation-of-duties-matrix']]" level="ERROR">
                 <message>A FedRAMP SSP MUST have a Separation of Duties Matrix attached.</message>
@@ -275,15 +259,15 @@
         <metapath target="/system-security-plan/metadata"/>
         <constraints>
             <expect id="data-center-alternate" target="." test="count(/location/prop[@name eq 'type'][@value eq 'data-center'][@class eq 'alternate']) &gt; 0">
-               <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0"  name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#data-centers"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0"  name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#data-centers"/>
                 <message>There MUST be one or more alternate data center(s).</message>
             </expect>
             <expect id="data-center-count" target="." test="count(/location/prop[@name eq 'type'][@value eq 'data-center']) &gt; 1">
-               <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0"  name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#data-centers"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0"  name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#data-centers"/>
                 <message>There MUST be at least two (2) data centers listed.</message>
             </expect>
             <expect id="data-center-primary" target="." test="count(/location/prop[@name eq 'type'][@value eq 'data-center'][@class eq 'primary']) = 1">
-               <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0"  name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#data-centers"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0"  name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#data-centers"/>
                 <message>There MUST be a single primary data center.</message>
             </expect>
             <index name="index-person-party-uuid" target="map:merge(party[@type='person'] ! map:entry(@uuid,.))?*">

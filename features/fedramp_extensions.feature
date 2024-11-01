@@ -1,6 +1,6 @@
 Feature: OSCAL Document Constraints
 
-@full-coverage
+@style-guide
 Scenario Outline: Validating OSCAL constraints with metaschema constraints
   Then I should verify that all constraints follow the style guide constraint
   
@@ -12,6 +12,7 @@ Scenario Outline: Validating OSCAL documents with metaschema constraints
   | fedramp-external-allowed-values.xml |
   | fedramp-external-constraints.xml |
   | oscal-external-constraints.xml |
+  | style-guide-test-constraints.xml |
 #END_DYNAMIC_CONSTRAINT_FILES
   When I process the constraint unit test "<test_file>"
   Then the constraint unit test should pass
@@ -268,7 +269,6 @@ Examples:
   | inventory-item-virtual |
   | missing-response-components |
   | privilege-level |
-  | prop-response-point-has-cardinality-one |
   | resource-has-base64-or-rlink |
   | resource-has-title |
   | responsible-party-is-person |

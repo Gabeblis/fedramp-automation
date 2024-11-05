@@ -47,7 +47,7 @@ jobs:
       - name: Run Cucumber tests
         shell: bash
         run: |
-          make build-validations
+          OSCAL_EXECUTOR="oscal-cli" make build-validations
       - name : Publish all Junit XML tests results in Github Summary
         uses: test-summary/action@31493c76ec9e7aa675f1585d3ed6f1da69269a86
         if: always()

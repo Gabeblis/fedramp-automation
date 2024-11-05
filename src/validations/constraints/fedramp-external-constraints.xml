@@ -240,15 +240,15 @@
                 <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#authorization-boundary"/>
                 <message>A FedRAMP SSP authorization boundary diagram MUST reference a resource representing the diagram document.</message>
             </expect>
-            <expect id="has-network-architecture-diagram-link-href-target" target="." test="exists(//resource[@uuid eq substring-after($network-architecture-link, '#')])" level="ERROR">
-                <formal-name>Has Network Architecture Diagram Link Href Target</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#network-architecture"/>
-                <message>A FedRAMP SSP network architecture diagram MUST reference a resource representing the diagram document.</message>
-            </expect>
             <expect id="has-data-flow-diagram-link-href-target" target="." test="exists(//resource[@uuid eq substring-after($data-flow-link, '#')])" level="ERROR">
                 <formal-name>Has Data Flow Diagram Link Href Target</formal-name>
                 <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#data-flow"/>
                 <message>A FedRAMP SSP data flow diagram MUST reference a resource representing the diagram document.</message>
+            </expect>
+            <expect id="has-network-architecture-diagram-link-href-target" target="." test="exists(//resource[@uuid eq substring-after($network-architecture-link, '#')])" level="ERROR">
+                <formal-name>Has Network Architecture Diagram Link Href Target</formal-name>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#network-architecture"/>
+                <message>A FedRAMP SSP network architecture diagram MUST reference a resource representing the diagram document.</message>
             </expect>
         </constraints>
     </context>

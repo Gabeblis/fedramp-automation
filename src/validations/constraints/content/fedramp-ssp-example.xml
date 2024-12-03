@@ -806,7 +806,8 @@
       <user uuid="11111111-2222-4000-8000-008000000001">
          <prop name="separation-of-duties-matrix" value="yes" ns="http://fedramp.gov/ns/oscal" />
          <prop name="type" value="internal"/>
-         
+         <prop ns="http://fedramp.gov/ns/oscal" name="privilege-level" value="read-write"/>
+         <prop ns="http://fedramp.gov/ns/oscal" name="sensitivity" value="high-risk"/>
          <role-id>system-poc-technical</role-id>
          <authorized-privilege>
             <title>Admin</title>
@@ -852,7 +853,8 @@
       <user uuid="11111111-2222-4000-8000-008000000004">
          <prop name="separation-of-duties-matrix" value="yes" ns="http://fedramp.gov/ns/oscal" />
          <prop name="type" value="internal"/>
-         
+         <prop ns="http://fedramp.gov/ns/oscal" name="privilege-level" value="read-write"/>
+         <prop ns="http://fedramp.gov/ns/oscal" name="sensitivity" value="high-risk"/>
          <role-id>system-poc-technical</role-id>
          <authorized-privilege>
             <title>Admin</title>

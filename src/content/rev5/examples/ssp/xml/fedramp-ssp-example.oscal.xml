@@ -2485,7 +2485,7 @@ SSP authors must add implmentations for all required controls.
           </description>
           <link href="#11111111-2222-4000-8000-001000000005" rel="policy"/>
           <link href="#11111111-2222-4000-8000-001000000023" rel="procedure"/>
-          <implementation-status state="operational"/>
+          <implementation-status state="implemented"/>
                     <responsible-role role-id="system-admin">
                         <party-uuid>11111111-0000-4000-9000-000000000001</party-uuid>
                     </responsible-role>
@@ -2500,7 +2500,7 @@ SSP authors must add implmentations for all required controls.
             <p>Component approach. This links to a component representing the Identity Management and Access Control Policy.</p>
             <p>That component contains a link to the policy, so it does not have to be linked here too.</p>
           </description>
-          <implementation-status state="operational"/>
+          <implementation-status state="implemented"/>
                     <responsible-role role-id="system-admin">
                         <party-uuid>11111111-0000-4000-9000-000000000001</party-uuid>
                     </responsible-role>
@@ -2543,7 +2543,7 @@ SSP authors must add implmentations for all required controls.
           <description>
             <p>Describe how Part b-1 is satisfied.</p>
           </description>
-          <implementation-status state="operational"/>
+          <implementation-status state="implemented"/>
                     <responsible-role role-id="system-admin">
                         <party-uuid>11111111-0000-4000-9000-000000000001</party-uuid>
                     </responsible-role>
@@ -2553,7 +2553,7 @@ SSP authors must add implmentations for all required controls.
           <description>
             <p>Describe how Part b-2 is satisfied.</p>
           </description>
-          <implementation-status state="operational"/>
+          <implementation-status state="implemented"/>
                     <responsible-role role-id="system-admin">
                         <party-uuid>11111111-0000-4000-9000-000000000001</party-uuid>
                     </responsible-role>

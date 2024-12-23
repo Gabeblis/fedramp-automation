@@ -107,14 +107,14 @@
                 <enum value="network">A physical or virtual network.</enum>
             </allowed-values>
 
-            <allowed-values id="control-implementation-status" target="control-implementation/implemented-requirement/statement/by-component/prop[@name='implementation-status']/@value" allow-other="no" level="ERROR">
+            <allowed-values id="control-implementation-status" target="control-implementation/implemented-requirement/statement/by-component/implementation-status/@state" allow-other="no" level="ERROR">
                 <formal-name>Control Implementation Status</formal-name>
                 <description>The implementation status of the control.</description>
-                <enum value="implemented">Implemented</enum>
-                <enum value="partial">Partially Implemented</enum>
-                <enum value="planned">Planned</enum>
-                <enum value="alternative">Alternative Implementation</enum>
-                <enum value="not-applicable">Not Applicable</enum>
+                <enum value="implemented">The control is fully implemented.</enum>
+                    <enum value="partial">The control is partially implemented.</enum>
+                    <enum value="planned">There is a plan for implementing the control as explained in the remarks.</enum>
+                    <enum value="alternative">There is an alternative implementation for this control as explained in the remarks.</enum>
+                    <enum value="not-applicable">This control does not apply to this system as justified in the remarks.</enum>
             </allowed-values>
 
             <allowed-values id="deployment-model" target="system-characteristics/prop[@name='cloud-deployment-model']/@value" allow-other="no" level="ERROR">

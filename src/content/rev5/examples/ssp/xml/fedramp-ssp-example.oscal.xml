@@ -2267,6 +2267,7 @@ approved.</p>
       <prop name="vlan-id" value="VLAN Identifier"/>
       <prop name="network-id" value="Network Identifier"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
+      <prop ns="http://fedramp.gov/ns/oscal" name="vendor-name" value="Vendor"/>
       <!-- <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="database"/>-->
       <prop name="allows-authenticated-scan" value="no">
         <remarks>
@@ -2322,6 +2323,7 @@ preferable to the link[rel='validation'] example above.</p>
       <!-- <prop name="patch-level" value="Patch-Level"/> -->
       <prop name="baseline-configuration-name" value="Baseline Configuration Name"/>
       <prop name="physical-location" value="Physical location of Asset"/>
+      <prop ns="http://fedramp.gov/ns/oscal" name="vendor-name" value="Vendor"/>
       <prop name="allows-authenticated-scan" value="no">
         <remarks>
           <p>If no, explain why. If yes, omit remark.</p>
@@ -2353,6 +2355,7 @@ preferable to the link[rel='validation'] example above.</p>
       <!-- Todo: check why schematron validation is indicating that this is not a valid ipv4 value -->
       <prop name="ipv6-address" value="0000:0000:0000:0000:0000:ffff:0a03:0303"/>
       <prop name="is-scanned" value="yes"/>
+      <prop ns="http://fedramp.gov/ns/oscal" name="vendor-name" value="Vendor"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
       <implemented-component component-uuid="11111111-2222-4000-8000-009000000008"/>
     </inventory-item>
@@ -2367,6 +2370,7 @@ preferable to the link[rel='validation'] example above.</p>
       <prop name="ipv4-address" value="10.4.4.4"/>
       <prop name="ipv6-address" value="0000:0000:0000:0000:0000:ffff:0a04:0404"/>
       <prop name="is-scanned" value="yes"/>
+      <prop ns="http://fedramp.gov/ns/oscal" name="vendor-name" value="Vendor"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
       <implemented-component component-uuid="11111111-2222-4000-8000-009000000007"/>
     </inventory-item>
@@ -2381,6 +2385,7 @@ preferable to the link[rel='validation'] example above.</p>
       <prop name="virtual" value="no"/>
       <prop name="public" value="yes"/>
       <prop name="is-scanned" value="yes"/>
+      <prop ns="http://fedramp.gov/ns/oscal" name="vendor-name" value="Vendor"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
       <implemented-component component-uuid="11111111-2222-4000-8000-009000000011"/>
     </inventory-item>
@@ -2394,6 +2399,7 @@ preferable to the link[rel='validation'] example above.</p>
       <prop name="asset-type" value="router"/>
       <prop name="virtual" value="no"/>
       <prop name="public" value="no"/>
+      <prop ns="http://fedramp.gov/ns/oscal" name="vendor-name" value="Vendor"/>
       <prop name="is-scanned" value="no">
         <remarks>
           <p>Asset wasn't running at time of scan.</p>
@@ -2412,6 +2418,7 @@ preferable to the link[rel='validation'] example above.</p>
       <prop name="virtual" value="no"/>
       <prop name="public" value="no"/>
       <prop name="is-scanned" value="yes"/>
+      <prop ns="http://fedramp.gov/ns/oscal" name="vendor-name" value="Vendor"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
       <implemented-component component-uuid="11111111-2222-4000-8000-009000000008"/>
     </inventory-item>
@@ -2425,6 +2432,7 @@ preferable to the link[rel='validation'] example above.</p>
       <prop name="ipv6-address" value="0000:0000:0000:0000:0000:ffff:0a08:0808"/>
       <prop name="virtual" value="yes"/>
       <prop name="public" value="no"/>
+      <prop ns="http://fedramp.gov/ns/oscal" name="vendor-name" value="Vendor"/>
       <prop name="is-scanned" value="no">
         <remarks>
           <p>Asset wasn't running at time of scan.</p>
@@ -2443,6 +2451,7 @@ preferable to the link[rel='validation'] example above.</p>
       <prop name="virtual" value="yes"/>
       <prop name="public" value="no"/>
       <prop name="is-scanned" value="yes"/>
+      <prop ns="http://fedramp.gov/ns/oscal" name="vendor-name" value="Vendor"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
       <implemented-component component-uuid="11111111-2222-4000-8000-009000000018"/>
     </inventory-item>

@@ -637,6 +637,18 @@
     </context>
 
     <context>
+        <metapath target="/system-security-plan/system-implementation/inventory-item"/>
+        <constraints>
+            <let var ="component-uuid" expression="implemented-component/@component-uuid"/>
+            <expect id="inventory-item-has-vendor-name" target="." test="count(prop[@name='vendor-name' and @ns='http://fedramp.gov/ns/oscal']) >= 1 or count(../component[@uuid=$component-uuid]/prop[@name='vendor-name' and @ns='http://fedramp.gov/ns/oscal']) >= 1" level="ERROR">
+                <formal-name>Inventory Item Has Vendor Name</formal-name>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
+                <message>In a FedRAMP SSP, each inventory item MUST include the vendor name in the inventory item itself or within the linked component.</message>
+            </expect>
+        </constraints>
+    </context>
+
+    <context>
         <metapath target="/(assessment-plan|assessment-results|plan-of-action-and-milestones|system-security-plan)/metadata"/>
         <constraints>
             <expect id="fedramp-version" target="." test="exists(prop[@name='fedramp-version'][@ns='http://fedramp.gov/ns/oscal'])" level="ERROR">

@@ -1,0 +1,9 @@
+test-case:
+  name: Negative Test for inventory-item-and-component-has-public
+  description: >-
+    This test case validates the behavior of constraint
+    inventory-item-and-component-has-public
+  content: ../content/ssp-inventory-item-and-component-has-public-INVALID.xml
+  expectations:
+    - constraint-id: inventory-item-and-component-has-public
+      result: fail

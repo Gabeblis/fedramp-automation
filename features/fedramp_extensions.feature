@@ -115,6 +115,7 @@ Examples:
   | interconnection-direction |
   | interconnection-security |
   | inventory-item-allows-authenticated-scan |
+  | inventory-item-and-component-has-public |
   | inventory-item-has-vendor-name |
   | inventory-item-public |
   | inventory-item-virtual |
@@ -356,6 +357,8 @@ Examples:
   | interconnection-security-PASS.yaml |
   | inventory-item-allows-authenticated-scan-FAIL.yaml |
   | inventory-item-allows-authenticated-scan-PASS.yaml |
+  | inventory-item-and-component-has-public-FAIL.yaml |
+  | inventory-item-and-component-has-public-PASS.yaml |
   | inventory-item-has-vendor-name-FAIL.yaml |
   | inventory-item-has-vendor-name-PASS.yaml |
   | inventory-item-public-FAIL.yaml |

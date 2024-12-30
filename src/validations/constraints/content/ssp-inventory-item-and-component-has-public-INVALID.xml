@@ -1,0 +1,11 @@
+<system-security-plan xmlns="http://csrc.nist.gov/ns/oscal/1.0" uuid="11111111-2222-4000-8000-000000000000">
+  <system-implementation>
+    <component uuid="11111111-2222-4000-8000-009000500004" type="service">
+      <prop name="implementation-point" value="internal"/>
+      <!-- <prop name="public" value="no"/> Missing public prop. -->
+    </component>
+    <inventory-item uuid="11111111-2222-4000-8000-011000000002">
+      <!-- <prop name="public" value="no"/> Missing public prop. -->
+    </inventory-item>
+  </system-implementation>
+</system-security-plan>

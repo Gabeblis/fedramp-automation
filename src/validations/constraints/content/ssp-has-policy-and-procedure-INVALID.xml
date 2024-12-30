@@ -1,0 +1,22 @@
+<system-security-plan xmlns="http://csrc.nist.gov/ns/oscal/1.0" uuid="11111111-2222-4000-8000-000000000000">
+  <system-implementation>
+    <component uuid="11111111-2222-4000-8000-009000000000" type="this-system">
+    </component>
+    <!-- <component uuid="11111111-2222-4000-8000-009000600001" type="policy">
+    </component> (AC) No component that has matching uuid and a type of "policy".-->
+    <!-- <component uuid="11111111-2222-4000-8000-009000800001" type="process-procedure">
+    </component> (AC) No component that has matching uuid and a type of "process-procedure".-->
+  </system-implementation>
+  <control-implementation>
+    <implemented-requirement uuid="11111111-2222-4000-8000-012000000001" control-id="ac-1">
+      <statement statement-id="ac-1_smt.a" uuid="11111111-2222-4000-8000-012000010100">
+        <by-component component-uuid="11111111-2222-4000-8000-009000000000" uuid="11111111-2222-4000-8000-012000010101">
+        </by-component>
+        <by-component component-uuid="11111111-2222-4000-8000-009000600001" uuid="11111111-2222-4000-8000-012000010102">
+        </by-component>
+        <by-component component-uuid="11111111-2222-4000-8000-009000800001" uuid="11111111-2222-4000-8000-012000010103">
+        </by-component>
+      </statement>
+    </implemented-requirement>
+  </control-implementation>
+</system-security-plan>

@@ -1,0 +1,8 @@
+<system-security-plan xmlns="http://csrc.nist.gov/ns/oscal/1.0" uuid="11111111-2222-4000-8000-000000000000">
+  <system-implementation>
+    <inventory-item uuid="11111111-2222-4000-8000-011000000001">
+      <!-- MAC address is formatted incorrectly. -->
+      <prop name="mac-address" value="000000000000"/> 
+    </inventory-item>
+  </system-implementation>
+</system-security-plan>

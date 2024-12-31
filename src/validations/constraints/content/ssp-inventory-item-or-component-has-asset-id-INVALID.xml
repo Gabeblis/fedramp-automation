@@ -1,0 +1,11 @@
+<system-security-plan xmlns="http://csrc.nist.gov/ns/oscal/1.0" uuid="11111111-2222-4000-8000-000000000000">
+  <system-implementation>
+    <component uuid="11111111-2222-4000-8000-009000500004" type="software">
+      <prop name="asset-type" value="image"/>
+      <!--<prop name="asset-id" value="unique-asset-ID-02"/> Missing "asset-id" prop.-->
+    </component>
+    <inventory-item uuid="11111111-2222-4000-8000-011000000001">
+      <!--<prop name="asset-id" value="unique-asset-ID-01"/> Missing "asset-id" prop.-->
+    </inventory-item>
+  </system-implementation>
+</system-security-plan>

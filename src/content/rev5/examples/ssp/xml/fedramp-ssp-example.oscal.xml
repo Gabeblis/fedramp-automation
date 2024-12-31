@@ -2249,7 +2249,7 @@ approved.</p>
       <description>
         <p>Legacy Example (No implemented-component).</p>
       </description>
-      <!--<prop name="asset-id" value="unique-asset-ID-01"/>-->
+      <prop name="asset-id" value="unique-asset-ID-01"/>
       <prop name="ipv4-address" value="10.1.1.1"/>
       <prop name="ipv6-address" value="2001:db8:3333:4444:5555:6666:7777:8888"/>
       <prop name="virtual" value="no"/>

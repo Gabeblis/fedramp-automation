@@ -1,0 +1,9 @@
+test-case:
+  name: Negative Test for inventory-item-or-component-has-asset-id
+  description: >-
+    This test case validates the behavior of constraint
+    inventory-item-or-component-has-asset-id
+  content: ../content/ssp-inventory-item-or-component-has-asset-id-INVALID.xml
+  expectations:
+    - constraint-id: inventory-item-or-component-has-asset-id
+      result: fail

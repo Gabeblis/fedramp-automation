@@ -643,6 +643,17 @@
     </context>
 
     <context>
+        <metapath target="/system-security-plan/system-implementation"/>
+        <constraints>
+            <expect id="inventory-item-or-component-has-asset-id" target="(inventory-item)| (component[@type='software' and prop[@name='asset-type' and @value='image']])" test="count(prop[@name='asset-id']) = 1" level="ERROR">
+                <formal-name>Inventory Item or Component Has Asset ID</formal-name>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
+                <message>In a FedRAMP SSP, each inventory item and software image component MUST include the asset ID.</message>
+            </expect>
+        </constraints>
+    </context>
+
+    <context>
         <metapath target="/system-security-plan/system-implementation/inventory-item"/>
         <constraints>
             <let var ="component-uuid" expression="implemented-component/@component-uuid"/>

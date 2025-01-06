@@ -708,11 +708,16 @@
                 <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
                 <message>In a FedRAMP SSP, each inventory item MUST include the vendor name in the inventory item itself or within the linked component.</message>
             </expect>
-<expect id="scan-type-has-remarks" target="..//prop[@name='scan-type' and @ns='http://fedramp.gov/ns/oscal' and @value=('other','not-applicable')]" test="exists(remarks)" level="ERROR">
-    <formal-name>Scan Type Has Remarks</formal-name>
-    <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
-    <message>When scan-type is 'other' or 'not-applicable', remarks MUST be provided to explain the selection.</message>
-</expect>
+            <expect id="inventory-item-or-component-has-virtual" target="." test="count(prop[@name='virtual']) = 1 or count(../component[@uuid=$component-uuid]/prop[@name='virtual']) = 1" level="ERROR">
+                <formal-name>Inventory Item or Component Has Virtual</formal-name>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
+                <message>In a FedRAMP SSP, each inventory item MUST state if it is virtual in the inventory item itself or the linked component.</message>
+            </expect>
+            <expect id="scan-type-has-remarks" target="..//prop[@name='scan-type' and @ns='http://fedramp.gov/ns/oscal' and @value=('other','not-applicable')]" test="exists(remarks)" level="ERROR">
+                <formal-name>Scan Type Has Remarks</formal-name>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
+                <message>When scan-type is 'other' or 'not-applicable', remarks MUST be provided to explain the selection.</message>
+            </expect>
         </constraints>
     </context>
 

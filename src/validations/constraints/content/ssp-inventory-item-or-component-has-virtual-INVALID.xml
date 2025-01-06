@@ -1,0 +1,12 @@
+<system-security-plan xmlns="http://csrc.nist.gov/ns/oscal/1.0" uuid="11111111-2222-4000-8000-000000000000">
+  <system-implementation>
+    <component uuid="11111111-2222-4000-8000-009000000007" type="process-procedure">
+      <!-- <prop name="virtual" value="no"/> The linked component is missing the "virtual" prop.-->
+    </component>
+    <inventory-item uuid="11111111-2222-4000-8000-011000000001">
+      <!-- <prop name="virtual" value="no"/> Iventory item itself is missing the "virtual" prop.-->
+      <implemented-component component-uuid="11111111-2222-4000-8000-009000000007">
+      </implemented-component>
+    </inventory-item>
+  </system-implementation>
+</system-security-plan>

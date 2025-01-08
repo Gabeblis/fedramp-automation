@@ -2375,6 +2375,7 @@ approved.</p>
       <prop name="fqdn" value="dns.name"/>
       <prop name="uri" value="uniform.resource.locator"/>
       <prop name="netbios-name" value="netbios-name"/>
+      <prop name="is-scanned" value="yes"/>
       <!-- patch-level applies to component, not inventory-item -->
       <!-- <prop name="patch-level" value="Patch-Level"/> -->
       <prop name="baseline-configuration-name" value="Baseline Configuration Name"/>

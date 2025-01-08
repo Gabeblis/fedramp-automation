@@ -1,0 +1,9 @@
+test-case:
+  name: Negative Test for inventory-item-has-is-scanned
+  description: >-
+    This test case validates the behavior of constraint
+    inventory-item-has-is-scanned
+  content: ../content/ssp-inventory-item-has-is-scanned-INVALID.xml
+  expectations:
+    - constraint-id: inventory-item-has-is-scanned
+      result: fail

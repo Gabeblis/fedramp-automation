@@ -2310,6 +2310,7 @@ approved.</p>
       <description>
         <p>Legacy Example (No implemented-component).</p>
       </description>
+      <prop name="hardware-model" value="model"/>
       <prop name="asset-id" value="unique-asset-ID-01"/>
       <prop name="software-version" value="software-version"/>
       <prop name="ipv4-address" value="10.1.1.1"/>
@@ -2365,6 +2366,7 @@ approved.</p>
       <description>
         <p>Component Inventory Example</p>
       </description>
+      <prop name="hardware-model" value="model"/>
       <prop name="asset-id" value="unique-asset-ID-02"/>
       <prop name="ipv4-address" value="10.2.2.2"/>
       <prop name="ipv6-address" value="0000:0000:0000:0000:0000:ffff:0a02:0202"/>
@@ -2408,6 +2410,7 @@ approved.</p>
       <description>
         <p>None.</p>
       </description>
+      <prop name="hardware-model" value="model"/>
       <prop name="asset-id" value="unique-asset-ID-03"/>
       <prop name="asset-type" value="web-server"/>
       <prop name="virtual" value="yes"/>
@@ -2430,6 +2433,7 @@ approved.</p>
       <description>
         <p>None.</p>
       </description>
+      <prop name="hardware-model" value="model"/>
       <prop name="asset-id" value="unique-asset-ID-04"/>
       <prop name="asset-type" value="appliance"/>
       <prop name="virtual" value="yes"/>
@@ -2447,6 +2451,7 @@ approved.</p>
       <description>
         <p>None.</p>
       </description>
+      <prop name="hardware-model" value="model"/>
       <prop name="asset-id" value="unique-asset-ID-05"/>
       <prop name="asset-type" value="firewall"/>
       <prop name="ipv4-address" value="10.5.5.5"/>
@@ -2468,6 +2473,7 @@ approved.</p>
       <description>
         <p>None.</p>
       </description>
+      <prop name="hardware-model" value="model"/>
       <prop name="asset-id" value="unique-asset-ID-06"/>
       <prop name="ipv4-address" value="10.6.6.6"/>
       <prop name="ipv6-address" value="0000:0000:0000:0000:0000:ffff:0a06:0606"/>
@@ -2493,6 +2499,7 @@ approved.</p>
       <description>
         <p>None.</p>
       </description>
+      <prop name="hardware-model" value="model"/>
       <prop name="asset-id" value="unique-asset-ID-07"/>
       <prop name="asset-type" value="switch"/>
       <prop name="ipv4-address" value="10.7.7.7"/>
@@ -2513,6 +2520,7 @@ approved.</p>
       <description>
         <p>None.</p>
       </description>
+      <prop name="hardware-model" value="model"/>
       <prop name="asset-id" value="unique-asset-ID-08"/>
       <prop name="asset-type" value="web-server"/>
       <prop name="ipv4-address" value="10.8.8.8"/>
@@ -2537,6 +2545,7 @@ approved.</p>
       <description>
         <p>Email-Service</p>
       </description>
+      <prop name="hardware-model" value="model"/>
       <prop name="asset-id" value="unique-asset-ID-09"/>
       <prop name="asset-type" value="email-server"/>
       <prop name="ipv4-address" value="10.10.10.100"/>

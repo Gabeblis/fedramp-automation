@@ -1041,6 +1041,7 @@ these datails are derived from other content in this SSP.</p>
         <p>An authorized service provided by the Awesome Cloud leveraged authorization.</p>
         <p>Describe the service and what it is used for.</p>
       </description>
+      <prop name='diagram-label' ns='http://fedramp.gov/ns/oscal' value='label'/>
       <prop name="leveraged-authorization-uuid" value="11111111-2222-4000-8000-019000000001"/>
       <prop name="implementation-point" value="external"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="information-type" class="incoming" value="C.3.5.1"/>
@@ -1102,6 +1103,7 @@ leveraged-authorization assembly:</p>
         <p>An non-authorized service provided by the Awesome Cloud leveraged authorization.</p>
         <p>Describe the service and what it is used for.</p>
       </description>
+      <prop name='diagram-label' ns='http://fedramp.gov/ns/oscal' value='label'/>
       <prop name="implementation-point" value="external"/>
       <prop name="connection-security" value="tls-1.3" ns="http://fedramp.gov/ns/oscal"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="direction" value="outgoing"/>
@@ -1197,6 +1199,7 @@ leveraged-authorization assembly:</p>
       <description>
         <p>An external system to which this system shares an interconnection.</p>
       </description>
+      <prop name='diagram-label' ns='http://fedramp.gov/ns/oscal' value='label'/>
       <prop name="implementation-point" value="external"/>
       <prop name="direction" value="incoming" ns="http://fedramp.gov/ns/oscal"/>
       <prop name="direction" value="outgoing" ns="http://fedramp.gov/ns/oscal"/>
@@ -1285,6 +1288,7 @@ and "system-poc-technical"</p>
         <p>Describe the purpose of the external system/service; specifically, provide reasons
 for connectivity (e.g., system monitoring, system alerting, download updates, etc.)</p>
       </description>
+      <prop name='diagram-label' ns='http://fedramp.gov/ns/oscal' value='label'/>
       <prop name="implementation-point" value="external"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="direction" value="incoming"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="direction" value="outgoing"/>
@@ -1430,6 +1434,7 @@ here.</p>
         <p>A service provided by an external system other than the leveraged system.</p>
         <p>Describe the service and what it is used for.</p>
       </description>
+      <prop name='diagram-label' ns='http://fedramp.gov/ns/oscal' value='label'/>
       <prop name="implementation-point" value="external"/>
       <!--<prop name="direction" value="outgoing"/>-->
       <prop name="leveraged-authorization-uuid" value="11111111-2222-4000-8000-019000000001"/>
@@ -1521,7 +1526,7 @@ leveraged-authorization assembly:</p>
         <p>A service provided by an external system other than the leveraged system.</p>
         <p>Describe the service and what it is used for.</p>
       </description>
-
+      <prop name='diagram-label' ns='http://fedramp.gov/ns/oscal' value='label'/>
       <prop name="implementation-point" value="internal"/>
       <prop name="public" value="no"/>
       <prop name="connection-security" value="tls-1.3" ns="http://fedramp.gov/ns/oscal"/>
@@ -1598,6 +1603,7 @@ property.</p>
       <description>
         <p>None</p>
       </description>
+      <prop name='diagram-label' ns='http://fedramp.gov/ns/oscal' value='label'/>
       <prop name="asset-type" value="cli"/>
       <prop name="implementation-point" value="internal"/>
       <prop name="connection-security" value="tls-1.3" ns="http://fedramp.gov/ns/oscal"/>
@@ -1741,6 +1747,7 @@ compliance (e.g., Module in Process).</p>
       <description>
         <p>FUNCTION: Describe typical component function.</p>
       </description>
+      <prop name='diagram-label' ns='http://fedramp.gov/ns/oscal' value='label'/>
       <prop name="asset-type" value="operating-system"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
       <prop name="vendor-name" value="Vendor Name"/>
@@ -1762,6 +1769,7 @@ compliance (e.g., Module in Process).</p>
       <description>
         <p>FUNCTION: Describe typical component function.</p>
       </description>
+      <prop name='diagram-label' ns='http://fedramp.gov/ns/oscal' value='label'/>
       <prop name="asset-type" value="operating-system"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
       <prop name="vendor-name" value="Vendor Name"/>
@@ -1783,6 +1791,7 @@ compliance (e.g., Module in Process).</p>
       <description>
         <p>FUNCTION: This container image is the base operating system used in the example. A notional CSP, like Awesome Cloud, would update and customize this image for business, reliability, and security needs.</p>
       </description>
+      <prop name='diagram-label' ns='http://fedramp.gov/ns/oscal' value='label'/>
       <prop name="asset-type" value="image"/>
       <prop name="checksum" ns="http://fedramp.gov/ns/oscal" value="504931a74cb58330cafb9f59f5e553af3cc63af205dc955f7f80dc981276def0"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
@@ -1808,6 +1817,7 @@ compliance (e.g., Module in Process).</p>
       <description>
         <p>FUNCTION: Describe typical component function.</p>
       </description>
+      <prop name='diagram-label' ns='http://fedramp.gov/ns/oscal' value='label'/>
       <prop name="asset-type" value="database"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="database"/>
@@ -1830,6 +1840,7 @@ compliance (e.g., Module in Process).</p>
       <description>
         <p>None</p>
       </description>
+      <prop name='diagram-label' ns='http://fedramp.gov/ns/oscal' value='label'/>
       <prop name="asset-type" value="operating-system"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
       <prop name="baseline-configuration-name" value="Baseline Config. Name"/>
@@ -1841,6 +1852,7 @@ compliance (e.g., Module in Process).</p>
       <description>
         <p>None</p>
       </description>
+      <prop name='diagram-label' ns='http://fedramp.gov/ns/oscal' value='label'/>
       <prop name="connection-security" value="tls-1.3" ns="http://fedramp.gov/ns/oscal"/>
       <prop name="implementation-point" value="external"/>
       <prop name="direction" value="incoming" ns="http://fedramp.gov/ns/oscal"/>
@@ -1886,6 +1898,7 @@ compliance (e.g., Module in Process).</p>
       <description>
         <p>None</p>
       </description>
+      <prop name='diagram-label' ns='http://fedramp.gov/ns/oscal' value='label'/>
       <prop name="asset-type" value="appliance"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="web"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="login-url" value="https://admin.offering.com/login"/>
@@ -2268,6 +2281,7 @@ approved.</p>
       <description>
         <p>Email Service</p>
       </description>
+      <prop name='diagram-label' ns='http://fedramp.gov/ns/oscal' value='label'/>
       <prop name="connection-security" value="tls-1.3" ns="http://fedramp.gov/ns/oscal"/>
       <prop name="implementation-point" value="external"/>
       <prop name="direction" value="incoming" ns="http://fedramp.gov/ns/oscal"/>
@@ -2310,6 +2324,7 @@ approved.</p>
       <description>
         <p>Legacy Example (No implemented-component).</p>
       </description>
+      <prop name='diagram-label' ns='http://fedramp.gov/ns/oscal' value='label'/>
       <prop name="asset-id" value="unique-asset-ID-01"/>
       <prop name="ipv4-address" value="10.1.1.1"/>
       <prop name="ipv6-address" value="2001:db8:3333:4444:5555:6666:7777:8888"/>
@@ -2364,6 +2379,7 @@ approved.</p>
       <description>
         <p>Component Inventory Example</p>
       </description>
+      <prop name='diagram-label' ns='http://fedramp.gov/ns/oscal' value='label'/>
       <prop name="asset-id" value="unique-asset-ID-02"/>
       <prop name="ipv4-address" value="10.2.2.2"/>
       <prop name="ipv6-address" value="0000:0000:0000:0000:0000:ffff:0a02:0202"/>
@@ -2407,6 +2423,7 @@ approved.</p>
       <description>
         <p>None.</p>
       </description>
+      <prop name='diagram-label' ns='http://fedramp.gov/ns/oscal' value='label'/>
       <prop name="asset-id" value="unique-asset-ID-03"/>
       <prop name="asset-type" value="web-server"/>
       <prop name="virtual" value="yes"/>
@@ -2429,6 +2446,7 @@ approved.</p>
       <description>
         <p>None.</p>
       </description>
+      <prop name='diagram-label' ns='http://fedramp.gov/ns/oscal' value='label'/>
       <prop name="asset-id" value="unique-asset-ID-04"/>
       <prop name="asset-type" value="appliance"/>
       <prop name="virtual" value="yes"/>
@@ -2446,6 +2464,7 @@ approved.</p>
       <description>
         <p>None.</p>
       </description>
+      <prop name='diagram-label' ns='http://fedramp.gov/ns/oscal' value='label'/>
       <prop name="asset-id" value="unique-asset-ID-05"/>
       <prop name="asset-type" value="firewall"/>
       <prop name="ipv4-address" value="10.5.5.5"/>
@@ -2467,6 +2486,7 @@ approved.</p>
       <description>
         <p>None.</p>
       </description>
+      <prop name='diagram-label' ns='http://fedramp.gov/ns/oscal' value='label'/>
       <prop name="asset-id" value="unique-asset-ID-06"/>
       <prop name="ipv4-address" value="10.6.6.6"/>
       <prop name="ipv6-address" value="0000:0000:0000:0000:0000:ffff:0a06:0606"/>
@@ -2492,6 +2512,7 @@ approved.</p>
       <description>
         <p>None.</p>
       </description>
+      <prop name='diagram-label' ns='http://fedramp.gov/ns/oscal' value='label'/>
       <prop name="asset-id" value="unique-asset-ID-07"/>
       <prop name="asset-type" value="switch"/>
       <prop name="ipv4-address" value="10.7.7.7"/>
@@ -2512,6 +2533,7 @@ approved.</p>
       <description>
         <p>None.</p>
       </description>
+      <prop name='diagram-label' ns='http://fedramp.gov/ns/oscal' value='label'/>
       <prop name="asset-id" value="unique-asset-ID-08"/>
       <prop name="asset-type" value="web-server"/>
       <prop name="ipv4-address" value="10.8.8.8"/>
@@ -2536,6 +2558,7 @@ approved.</p>
       <description>
         <p>Email-Service</p>
       </description>
+      <prop name='diagram-label' ns='http://fedramp.gov/ns/oscal' value='label'/>
       <prop name="asset-id" value="unique-asset-ID-09"/>
       <prop name="asset-type" value="email-server"/>
       <prop name="ipv4-address" value="10.10.10.100"/>

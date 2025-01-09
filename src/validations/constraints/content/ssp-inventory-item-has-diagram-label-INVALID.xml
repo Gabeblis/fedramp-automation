@@ -1,0 +1,10 @@
+<system-security-plan xmlns="http://csrc.nist.gov/ns/oscal/1.0" uuid="11111111-2222-4000-8000-000000000000">
+  <system-implementation>
+    <component uuid="11111111-2222-4000-8000-009000000007" type="process-procedure">
+      <!-- <prop name='diagram-label' ns='http://fedramp.gov/ns/oscal' value='label'/> Missing "diagram-label" prop. -->
+    </component>
+    <inventory-item uuid="11111111-2222-4000-8000-011000000001">
+      <!-- <prop name='diagram-label' ns='http://fedramp.gov/ns/oscal' value='label'/> Missing "diagram-label" prop. -->
+    </inventory-item>
+  </system-implementation>
+</system-security-plan>

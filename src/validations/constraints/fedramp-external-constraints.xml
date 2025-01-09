@@ -586,10 +586,16 @@
         <metapath target="/system-security-plan/system-implementation"/>
         <constraints>
             <let var="inter-boundary-component" expression="component[(@type=('service','software') and not(prop[@name='leveraged-authorization-uuid']) and prop[@name='implementation-point' and @value='external']) or (@type='interconnection') or (@type=('service','software') and prop[@name='implementation-point' and @value='internal'] and (prop[@name='communicates-externally' and @value='yes' and @ns='http://fedramp.gov/ns/oscal']))]"/>
+            <let var="inventory-linked-component-uuids" expression="inventory-item/implemented-component/@component-uuid"/>
             <expect id="authentication-method-has-remarks" target="//component[(@type='system' and ./prop[@name='leveraged-authorization-uuid']) or (@type='service' and not(./prop[@name='leveraged-authorization-uuid']) and ./prop[@name='implementation-point' and @value='external']) or (@type='interconnection') or (@type='service' and ./prop[@name='implementation-point' and @value='internal'] and ./prop[@name='direction']) or (@type='software' and ./prop[@name='asset-type' and @value='cli'] and ./prop[@name='direction'])]" test="count(./prop[@name='authentication-method' and @ns='http://fedramp.gov/ns/oscal'])  = count(./prop[@name='authentication-method' and @ns='http://fedramp.gov/ns/oscal']/remarks)" level="ERROR">
                 <formal-name>Authentication Method Has Remarks</formal-name>
                 <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#leveraged-fedramp-authorized-services"/>
                 <message>Each authentication method in a FedRAMP SSP MUST have a remarks field.</message>
+            </expect>
+            <expect id="component-has-diagram-label" target="component[not(@uuid=$inventory-linked-component-uuids) and @type=('hardware', 'software', 'service', 'interconnection')]" test="count(prop[@name='diagram-label' and @ns='http://fedramp.gov/ns/oscal']) = 1" level="ERROR">
+                <formal-name>Component Has Diagram Label</formal-name>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
+                <message>In a FedRAMP SSP, each hardware, software, service, and interconnection component MUST include the diagram label.</message>
             </expect>
             <expect id="component-has-used-by-link" target="component[protocol]" test="count(link[@rel='used-by']) >= 1" level="ERROR">
                 <formal-name>Component Has Used-By Link</formal-name>
@@ -687,6 +693,11 @@
                 <formal-name>High Impact Inventory Item Has Asset Owner</formal-name>
                 <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
                 <message>For HIGH-impact systems, every inventory-item MUST identify an asset-owner or administrator property either within the inventory-item itself, or within the component linked by the inventory-item.</message>
+            </expect>
+            <expect id="inventory-item-has-diagram-label" target="." test="count(prop[@name='diagram-label' and @ns='http://fedramp.gov/ns/oscal']) >= 1 or count(../component[@uuid=$component-uuid]/prop[@name='diagram-label' and @ns='http://fedramp.gov/ns/oscal']) >= 1" level="ERROR">
+                <formal-name>Inventory Item Has Diagram Label</formal-name>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
+                <message>In a FedRAMP SSP, each inventory item MUST include the diagram label either in the inventory item itself or within the linked component.</message>
             </expect>
             <expect id="inventory-item-has-function" target="." test="exists(prop[@name='function']/remarks) or exists($implemented-component/prop[@name='function']/remarks)" level="ERROR">
                 <formal-name>Inventory Item Has Function</formal-name>

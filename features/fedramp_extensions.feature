@@ -38,6 +38,7 @@ Examples:
   | cia-impact-has-selected |
   | cloud-service-model |
   | component-has-authentication-method |
+  | component-has-diagram-label |
   | component-has-non-provider-responsible-role |
   | component-has-provider-responsible-role |
   | component-has-used-by-link |
@@ -124,6 +125,7 @@ Examples:
   | interconnection-security |
   | inventory-item-allows-authenticated-scan |
   | inventory-item-and-component-has-public |
+  | inventory-item-has-diagram-label |
   | inventory-item-has-function |
   | inventory-item-has-scan-type |
   | inventory-item-has-valid-mac-address |
@@ -216,6 +218,8 @@ Examples:
   | cloud-service-model-PASS.yaml |
   | component-has-authentication-method-FAIL.yaml |
   | component-has-authentication-method-PASS.yaml |
+  | component-has-diagram-label-FAIL.yaml |
+  | component-has-diagram-label-PASS.yaml |
   | component-has-non-provider-responsible-role-FAIL.yaml |
   | component-has-non-provider-responsible-role-PASS.yaml |
   | component-has-used-by-link-FAIL.yaml |
@@ -388,6 +392,8 @@ Examples:
   | inventory-item-allows-authenticated-scan-PASS.yaml |
   | inventory-item-and-component-has-public-FAIL.yaml |
   | inventory-item-and-component-has-public-PASS.yaml |
+  | inventory-item-has-diagram-label-FAIL.yaml |
+  | inventory-item-has-diagram-label-PASS.yaml |
   | inventory-item-has-function-FAIL.yaml |
   | inventory-item-has-function-PASS.yaml |
   | inventory-item-has-scan-type-FAIL.yaml |

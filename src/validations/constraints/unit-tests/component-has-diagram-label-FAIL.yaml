@@ -1,0 +1,9 @@
+test-case:
+  name: Negative Test for component-has-diagram-label
+  description: >-
+    This test case validates the behavior of constraint
+    component-has-diagram-label
+  content: ../content/ssp-component-has-diagram-label-INVALID.xml
+  expectations:
+    - constraint-id: component-has-diagram-label
+      result: fail

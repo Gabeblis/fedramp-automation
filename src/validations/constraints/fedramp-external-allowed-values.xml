@@ -61,6 +61,7 @@
                 <enum value="privacy-impact-assessment">Privacy Impact Assessment</enum>
                 <enum value="information-system-contingency-plan">Information System Contingency Plan</enum>
                 <enum value="configuration-management-plan">configuration-management-plan</enum>
+                <enum value="fedramp-poam">A Plan of Action and Milestones represented either using the FedRAMP template or FedRAMP-compliant OSCAL.</enum>
                 <remarks>
                     <p>Not all values apply to all FedRAMP artifacts.</p>
                 </remarks>

@@ -100,6 +100,8 @@
                 <enum value="this-system">The system as a whole.</enum>
                 <enum value="system">An external system, which may be a leveraged system or the other side of an interconnection.</enum>
                 <enum value="network">A physical or virtual network.</enum>
+                <enum value="client">A client that may use a service.</enum>
+                <enum value="connection">A logical connection between two or more network nodes.</enum>
             </allowed-values>
 
             <allowed-values id="connection-security" target="system-implementation/component/prop[@name='connection-security' and @ns='http://fedramp.gov/ns/oscal']/@value" allow-other="yes" level="WARNING">

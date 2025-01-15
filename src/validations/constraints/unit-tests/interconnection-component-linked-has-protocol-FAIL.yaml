@@ -1,0 +1,8 @@
+# Driver for the invalid interconnection-component-linked-has-protocol constraint unit test.
+test-case:
+  name: The invalid interconnection-component-linked-has-protocol constraint unit test.
+  description: Test that the FedRAMP SSP interconnection "used-by" linked component does not have a protocol assembly.
+  content: ../content/ssp-interconnection-component-linked-has-protocol-INVALID.xml
+  expectations:
+  - constraint-id: interconnection-component-linked-has-protocol
+    result: fail

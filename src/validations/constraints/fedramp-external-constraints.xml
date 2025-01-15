@@ -669,6 +669,18 @@
         </constraints>
     </context>
 
+    <context>
+        <metapath target="/system-security-plan/system-implementation/component"/>
+        <constraints>
+            <let var="interconnection-component-used-by-href" expression=".[@type=('interconnection', 'connection')]/link[@rel='used-by']/@href"/>
+            <expect id="interconnection-component-linked-has-protocol" target=".[@type=('interconnection', 'connection')]" test="some $href in $interconnection-component-used-by-href satisfies count(../component[@uuid=substring-after($href,'#')]/protocol) >= 1" level="ERROR">
+                <formal-name>Linked Interconnection Component Has Protocol</formal-name>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#ports-protocols-and-services"/>
+                <message>In a FedRAMP SSP, at least one of the interconnection "used-by" linked components MUST have at least one protocol assembly.</message>
+            </expect>
+        </constraints>
+    </context>
+
 
     <context>
         <metapath target="/system-security-plan/system-implementation/inventory-item"/>

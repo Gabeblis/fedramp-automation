@@ -676,7 +676,6 @@
                 <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#ports-protocols-and-services"/>
                 <message>A FedRAMP SSP's component MUST reference the existing component(s) that use it via network communication. However, component "{../@uuid}" references a nonexistent component "{@href}".</message>
             </expect>
-
         </constraints>
     </context>
 
@@ -684,6 +683,11 @@
         <metapath target="/system-security-plan/system-implementation/component"/>
         <constraints>
             <let var="interconnection-component-used-by-href" expression=".[@type=('interconnection', 'connection')]/link[@rel='used-by']/@href"/>
+            <expect id="component-has-authenticated-scan" target=".[@type='service' and prop[@name='implementation-point' and @value='internal']]" test="count(prop[@name='allows-authenticated-scan']) = 1" level="ERROR">
+                <formal-name>Component Has Authenticated Scan</formal-name>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
+                <message>In a FedRAMP SSP, each internal service component MUST state whether it allows authenticated scans.</message>
+            </expect>
             <expect id="interconnection-component-linked-has-protocol" target=".[@type=('interconnection', 'connection')]" test="some $href in $interconnection-component-used-by-href satisfies count(../component[@uuid=substring-after($href,'#')]/protocol) >= 1" level="ERROR">
                 <formal-name>Linked Interconnection Component Has Protocol</formal-name>
                 <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#ports-protocols-and-services"/>
@@ -691,7 +695,6 @@
             </expect>
         </constraints>
     </context>
-
 
     <context>
         <metapath target="/system-security-plan/system-implementation/inventory-item"/>
@@ -715,6 +718,11 @@
                 <formal-name>Inventory Item Has Asset-Type</formal-name>
                 <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
                 <message>In a FedRAMP SSP, each inventory item MUST define the asset type either in the inventory item itself or within the linked component.</message>
+            </expect>
+            <expect id="inventory-item-has-authenticated-scan" target="." test="count(prop[@name='allows-authenticated-scan']) >= 1 or count(../component[@uuid=$component-uuid]/prop[@name='allows-authenticated-scan']) = 1" level="ERROR">
+                <formal-name>Inventory Item Has Authenticated Scan</formal-name>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
+                <message>In a FedRAMP SSP, each inventory item MUST state whether it allows authenticated scans in the inventory item itself or within the linked component.</message>
             </expect>
             <expect id="inventory-item-has-diagram-label" target="." test="count(prop[@name='diagram-label' and @ns='http://fedramp.gov/ns/oscal']) >= 1 or count(../component[@uuid=$component-uuid]/prop[@name='diagram-label' and @ns='http://fedramp.gov/ns/oscal']) >= 1" level="ERROR">
                 <formal-name>Inventory Item Has Diagram Label</formal-name>

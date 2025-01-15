@@ -1528,6 +1528,7 @@ leveraged-authorization assembly:</p>
       </description>
       <prop name='diagram-label' ns='http://fedramp.gov/ns/oscal' value='label'/>
       <prop name="implementation-point" value="internal"/>
+      <prop name="allows-authenticated-scan" value="yes"/>
       <prop name="public" value="no"/>
       <prop name="connection-security" value="tls-1.3" ns="http://fedramp.gov/ns/oscal"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="provider" value="self"/>
@@ -1661,6 +1662,7 @@ property.</p>
         <p>Describe the service and what it is used for.</p>
       </description>
       <prop name="implementation-point" value="internal"/>
+      <prop name="allows-authenticated-scan" value="yes"/>
       <prop name="public" value="yes"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
       <status state="operational"/>
@@ -2477,6 +2479,7 @@ approved.</p>
       <!-- Todo: check why schematron validation is indicating that this is not a valid ipv4 value -->
       <prop name="ipv6-address" value="0000:0000:0000:0000:0000:ffff:0a03:0303"/>
       <prop name="is-scanned" value="yes"/>
+      <prop name="allows-authenticated-scan" value="yes"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="vendor-name" value="Vendor"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
 
@@ -2499,6 +2502,7 @@ approved.</p>
       <prop name="ipv4-address" value="10.4.4.4"/>
       <prop name="ipv6-address" value="0000:0000:0000:0000:0000:ffff:0a04:0404"/>
       <prop name="is-scanned" value="yes"/>
+      <prop name="allows-authenticated-scan" value="yes"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="vendor-name" value="Vendor"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="other">
         <remarks><p>a different kind of scan</p></remarks>
@@ -2517,6 +2521,7 @@ approved.</p>
       <prop name="virtual" value="no"/>
       <prop name="public" value="yes"/>
       <prop name="is-scanned" value="yes"/>
+      <prop name="allows-authenticated-scan" value="yes"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="vendor-name" value="Vendor"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
  
@@ -2544,6 +2549,7 @@ approved.</p>
           <p>Asset wasn't running at time of scan.</p>
         </remarks>
       </prop>
+      <prop name="allows-authenticated-scan" value="yes"/>
       <prop name="function" value="Required brief, text-based description.">
         <remarks>
           <p>Required, longer, formatted description.</p>
@@ -2565,6 +2571,7 @@ approved.</p>
       <prop name="virtual" value="no"/>
       <prop name="public" value="no"/>
       <prop name="is-scanned" value="yes"/>
+      <prop name="allows-authenticated-scan" value="yes"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="vendor-name" value="Vendor"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
       <prop name="function" value="Required brief, text-based description.">
@@ -2591,6 +2598,7 @@ approved.</p>
           <p>Asset wasn't running at time of scan.</p>
         </remarks>
       </prop>
+      <prop name="allows-authenticated-scan" value="yes"/>
       <prop name="function" value="Required brief, text-based description.">
         <remarks>
           <p>Optional, longer, formatted description.</p>
@@ -2611,6 +2619,7 @@ approved.</p>
       <prop name="virtual" value="yes"/>
       <prop name="public" value="no"/>
       <prop name="is-scanned" value="yes"/>
+      <prop name="allows-authenticated-scan" value="yes"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="vendor-name" value="Vendor"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
       <prop name='function' value='virtual'><remarks><p>virtual function</p></remarks></prop>

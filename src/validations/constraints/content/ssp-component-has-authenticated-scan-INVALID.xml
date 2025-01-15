@@ -1,0 +1,8 @@
+<system-security-plan xmlns="http://csrc.nist.gov/ns/oscal/1.0" uuid="11111111-2222-4000-8000-000000000000">
+  <system-implementation>
+    <component uuid="11111111-2222-4000-8000-009000500004" type="service">
+      <!-- <prop name="allows-authenticated-scan" value="yes"/> Missing allows-authenticated-scan prop. -->
+      <prop name="implementation-point" value="internal"/>
+    </component>
+  </system-implementation>
+</system-security-plan>

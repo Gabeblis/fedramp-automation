@@ -1,6 +1,6 @@
 <system-security-plan xmlns="http://csrc.nist.gov/ns/oscal/1.0" uuid="11111111-2222-4000-8000-000000000000">
   <system-implementation>
-    <component uuid="11111111-2222-4000-8000-009000000007" type="process-procedure">
+    <component uuid="11111111-2222-4000-8000-009000000007" type="software">
       <!-- <prop ns="http://fedramp.gov/ns/oscal" name="vendor-name" value="Vendor"/> Missing software-name in linked component-->
     </component>
     <inventory-item uuid="11111111-2222-4000-8000-011000000001">

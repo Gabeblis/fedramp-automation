@@ -563,10 +563,10 @@
                 <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#leveraged-fedramp-authorized-services"/>
                 <message>A FedRAMP SSP that defines a SaaS cloud service model MUST define at least one leveraged authorization.</message>
             </expect>
-            <expect id="security-sensitivity-level-matches-security-impact-level" target="security-sensitivity-level" test=". eq $security-impact-level" level="WARNING">
+            <expect id="security-sensitivity-level-matches-security-impact-level" target="security-sensitivity-level" test="$security-impact-level = 'fips-199-low' and matches(., '(fips-199-low|fips-199-moderate|fips-199-high)') or $security-impact-level = 'fips-199-moderate' and matches(., '(fips-199-moderate|fips-199-high)') or $security-impact-level = 'fips-199-high' and matches(., 'fips-199-high')" level="ERROR">
                 <formal-name>Security Sensitivity Level Matches Security Impact Level</formal-name>
                 <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#system-sensitivity-level"/>
-                <message>A FedRAMP SSP SHOULD define its FIPS-199 security sensitivity level to match the highest security impact level for the system's confidentiality, integrity, and availability objectives.</message>
+                <message>A FedRAMP SSP MUST define its FIPS-199 security sensitivity level to be as high or higher than the highest security impact level/objective.</message>
             </expect>
         </constraints>
     </context>

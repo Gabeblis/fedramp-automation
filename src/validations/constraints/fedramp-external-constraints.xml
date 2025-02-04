@@ -10,17 +10,17 @@
         <constraints>
             <expect id="user-has-authorized-privilege" target="." test="count(authorized-privilege) gt 0" level="ERROR">
                 <formal-name>User Has Authorized Privilege</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#user"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=user-has-authorized-privilege"/>
                 <message>A FedRAMP document MUST define a user with at least one authorized privilege by a privilege identifier.</message>
             </expect>
             <expect id="user-has-role-id" target="." test="count(role-id) gt 0" level="ERROR">
                 <formal-name>User Has Role ID</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#user"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=user-has-role-id"/>
                 <message>A FedRAMP document MUST define a user with at least one role by a role identifier.</message>
             </expect>
             <expect id="user-has-user-type" target="." test="count(prop[@name='type']) = 1" level="ERROR">
                 <formal-name>User Has User Type</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#user"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=user-has-user-type"/>
                 <message>A FedRAMP document MUST define a user with a type.</message>
             </expect>
         </constraints>
@@ -33,7 +33,7 @@
         <constraints>
             <expect id="prop-response-point-has-cardinality-one" target=".//part" test="count(prop[@ns='http://fedramp.gov/ns/oscal' and @name='response-point']) &lt;= 1" level="ERROR">
                 <formal-name>Prop Response Point Has Cardinality One</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/6-security-controls/#control-implementation-descriptions"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=prop-response-point-has-cardinality-one"/>
                 <message>MUST NOT have Duplicate response point at '{ path(.) }'.</message>
             </expect>
             <remarks>
@@ -74,28 +74,28 @@
             </index>
             <expect id="aggregate-parameters-warning" target="//set-parameter" test="every $param in $aggregate-parameters satisfies @param-id != $param" level="WARNING">
                 <formal-name>No Aggregate Parameters in SSP</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/6-security-controls/#responsible-roles-and-parameter-assignments"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=aggregate-parameters-warning"/>
                 <message>A FedRAMP SSP SHOULD NOT set aggregate parameters directly. Parameter {@param-id} is an aggregate parameter that should not be set in the SSP.</message>
             </expect>
-                        <expect id="component-has-authentication-method" target="//component[(@type='system' and prop[@name='leveraged-authorization-uuid']) or (@type='interconnection') or (@type=('service', 'software') and not(prop[@name='leveraged-authorization-uuid']) and prop[@name='implementation-point' and @value='external']) or (@type=('service', 'software') and prop[@name='implementation-point' and @value='internal'] and prop[@name='communicates-externally' and @value='yes' and @ns='http://fedramp.gov/ns/oscal'])]" test="count(prop[@ns='http://fedramp.gov/ns/oscal' and @name='authentication-method']) >= 1" level="ERROR">
+            <expect id="component-has-authentication-method" target="//component[(@type='system' and prop[@name='leveraged-authorization-uuid']) or (@type='interconnection') or (@type=('service', 'software') and not(prop[@name='leveraged-authorization-uuid']) and prop[@name='implementation-point' and @value='external']) or (@type=('service', 'software') and prop[@name='implementation-point' and @value='internal'] and prop[@name='communicates-externally' and @value='yes' and @ns='http://fedramp.gov/ns/oscal'])]" test="count(prop[@ns='http://fedramp.gov/ns/oscal' and @name='authentication-method']) >= 1" level="ERROR">
                 <formal-name>Component Has Authentication Method</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#leveraged-fedramp-authorized-services"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=component-has-authentication-method"/>
                 <message>A FedRAMP SSP MUST include at least one authentication method for each leveraged system.</message>
             </expect>
             <expect id="component-has-non-provider-responsible-role" target="//component[(@type='system' and prop[@name='leveraged-authorization-uuid']) or (@type=('service', 'software') and not(prop[@name='leveraged-authorization-uuid']) and prop[@name='implementation-point' and @value='external']) or (@type='interconnection') or (@type=('service', 'software') and prop[@name='implementation-point' and @value='internal'] and prop[@name='communicates-externally' and @value='yes' and @ns='http://fedramp.gov/ns/oscal'])]" test="count(responsible-role[not(@role-id='provider')]) >= 1" level="ERROR">
                 <formal-name>Component Has Non-Provider Responsible Role</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#external-systems-and-services-not-having-fedramp-authorization"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=component-has-non-provider-responsible-role"/>
                 <message>A FedRAMP SSP MUST have each component describing leveraged systems, interconnections, or authorized services identify at least one responsible role other than "provider".</message>
             </expect>
             <expect id="component-has-provider-responsible-role" target="//component[(@type='system' and prop[@name='leveraged-authorization-uuid']) or (@type=('service', 'software') and not(prop[@name='leveraged-authorization-uuid']) and prop[@name='implementation-point' and @value='external']) or (@type='interconnection') or (@type=('service', 'software') and prop[@name='implementation-point' and @value='internal'] and prop[@name='communicates-externally' and @value='yes' and @ns='http://fedramp.gov/ns/oscal'])]" test="count(responsible-role[@role-id='provider']/party-uuid) = 1" level="ERROR">
                 <formal-name>Component Has Provider Responsible Role</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#external-systems-and-services-not-having-fedramp-authorization"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=component-has-provider-responsible-role"/>
                 <message>A FedRAMP SSP MUST have each component describing leveraged systems, interconnections, or authorized services identify a "provider" role that references one responsible party.</message>
             </expect>
-                        <index-has-key id='extraneous-implemented-requirements' target="//implemented-requirement" name="index-imported-controls" level="WARNING">
+            <index-has-key id="extraneous-implemented-requirements" target="//implemented-requirement" name="index-imported-controls" level="WARNING">
                 <formal-name>Additional Controls Implemented Not in Baseline</formal-name>
                 <description>A FedRAMP SSP SHOULD NOT include extraneous controls outside of the FedRAMP baseline.</description>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/6-security-controls/#implementation-status"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=extraneous-implemented-requirements"/>
                 <key-field target="@control-id"/>
                 <message>A FedRAMP SSP SHOULD NOT include extraneous controls outside of the FedRAMP baseline. Extraneous control: ({@control-id}).</message>
             </index-has-key>
@@ -112,24 +112,24 @@
             </index>
             <index-has-key id="has-required-parameters" target="$required-parameters-map" name="index-implemented-parameters" level="ERROR">
                 <formal-name>Required Parameters Must Be Set</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/6-security-controls/#responsible-roles-and-parameter-assignments"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-required-parameters"/>
                 <key-field target="@id"/>
                 <message>A FedRAMP SSP must define all parameters for all controls from the imported baseline. The following parameters are defined in the baseline, but not properly set in the SSP: ({@id}).</message>
             </index-has-key>
             <index-has-key id="has-required-response-points" target="$required-response-points-map" name="index-implemented-statements" level="ERROR">
                 <formal-name>Response Points Must Be Set</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/6-security-controls/#responsible-roles-and-parameter-assignments"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-required-response-points"/>
                 <key-field target="@id"/>
                 <message>All Response points defined in the baseline MUST have corresponding statements values in the SSP. Missing statement: ({@id}).</message>
             </index-has-key>
             <expect id="import-profile-has-available-document" target="import-profile" test="doc-available(resolve-uri($resolved-import-profile-href))" level="CRITICAL">
                 <formal-name>Import Profile has available document</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/3-working-with-oscal-files/#importing-the-fedramp-baseline"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=import-profile-has-available-document"/>
                 <message>A FedRAMP SSP MUST import a profile or catalog with a valid file or HTTP(S) address.</message>
             </expect>
             <expect id="import-profile-resolves-to-fedramp-content" target="." test="count(resolve-profile(doc(resolve-uri($resolved-import-profile-href)))//control//prop[@ns='http://fedramp.gov/ns/oscal' and @name='response-point']) >= 2" level="CRITICAL">
                 <formal-name>Import Profile resolves to Fedramp content</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/3-working-with-oscal-files/#importing-the-fedramp-baseline"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=import-profile-resolves-to-fedramp-content"/>
                 <message>A FedRAMP SSP MUST import a profile or catalog of security controls to reference implemented requirements against those control(s).</message>
                 <remarks>
                     <p>A FedRAMP SSP MUST use a valid FedRAMP catalog to reference security controls. It MUST NOT reference controls from a non-FedRAMP catalog.</p>
@@ -141,21 +141,21 @@
             <index name="index-implemented-requirements" target="$implemented-requirements-map">
                 <key-field target="@control-id"/>
             </index>
-            <index-has-key id='incomplete-implemented-requirements' target="$imported-controls-map" name="index-implemented-requirements" level="ERROR">
+            <index-has-key id="incomplete-implemented-requirements" target="$imported-controls-map" name="index-implemented-requirements" level="ERROR">
                 <formal-name>Incomplete Implemented Requirements</formal-name>
                 <description>A FedRAMP SSP MUST contain an implemented requirement for each imported control.</description>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/6-security-controls/#implementation-status"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=incomplete-implemented-requirements"/>
                 <key-field target="@id"/>
                 <message>A FedRAMP SSP MUST contain an implemented requirement for each imported control. Missing: ({@id}).</message>
             </index-has-key>
             <expect id="leveraged-authorization-has-valid-impact-level" target="//leveraged-authorization/prop[@name='impact-level'][@ns='http://fedramp.gov/ns/oscal']/@value" test=". = $sensitivity-level-floor" level="ERROR">
                 <formal-name>Leveraged Authorization Has Valid Impact Level</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#leveraged-fedramp-authorized-services"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=leveraged-authorization-has-valid-impact-level"/>
                 <message>The FIPS-199 impact level of the leveraged system MUST be the same or higher than the impact level of this system.</message>
             </expect>
             <expect id="non-provider-responsible-role-references-user" target="." test="$non-provider-user-has-function-performed" level="ERROR">
                 <formal-name>Non-Provider Responsible Role References User</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#external-systems-and-services-not-having-fedramp-authorization"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=non-provider-responsible-role-references-user"/>
                 <message>A FedRAMP SSP MUST have each component describing leveraged systems, interconnections, or authorized services reference at least one user with an authorized privilege and function performed via the "privilege-uuid" property.</message>
             </expect>
         </constraints>
@@ -167,47 +167,47 @@
         <constraints>
             <expect id="fedramp-citations-has-correct-link" target="resource[prop[@name='type' and @value='citation' and @class='fedramp-citations']]" test="count(rlink[@href = 'https://www.fedramp.gov/assets/resources/templates/FedRAMP-Laws-Regulations-Standards-and-Guidance-Reference.xlsx']) eq 1" level="ERROR">
                 <formal-name>FedRAMP Citations Has Correct Link</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/general-concepts/oscal-citations-and-attachments/"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=fedramp-citations-has-correct-link"/>
                 <message>The FedRAMP Laws, Regulations, Standards and Guidance MUST be https://www.fedramp.gov/assets/resources/templates/FedRAMP-Laws-Regulations-Standards-and-Guidance-Reference.xlsx</message>
             </expect>
             <expect id="has-configuration-management-plan" target="." test="exists(resource[prop[@name eq 'type' and @value eq 'plan' and @class eq 'configuration-management-plan']])" level="ERROR">
                 <formal-name>Has Configuration Management Plan</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-configuration-management-plan"/>
                 <message>A FedRAMP SSP MUST have a Configuration Management Plan attached.</message>
             </expect>
             <expect id="has-fedramp-citations" target="." test="count(resource[prop[@name='type' and @value='citation' and @class='fedramp-citations']]) = 1" level="ERROR">
                 <formal-name>Has FedRAMP Citations Reference</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/general-concepts/oscal-citations-and-attachments/"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-fedramp-citations"/>
                 <message>A FedRAMP MUST be have exactly one resource with a link to the FedRAMP Laws, Regulations, Standards and Guidance, but {count(resource[prop[@name='type' and @value='citation' and @class='fedramp-citations']])} found.</message>
             </expect>
             <expect id="has-incident-response-plan" target="." test="exists(resource[prop[@name eq 'type' and @value eq 'plan' and @class eq 'incident-response-plan']])" level="ERROR">
                 <formal-name>Has Incident Response Plan</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-incident-response-plan"/>
                 <message>A FedRAMP SSP MUST have an Incident Response Plan attached.</message>
             </expect>
             <expect id="has-information-system-contingency-plan" target="." test="exists(resource[prop[@name eq 'type' and @value eq 'plan' and @class eq 'information-system-contingency-plan']])" level="ERROR">
                 <formal-name>Has Information System Contingency Plan</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-information-system-contingency-plan"/>
                 <message>A FedRAMP SSP MUST have a Contingency Plan attached.</message>
             </expect>
             <expect id="has-rules-of-behavior" target="." test="exists(resource[prop[@name eq 'type' and @value eq 'rules-of-behavior']])" level="ERROR">
                 <formal-name>Has Rules Of Behavior</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-rules-of-behavior"/>
                 <message>A FedRAMP SSP MUST have Rules of Behavior.</message>
             </expect>
             <expect id="has-user-guide" target="." test="exists(resource[prop[@name eq 'type' and @value eq 'users-guide']])" level="ERROR">
                 <formal-name>Has User Guide</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-user-guide"/>
                 <message>A FedRAMP SSP MUST have a User Guide attached.</message>
             </expect>
             <expect id="resource-has-base64-or-rlink" target="resource" test="count(./rlink) >= 1 or count(./base64) >= 1" level="WARNING">
                 <formal-name>Resource Has Base64 Or Rlink</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/general-concepts/oscal-citations-and-attachments/#including-multiple-rlink-and-base64-fields"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=resource-has-base64-or-rlink"/>
                 <message>Every supporting artifact found in a citation MUST have at least one base64 or rlink element.</message>
             </expect>
             <expect id="resource-has-title" target="resource" test="exists(title)" level="WARNING">
                 <formal-name>Resource Has Title</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/general-concepts/oscal-citations-and-attachments/#citation-and-attachment-details"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=resource-has-title"/>
                 <message>Every supporting artifact found in a citation SHOULD have a title.</message>
             </expect>
         </constraints>
@@ -218,7 +218,7 @@
         <constraints>
             <expect id="misplaced-response-components" target="implemented-requirement" test="not(exists(by-component))" level="WARNING">
                 <formal-name>By-Component Reference for Implemented Requirements Misplaced</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/6-security-controls/#response-overview"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=misplaced-response-components"/>
                 <message>A FedRAMP SSP MUST identify how the system implements each control requirement implemented at the per-statement level, not in other locations allowed for non-FedRAMP use cases.</message>
                 <remarks>
                     <p>NIST maintains OSCAL models that allow implemented requirements for controls to have references to the implementing components in multiple locations to support multiple use cases.</p>
@@ -228,7 +228,7 @@
             </expect>        
             <expect id="missing-response-components" target="implemented-requirement/statement" test="count(by-component) ge 1" level="ERROR">
                 <formal-name>By-Component Reference for Implemented Requirements Missing</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/6-security-controls/#response-overview"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=missing-response-components"/>
                 <message>A FedRAMP SSP MUST identify how the system implements each control requirement implemented at the per-statement level and reference any component used to implement it.</message>
             </expect>
         </constraints>
@@ -247,27 +247,27 @@
             <let var="prepared-for-location" expression="//location[@uuid eq $prepared-for-party-location-uuid]"/>
             <expect id="data-center-alternate" target="." test="count(/location/prop[@name eq 'type'][@value eq 'data-center'][@class eq 'alternate']) &gt; 0">
                 <formal-name>Data Center Alternate</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#data-centers"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=data-center-alternate"/>
                 <message>There MUST be one or more alternate data center(s).</message>
             </expect>
             <expect id="data-center-count" target="." test="count(/location/prop[@name eq 'type'][@value eq 'data-center']) &gt; 1">
                 <formal-name>Data Center Count</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#data-centers"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=data-center-count"/>
                 <message>There MUST be at least two (2) data centers listed.</message>
             </expect>
             <expect id="data-center-country-code" target="location[prop[@name='type' and @value='data-center']]" test="count(address/country) eq 1">
                 <formal-name>Data Center Has Country Code</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#data-centers"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=data-center-country-code"/>
                 <message>Each data center address MUST contain a country code.</message>
             </expect>
             <expect id="data-center-primary" target="." test="count(/location/prop[@name eq 'type'][@value eq 'data-center'][@class eq 'primary']) = 1">
                 <formal-name>Data Center Primary</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#data-centers"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=data-center-primary"/>
                 <message>There MUST be a single primary data center.</message>
             </expect>
             <expect id="data-center-us" target="location[prop[@name='type' and @value='data-center']]" test="address/country eq 'US'">
                 <formal-name>Data Center In United States</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#data-centers"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=data-center-us"/>
                 <message>Each data center MUST have an address that is within the United States.</message>
             </expect>
             <index name="index-person-party-uuid" target="map:merge(party[@type='person'] ! map:entry(@uuid,.))?*">
@@ -277,54 +277,54 @@
             </index>
             <index-has-key id="responsible-party-is-person" name="index-person-party-uuid" target="./responsible-party[(@role-id='system-owner') or (@role-id='information-system-security-officer')]" level="ERROR">
                 <formal-name>Responsible Party Is Person</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#summary-of-ssp-roles-requirements"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=responsible-party-is-person"/>
                 <key-field target="party-uuid"/>
                 <message>For roles 'system-owner' and 'information-system-security-officer', the responsible-role party MUST be a party of type 'person'.</message>
             </index-has-key>
             <expect id="responsible-party-prepared-by" target="." test="exists(responsible-party[@role-id eq 'prepared-by'])" level="ERROR">
                 <formal-name>Responsible Party Prepared By</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/general-concepts/4-expressing-common-fedramp-template-elements-in-oscal/#prepared-by-csp-self-prepared"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=responsible-party-prepared-by"/>
                 <message>A FedRAMP SSP MUST have a responsible party that defines which party performs the role of preparing the document.</message>
             </expect>
             <expect id="responsible-party-prepared-by-location-valid" target="." test="($prepared-by-party/address[@type='work'] and $prepared-by-party/address/addr-line and $prepared-by-party/address/city and $prepared-by-party/address/state and $prepared-by-party/address/postal-code) or ($prepared-by-location/address[@type='work'] and $prepared-by-location/address/addr-line and $prepared-by-location/address/city and $prepared-by-location/address/state and $prepared-by-location/address/postal-code)" level="ERROR">
                 <formal-name>Responsible Party Prepared By Location Valid</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/general-concepts/4-expressing-common-fedramp-template-elements-in-oscal/#prepared-by-csp-self-prepared"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=responsible-party-prepared-by-location-valid"/>
                 <message>A FedRAMP SSP MUST have a responsible party for preparing the document, and that party MUST define an address.</message>
             </expect>
             <expect id="responsible-party-prepared-for" target="." test="exists(responsible-party[@role-id eq 'prepared-for'])" level="ERROR">
                 <formal-name>Responsible Party Prepared For</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/general-concepts/4-expressing-common-fedramp-template-elements-in-oscal/#prepared-for-csp"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=responsible-party-prepared-for"/>
                 <message>A FedRAMP SSP MUST have a responsible party that defines the party for whom the document was prepared.</message>
             </expect>
             <expect id="responsible-party-prepared-for-location-valid" target="." test="($prepared-for-party/address[@type='work'] and $prepared-for-party/address/addr-line and $prepared-for-party/address/city and $prepared-for-party/address/state and $prepared-for-party/address/postal-code) or ($prepared-for-location/address[@type='work'] and $prepared-for-location/address/addr-line and $prepared-for-location/address/city and $prepared-for-location/address/state and $prepared-for-location/address/postal-code)" level="ERROR">
                 <formal-name>Responsible Party Prepared For Location Valid</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/general-concepts/4-expressing-common-fedramp-template-elements-in-oscal/#prepared-for-csp"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=responsible-party-prepared-for-location-valid"/>
                 <message>A FedRAMP SSP MUST define the address of the responsible party for whom the document was prepared.</message>
             </expect>
             <expect id="role-defined-authorizing-official-poc" target="." test="exists(role[@id eq 'authorizing-official-poc'])" level="ERROR">
                 <formal-name>Role Defined Authorizing Official POC</formal-name>
                 <!-- TODO: Add supporting documentation to automate.fedramp.gov -->
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=role-defined-authorizing-official-poc"/>
                 <message>A FedRAMP SSP MUST define a role for the point of contact for an authorizing official.</message>
             </expect>
             <expect id="role-defined-information-system-security-officer" target="." test="exists(role[@id eq 'information-system-security-officer'])" level="ERROR">
                 <formal-name>Role Defined Information System Security Officer</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#assignment-of-security-responsibilities"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=role-defined-information-system-security-officer"/>
                 <message>A FedRAMP SSP MUST define a role for the point of contact for an information system security officer.</message>
             </expect>
             <expect id="role-defined-prepared-by" target="." test="exists(role[@id eq 'prepared-by'])" level="ERROR">
                 <formal-name>Role Defined Prepared By</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/general-concepts/4-expressing-common-fedramp-template-elements-in-oscal/#prepared-by-csp-self-prepared"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=role-defined-prepared-by"/>
                 <message>A FedRAMP SSP MUST define a role for preparing this document.</message>
             </expect>
             <expect id="role-defined-prepared-for" target="." test="exists(role[@id eq 'prepared-for'])" level="ERROR">
                 <formal-name>Role Defined Prepared For</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/general-concepts/4-expressing-common-fedramp-template-elements-in-oscal/#prepared-for-csp"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=role-defined-prepared-for"/>
                 <message>A FedRAMP SSP MUST define a role for which the document was prepared.</message>
             </expect>
             <expect id="role-defined-system-owner" target="." test="exists(role[@id eq 'system-owner'])" level="ERROR">
                 <formal-name>Role Defined System Owner</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#information-system-owner"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=role-defined-system-owner"/>
                 <message>A FedRAMP SSP MUST define the system owner role.</message>
             </expect>
         </constraints>
@@ -342,77 +342,77 @@
                 else ('fips-199-low')"/>
             <expect id="categorization-has-correct-system-attribute" target="system-information/information-type/categorization" test="@system eq 'https://doi.org/10.6028/NIST.SP.800-60v2r1'" level="ERROR">
                 <formal-name>Categorization Has Correct System Attribute</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#system-information-and-information-types"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=categorization-has-correct-system-attribute"/>
                 <message>A FedRAMP SSP information-type categorization MUST have a correct system attribute. FedRAMP only supports the system value 'https://doi.org/10.6028/NIST.SP.800-60v2r1'.</message>
             </expect>
             <expect id="categorization-has-information-type-id" target="system-information/information-type/categorization" test="exists(information-type-id)" level="ERROR">
                 <formal-name>Categorization Has Information Type ID</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#system-information-and-information-types"/>
+               <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=categorization-has-information-type-id"/>
                 <message>A FedRAMP SSP information type categorization MUST have at least one information type identifier.</message>
             </expect>
             <expect id="cia-impact-has-adjustment-justification" target="system-information/information-type/(confidentiality-impact | integrity-impact | availability-impact)" test="if (base ne selected) then exists(adjustment-justification) else true()" level="ERROR">
                 <formal-name>Cia Impact Has Adjustment Justification</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#system-information-and-information-types"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=cia-impact-has-adjustment-justification"/>
                 <message>When SP 800-60 base and selected impacts levels differ for a given information type, the SSP MUST include a justification for the difference.</message>
             </expect>
             <expect id="cia-impact-has-selected" target="system-information/information-type/(confidentiality-impact | integrity-impact | availability-impact)" test="exists(selected)" level="ERROR">
                 <formal-name>Cia Impact Has Selected</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#system-information-and-information-types"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=cia-impact-has-selected"/>
                 <message>A FedRAMP SSP information type confidentiality, integrity, or availability impact MUST specify the selected impact.</message>
             </expect>
             <expect id="fully-operational-date-is-valid" target="prop[@ns='http://fedramp.gov/ns/oscal' and @name='fully-operational-date']/@value" test=". &lt;= current-dateTime()" level="ERROR">                <!-- TODO - Need metapath current-date() function -->
                 <formal-name>Fully Operational Date Is Valid</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#system-status"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=fully-operational-date-is-valid"/>
                 <message>A system MUST be fully implemented prior to submitting the SSP to FedRAMP.</message>
             </expect>
             <matches id="fully-operational-date-type" target="prop[@ns='http://fedramp.gov/ns/oscal' and @name='fully-operational-date']/@value" datatype="date-with-timezone" level="ERROR">
                 <formal-name>Fully Operational Date Type</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#system-status"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=fully-operational-date-type"/>
                 <message>A FedRAMP SSP MUST specify the system's fully operational data as a "full-date" per RFC3339 with the addition of a timezone.</message>
             </matches>
             <expect id="has-authenticator-assurance-level" target="." test="exists(prop[@name eq 'authenticator-assurance-level'])" level="ERROR">
                 <formal-name>Has Authenticator Assurance Level</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#digital-identity-level-dil-determination"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-authenticator-assurance-level"/>
                 <message>A FedRAMP SSP MUST define its NIST SP 800-63 authenticator assurance level (AAL).</message>
             </expect>
             <expect id="has-authorization-boundary-diagram" target="authorization-boundary" test="exists(diagram)" level="WARNING">
                 <formal-name>Has Authorization Boundary Diagram</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#authorization-boundary"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-authorization-boundary-diagram"/>
                 <message>A FedRAMP SSP MUST have at least one authorization boundary diagram.</message>
             </expect>
             <expect id="has-authorization-boundary-diagram-caption" target="authorization-boundary/diagram" test="exists(caption)" level="ERROR">
                 <formal-name>Has Authorization Boundary Diagram Caption</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#authorization-boundary"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-authorization-boundary-diagram-caption"/>
                 <message>Each FedRAMP SSP authorization boundary diagram MUST have a caption.</message>
             </expect>
             <expect id="has-authorization-boundary-diagram-description" target="authorization-boundary/diagram" test="exists(description)" level="ERROR">
                 <formal-name>Has Authorization Boundary Diagram Description</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#authorization-boundary"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-authorization-boundary-diagram-description"/>
                 <message>A FedRAMP SSP document authorization boundary diagram MUST have a description.</message>
             </expect>
             <expect id="has-authorization-boundary-diagram-link" target="authorization-boundary/diagram" test="exists(link)" level="ERROR">
                 <formal-name>Has Authorization Boundary Diagram Link</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#authorization-boundary"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-authorization-boundary-diagram-link"/>
                 <message>Each FedRAMP SSP authorization boundary diagram MUST have a link.</message>
             </expect>
             <expect id="has-authorization-boundary-diagram-link-rel" target="authorization-boundary/diagram/link" test="exists(@rel)" level="ERROR">
                 <formal-name>Has Authorization Boundary Diagram Link Rel</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#authorization-boundary"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-authorization-boundary-diagram-link-rel"/>
                 <message>Each FedRAMP SSP authorization boundary diagram MUST have a link rel attribute.</message>
             </expect>
             <expect id="has-authorization-boundary-diagram-link-rel-allowed-value" target="authorization-boundary/diagram/link" test="@rel eq 'diagram'" level="ERROR">
                 <formal-name>Has Authorization Boundary Diagram Link Rel Allowed Value</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#authorization-boundary"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-authorization-boundary-diagram-link-rel-allowed-value"/>
                 <message>Each FedRAMP SSP authorization boundary diagram MUST have a link rel attribute with the value "diagram".</message>
             </expect>
             <expect id="has-cloud-deployment-model" target="." test="exists(prop[@name eq 'cloud-deployment-model'])" level="ERROR">
                 <formal-name>Has Cloud Deployment Model</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#deployment-model"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-cloud-deployment-model"/>
                 <message>A FedRAMP SSP MUST define a cloud deployment model.</message>
             </expect>
             <expect id="has-cloud-deployment-model-remarks" target="." test="if (count(prop[@name eq 'cloud-deployment-model']) > 1) then every $p in prop[@name eq 'cloud-deployment-model'] satisfies exists($p/remarks) else every $p in prop[@name eq 'cloud-deployment-model' and @value eq 'other'] satisfies exists($p/remarks)" level="ERROR">
                 <formal-name>Has Cloud Deployment Model Remarks</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#deployment-model"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-cloud-deployment-model-remarks"/>
                 <message>A FedRAMP SSP with more than one cloud deployment model or a cloud deployment model of "other" MUST supply remarks to clarify this selection.</message>
                 <remarks>
                     <p>A FedRAMP SSP MUST use precise classifications for cloud deployment models. It MUST NOT use generic classifications like "hybrid-cloud".</p>
@@ -420,152 +420,152 @@
             </expect>
             <expect id="has-cloud-service-model" target="." test="exists(prop[@name eq 'cloud-service-model'])" level="ERROR">
                 <formal-name>Has Cloud Service Model</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#service-model"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-cloud-service-model"/>
                 <message>A FedRAMP SSP MUST define a cloud service model.</message>
             </expect>
             <expect id="has-cloud-service-model-remarks" target="." test="every $p in prop[@name eq 'cloud-service-model' and @value eq 'other'] satisfies exists($p/remarks)" level="ERROR">
                 <formal-name>Has Cloud Service Model Remarks</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#service-model"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-cloud-service-model-remarks"/>
                 <message>A FedRAMP SSP with a cloud service model of "other" MUST supply remarks to explain this choice.</message>
             </expect>
             <expect id="has-data-flow" target="." test="exists(data-flow)" level="WARNING">
                 <formal-name>Has Data Flow</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#data-flow"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-data-flow"/>
                 <message>A FedRAMP SSP MUST include a data flow section.</message>
             </expect>
             <expect id="has-data-flow-description" target="data-flow" test="exists(description)" level="ERROR">
                 <formal-name>Has Data Flow Description</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#data-flow"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-data-flow-description"/>
                 <message>An OSCAL SSP document with a data flow MUST have a description.</message>
             </expect>
             <expect id="has-data-flow-diagram" target="data-flow" test="exists(diagram)" level="WARNING">
                 <formal-name>Has Data Flow Diagram</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#data-flow"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-data-flow-diagram"/>
                 <message>A FedRAMP SSP MUST have at least one data flow diagram.</message>
             </expect>
             <expect id="has-data-flow-diagram-caption" target="data-flow/diagram" test="exists(caption)" level="ERROR">
                 <formal-name>Has Data Flow Diagram Caption</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#data-flow"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-data-flow-diagram-caption"/>
                 <message>Each FedRAMP SSP data flow diagram MUST have a caption.</message>
             </expect>
             <expect id="has-data-flow-diagram-description" target="data-flow/diagram" test="exists(description)" level="ERROR">
                 <formal-name>Has Data Flow Diagram Description</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#data-flow"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-data-flow-diagram-description"/>
                 <message>Each FedRAMP SSP data flow diagram MUST have a description.</message>
             </expect>
             <expect id="has-data-flow-diagram-link" target="data-flow/diagram" test="exists(link)" level="ERROR">
                 <formal-name>Has Data Flow Diagram Link</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#data-flow"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-data-flow-diagram-link"/>
                 <message>Each FedRAMP SSP data flow diagram MUST have a link.</message>
             </expect>
             <expect id="has-data-flow-diagram-link-rel" target="data-flow/diagram/link" test="exists(@rel)" level="ERROR">
                 <formal-name>Has Data Flow Diagram Link Rel</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#data-flow"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-data-flow-diagram-link-rel"/>
                 <message>Each FedRAMP SSP data flow diagram MUST have a link rel attribute.</message>
             </expect>
             <expect id="has-data-flow-diagram-link-rel-allowed-value" target="data-flow/diagram/link" test="@rel eq 'diagram'" level="ERROR">
                 <formal-name>Has Data Flow Diagram Link Rel Allowed Value</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#data-flow"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-data-flow-diagram-link-rel-allowed-value"/>
                 <message>Each FedRAMP SSP data flow diagram MUST have a link rel attribute with the value "diagram".</message>
             </expect>
             <expect id="has-data-flow-diagram-uuid" target="data-flow/diagram" test="exists(@uuid)" level="ERROR">
                 <formal-name>Has Data Flow Diagram Uuid</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#data-flow"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-data-flow-diagram-uuid"/>
                 <message>An OSCAL SSP document with a data flow diagram MUST have a unique identifier.</message>
             </expect>
             <expect id="has-federation-assurance-level" target="." test="exists(prop[@name eq 'federation-assurance-level'])" level="ERROR">
                 <formal-name>Has Federation Assurance Level</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#digital-identity-level-dil-determination"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-federation-assurance-level"/>
                 <message>A FedRAMP SSP MUST define its NIST SP 800-63 federation assurance level (FAL).</message>
             </expect>
             <expect id="has-fully-operational-date" target="." test="exists(prop[@ns='http://fedramp.gov/ns/oscal' and @name='fully-operational-date'])" level="ERROR">
                 <formal-name>Fully Operational Date</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#system-status"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-fully-operational-date"/>
                 <message>A FedRAMP SSP MUST define the system's fully operational date.</message>
             </expect>
             <expect id="has-identity-assurance-level" target="." test="exists(prop[@name eq 'identity-assurance-level'])" level="ERROR">
                 <formal-name>Has Identity Assurance Level</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#digital-identity-level-dil-determination"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-identity-assurance-level"/>
                 <message>A FedRAMP SSP MUST define its NIST SP 800-63 identity assurance level (IAL).</message>
             </expect>
             <expect id="has-network-architecture" target="." test="exists(network-architecture)" level="ERROR">
                 <formal-name>Has Network Architecture</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#network-architecture"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-network-architecture"/>
                 <message>A FedRAMP SSP MUST include a network architecture.</message>
             </expect>
             <expect id="has-network-architecture-diagram" target="network-architecture" test="exists(diagram)" level="WARNING">
                 <formal-name>Has Network Architecture Diagram</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#network-architecture"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-network-architecture-diagram"/>
                 <message>A FedRAMP SSP MUST have at least one network architecture diagram.</message>
             </expect>
             <expect id="has-network-architecture-diagram-caption" target="network-architecture/diagram" test="exists(caption)" level="ERROR">
                 <formal-name>Has Network Architecture Diagram Caption</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#network-architecture"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-network-architecture-diagram-caption"/>
                 <message>Each FedRAMP SSP network architecture diagram MUST have a caption.</message>
             </expect>
             <expect id="has-network-architecture-diagram-description" target="network-architecture/diagram" test="exists(description)" level="ERROR">
                 <formal-name>Has Network Architecture Diagram Description</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#network-architecture"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-network-architecture-diagram-description"/>
                 <message>Each FedRAMP SSP network architecture diagram MUST have a description.</message>
             </expect>
             <expect id="has-network-architecture-diagram-link" target="network-architecture/diagram" test="exists(link)" level="ERROR">
                 <formal-name>Has Network Architecture Diagram Link</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#network-architecture"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-network-architecture-diagram-link"/>
                 <message>Each FedRAMP SSP network architecture diagram MUST have a link.</message>
             </expect>
             <expect id="has-network-architecture-diagram-link-rel" target="network-architecture/diagram/link" test="exists(@rel)" level="ERROR">
                 <formal-name>Has Network Architecture Diagram Link Rel</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#network-architecture"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-network-architecture-diagram-link-rel"/>
                 <message>Each FedRAMP SSP network architecture diagram MUST have a link rel attribute.</message>
             </expect>
             <expect id="has-network-architecture-diagram-link-rel-allowed-value" target="network-architecture/diagram/link" test="@rel eq 'diagram'" level="ERROR">
                 <formal-name>Has Network Architecture Diagram Link Rel Allowed Value</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#network-architecture"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-network-architecture-diagram-link-rel-allowed-value"/>
                 <message>Each FedRAMP SSP network architecture diagram MUST have a link rel attribute with the value "diagram".</message>
             </expect>
             <expect id="has-security-impact-level" target="." test="exists(security-impact-level)" level="ERROR">
                 <formal-name>Has Security Impact Level</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#system-sensitivity-level"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-security-impact-level"/>
                 <message>A FedRAMP SSP document MUST specify a security impact level.</message>
             </expect>
             <expect id="has-security-sensitivity-level" target="." test="exists(security-sensitivity-level)" level="ERROR">
                 <formal-name>Has Security Sensitivity Level</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#system-sensitivity-level"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-security-sensitivity-level"/>
                 <message>A FedRAMP SSP document MUST specify a FIPS 199 categorization.</message>
             </expect>
             <expect id="has-system-id" target="." test="exists(system-id[@identifier-type eq 'http://fedramp.gov/ns/oscal'])" level="ERROR">
                 <formal-name>Has System Id</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#system-name-abbreviation-and-fedramp-unique-identifier"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-system-id"/>
                 <message>A FedRAMP SSP MUST have a FedRAMP system identifier.</message>
             </expect>
             <expect id="has-system-name-short" target="." test="exists(system-name-short)" level="ERROR">
                 <formal-name>Has System Name Short</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#system-name-abbreviation-and-fedramp-unique-identifier"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-system-name-short"/>
                 <message>A FedRAMP SSP MUST have a short system name.</message>
             </expect>
             <expect id="information-type-has-availability-impact" target="system-information/information-type" test="exists(availability-impact)" level="ERROR">
                 <formal-name>Information Type Has Availability Impact</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#system-information-and-information-types"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=information-type-has-availability-impact"/>
                 <message>A FedRAMP SSP information type MUST have an availability impact.</message>
             </expect>
             <expect id="information-type-has-confidentiality-impact" target="system-information/information-type" test="exists(confidentiality-impact)" level="ERROR">
                 <formal-name>Information Type Has Confidentiality Impact</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#system-information-and-information-types"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=information-type-has-confidentiality-impact"/>
                 <message>A FedRAMP SSP information type MUST have a confidentiality impact.</message>
             </expect>
             <expect id="information-type-has-integrity-impact" target="system-information/information-type" test="exists(integrity-impact)" level="ERROR">
                 <formal-name>Information Type Has Integrity Impact</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#system-information-and-information-types"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=information-type-has-integrity-impact"/>
                 <message>A FedRAMP SSP information type MUST have an integrity impact.</message>
             </expect>
             <expect id="saas-has-leveraged-authorization" target="." test="if ($is-saas) then (count(..//leveraged-authorization) >= 1) else (true())" level="ERROR">
                 <formal-name>SaaS Has Leveraged Authorization</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#leveraged-fedramp-authorized-services"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=saas-has-leveraged-authorization"/>
                 <message>A FedRAMP SSP that defines a SaaS cloud service model MUST define at least one leveraged authorization.</message>
             </expect>
             <expect id="security-sensitivity-level-matches-security-impact-level" target="security-sensitivity-level" test=". eq $security-impact-level" level="WARNING">
                 <formal-name>Security Sensitivity Level Matches Security Impact Level</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#system-sensitivity-level"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=security-sensitivity-level-matches-security-impact-level"/>
                 <message>A FedRAMP SSP SHOULD define its FIPS-199 security sensitivity level to match the highest security impact level for the system's confidentiality, integrity, and availability objectives.</message>
             </expect>
         </constraints>
@@ -576,7 +576,7 @@
         <constraints>
             <matches id="end-of-life-date-type" target="prop[@ns='http://fedramp.gov/ns/oscal' and @name='end-of-life-date']/@value" datatype="date" level="ERROR">
                 <formal-name>End of Life Date Type</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=end-of-life-date-type"/>
                 <message>When the end-of-life-date property is present, it MUST be in date format.</message>
             </matches>
         </constraints>
@@ -589,83 +589,83 @@
             <let var="inventory-linked-component-uuids" expression="inventory-item/implemented-component/@component-uuid"/>
             <expect id="authentication-method-has-remarks" target="//component[(@type='system' and ./prop[@name='leveraged-authorization-uuid']) or (@type='service' and not(./prop[@name='leveraged-authorization-uuid']) and ./prop[@name='implementation-point' and @value='external']) or (@type='interconnection') or (@type='service' and ./prop[@name='implementation-point' and @value='internal'] and ./prop[@name='direction']) or (@type='software' and ./prop[@name='asset-type' and @value='cli'] and ./prop[@name='direction'])]" test="count(./prop[@name='authentication-method' and @ns='http://fedramp.gov/ns/oscal'])  = count(./prop[@name='authentication-method' and @ns='http://fedramp.gov/ns/oscal']/remarks)" level="ERROR">
                 <formal-name>Authentication Method Has Remarks</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#leveraged-fedramp-authorized-services"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=authentication-method-has-remarks"/>
                 <message>Each authentication method in a FedRAMP SSP MUST have a remarks field.</message>
             </expect>
             <expect id="component-has-diagram-label" target="component[not(@uuid=$inventory-linked-component-uuids) and @type=('hardware', 'software', 'service', 'interconnection')]" test="count(prop[@name='diagram-label' and @ns='http://fedramp.gov/ns/oscal']) = 1" level="ERROR">
                 <formal-name>Component Has Diagram Label</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=component-has-diagram-label"/>
                 <message>In a FedRAMP SSP, each hardware, software, service, and interconnection component MUST include the diagram label.</message>
             </expect>
             <expect id="component-has-used-by-link" target="component[protocol]" test="count(link[@rel='used-by']) >= 1" level="ERROR">
                 <formal-name>Component Has Used-By Link</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#ports-protocols-and-services"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=component-has-used-by-link"/>
                 <message>A FedRAMP SSP's component MUST identify which other components use it via network communication. Component "{ @uuid }" exposes ports for other components to connect, but does not identify which components use it.</message>
             </expect>
             <expect id="has-inventory-items" target="." test="count(inventory-item) >= 2" level="ERROR">
                 <formal-name>System Implementation Has Inventory Items</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-inventory-items"/>
                 <message>A FedRAMP SSP system implementation section MUST have at least two inventory items.</message>
             </expect>
             <expect id="image-has-checksum" target="//component[@type='software' and ./prop[@name='asset-type' and @value='image']]" test="count(./prop[@name='checksum' and @ns='http://fedramp.gov/ns/oscal']) = 1" level="ERROR">
                 <formal-name>Container Image Has Checksum Property</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=image-has-checksum"/>
                 <message>In a FedRAMP SSP, a component that describes a container or operating system image MUST define a checksum property.</message>
             </expect>
             <expect id="information-type-has-class" target="component/prop[@name='information-type' and @ns='http://fedramp.gov/ns/oscal']" test="exists(@class)" level="ERROR">
                 <formal-name>Information Type Has Class</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#leveraged-fedramp-authorized-services"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=information-type-has-class"/>
                 <message>In a FedRAMP SSP, each information type property in a component MUST categorize the class of data flow as incoming to the system, outgoing from the system, or both.</message>
             </expect>
             <expect id="inter-boundary-component-has-information-type" target="$inter-boundary-component" test="count(prop[@name='information-type' and @ns='http://fedramp.gov/ns/oscal']) &gt;= 1" level="ERROR">
                 <formal-name>Inter-Boundary Component Has Information Type</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#system-information-and-information-types"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=inter-boundary-component-has-information-type"/>
                 <message>An inter-boundary communication component {@uuid} ({path(.)}) MUST have at least one information-type property.</message>
             </expect>
             <expect id="inter-boundary-component-information-type-has-class-attribute" target="$inter-boundary-component" test="prop[@name='information-type' and @ns='http://fedramp.gov/ns/oscal']/@class => exists()" level="ERROR">
                 <formal-name>Inter-Boundary Component's Information Type Has @class Attribute</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#external-systems-and-services-not-having-fedramp-authorization"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=inter-boundary-component-information-type-has-class-attribute"/>
                 <message>In a FedRAMP SSP, the information type of an inter-boundary communication component MUST include the network traffic direction.</message>
             </expect>
             <expect id="inventory-item-and-component-has-public" target="(inventory-item | component[@type='service' and prop[@name='implementation-point' and @value='internal']])" test="count(prop[@name='public']) = 1" level="ERROR">
                 <formal-name>Inventory Item and Component Has Public</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=inventory-item-and-component-has-public"/>
                 <message>In a FedRAMP SSP, each inventory item and internal service component MUST state if they are public-facing.</message>
             </expect>
             <expect id="inventory-item-or-component-has-asset-id" target="(inventory-item)| (component[@type='software' and prop[@name='asset-type' and @value='image']])" test="count(prop[@name='asset-id']) = 1" level="ERROR">
                 <formal-name>Inventory Item or Component Has Asset ID</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=inventory-item-or-component-has-asset-id"/>
                 <message>In a FedRAMP SSP, each inventory item and software image component MUST include the asset ID.</message>
             </expect>
             <expect id="leveraged-authorization-has-authorization-type" target="leveraged-authorization" test="count(prop[@name='authorization-type'][@ns='http://fedramp.gov/ns/oscal']) = 1" level="ERROR">
                 <formal-name>Leveraged Authorization Has Authorization Type</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#leveraged-fedramp-authorized-services"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=leveraged-authorization-has-authorization-type"/>
                 <message>A FedRAMP SSP MUST define exactly one authorization type for each leveraged authorization entry.</message>
             </expect>
             <expect id="leveraged-authorization-has-impact-level" target="leveraged-authorization" test="count(prop[@name='impact-level'][@ns='http://fedramp.gov/ns/oscal']) = 1" level="ERROR">
                 <formal-name>Leveraged Authorization Has Impact Level</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#leveraged-fedramp-authorized-services"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=leveraged-authorization-has-impact-level"/>
                 <message>A FedRAMP SSP MUST define exactly one impact level for each leveraged authorization entry.</message>
             </expect>
             <expect id="leveraged-authorization-has-system-identifier" target="leveraged-authorization" test="count(prop[@name='leveraged-system-identifier'][@ns='http://fedramp.gov/ns/oscal']) = 1" level="ERROR">
                 <formal-name>Leveraged Authorization Has System Identifier</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#leveraged-fedramp-authorized-services"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=leveraged-authorization-has-system-identifier"/>
                 <message>A FedRAMP SSP MUST define exactly one system identifier for each leveraged authorization entry.</message>
             </expect>
             <expect id="network-component-has-connection-security-prop" target="//component[(@type='service' and not(./prop[@name='leveraged-authorization-uuid']) and ./prop[@name='implementation-point' and @value='external']) or (@type='interconnection') or (@type='service' and ./prop[@name='implementation-point' and @value='internal'] and ./prop[@name='direction']) or (@type='software' and ./prop[@name='asset-type' and @value='cli'] and ./prop[@name='direction'])]" test="count(./prop[@name='connection-security' and @ns='http://fedramp.gov/ns/oscal']) >= 1" level="ERROR">
                 <formal-name>Network Component Has Connection Security Property</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#ports-protocols-and-services"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=network-component-has-connection-security-prop"/>
                 <message>All network components in a FedRAMP SSP system implementation MUST define at least one interconnection security property.</message>
             </expect>
             <expect id="network-component-has-implementation-point" target="component[@type='service' or (@type='software' and ./prop[@name='asset-type' and @value='cli'])]" test="count(./prop[@name='implementation-point']) = 1" level="ERROR">
                 <formal-name>Component Has Implementation Point</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#leveraged-fedramp-authorized-services"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=network-component-has-implementation-point"/>
                 <message>A FedRAMP SSP with service components and CLI software components performing cross-boundary network communication MUST indicate exactly one time if the point of implementation is internal or external to the system.</message>
             </expect>
             <is-unique id="unique-inventory-item-asset-id" target="inventory-item/prop[@name='asset-id']">
                 <formal-name>Unique Asset Identifier</formal-name>
                 <description>Ensure each inventory item has a unique asset-id property.</description>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=unique-inventory-item-asset-id"/>
                 <key-field target="@value"/>
                 <remarks>
                     <p>A FedRAMP SSP's inventory item MUST have an Asset ID that is unique across all inventory items in the system and its components.</p>
@@ -673,7 +673,7 @@
             </is-unique>
             <expect id="used-by-link-references-component" target="component[protocol]/link[@rel='used-by']" test="some $uuid in ../../component/@uuid satisfies $uuid = substring-after(@href, '#')" level="ERROR">
                 <formal-name>Used-By Link References Component</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#ports-protocols-and-services"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=used-by-link-references-component"/>
                 <message>A FedRAMP SSP's component MUST reference the existing component(s) that use it via network communication. However, component "{../@uuid}" references a nonexistent component "{@href}".</message>
             </expect>
 
@@ -686,7 +686,7 @@
             <let var="interconnection-component-used-by-href" expression=".[@type=('interconnection', 'connection')]/link[@rel='used-by']/@href"/>
             <expect id="interconnection-component-linked-has-protocol" target=".[@type=('interconnection', 'connection')]" test="some $href in $interconnection-component-used-by-href satisfies count(../component[@uuid=substring-after($href,'#')]/protocol) >= 1" level="ERROR">
                 <formal-name>Linked Interconnection Component Has Protocol</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#ports-protocols-and-services"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=interconnection-component-linked-has-protocol"/>
                 <message>In a FedRAMP SSP, at least one of the interconnection "used-by" linked components MUST have at least one protocol assembly.</message>
             </expect>
         </constraints>
@@ -703,62 +703,62 @@
             <let var ="implemented-component" expression="../component[@uuid=$component-uuid]"/>
             <expect id="authenticated-scan-no-has-remarks" target="prop[@name='allows-authenticated-scan' and @value='no']" test="if ($high-sensitivity or $moderate-sensitivity) then exists(remarks) else true()" level="ERROR">
                 <formal-name>Authenticated Scan No Has Remarks</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=authenticated-scan-no-has-remarks"/>
                 <message>A FedRAMP SSP MUST provide justification for any high or moderate impact system inventory item that does not support authenticated scans.</message>
             </expect>
              <expect id="high-impact-inventory-item-has-asset-owner" target="." test="if ($high-sensitivity) then count(./responsible-party[@role-id=('asset-owner', 'asset-administrator')] | $implemented-component/responsible-role[@role-id=('asset-owner', 'asset-administrator')][count(party[@uuid=./party-uuid]) >= 1]) >= 1 else true()" level="ERROR">
                 <formal-name>High Impact Inventory Item Has Asset Owner</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=high-impact-inventory-item-has-asset-owner"/>
                 <message>For HIGH-impact systems, every inventory-item MUST identify an asset-owner or administrator property either within the inventory-item itself, or within the component linked by the inventory-item.</message>
             </expect>
             <expect id="inventory-item-has-asset-type" target="." test="count(prop[@name='asset-type' ]) = 1 or count(../component[@uuid=$component-uuid]/prop[@name='asset-type' ]) = 1" level="ERROR">
                 <formal-name>Inventory Item Has Asset-Type</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=inventory-item-has-asset-type"/>
                 <message>In a FedRAMP SSP, each inventory item MUST define the asset type either in the inventory item itself or within the linked component.</message>
             </expect>
             <expect id="inventory-item-has-diagram-label" target="." test="count(prop[@name='diagram-label' and @ns='http://fedramp.gov/ns/oscal']) >= 1 or count(../component[@uuid=$component-uuid]/prop[@name='diagram-label' and @ns='http://fedramp.gov/ns/oscal']) >= 1" level="ERROR">
                 <formal-name>Inventory Item Has Diagram Label</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=inventory-item-has-diagram-label"/>
                 <message>In a FedRAMP SSP, each inventory item MUST include the diagram label either in the inventory item itself or within the linked component.</message>
             </expect>
             <expect id="inventory-item-has-function" target="." test="exists(prop[@name='function']/remarks) or exists($implemented-component/prop[@name='function']/remarks)" level="ERROR">
                 <formal-name>Inventory Item Has Function</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=inventory-item-has-function"/>
                 <message>Every inventory-item MUST provide remarks to describe the function of the item, either within the inventory-item itself, or within the component linked by the inventory-item.</message>
             </expect>
             <expect id="inventory-item-has-is-scanned" target="." test="count(prop[@name='is-scanned']) = 1 or count(../component[@uuid=$component-uuid]/prop[@name='is-scanned']) = 1" level="ERROR">
                 <formal-name>Inventory Item Has Is-Scanned</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=inventory-item-has-is-scanned"/>
                 <message>In a FedRAMP SSP, each inventory item MUST state if it is included in scans either in the inventory item itself or within the linked component.</message>
             </expect>
             <expect id="inventory-item-has-scan-type" target="." test="count(prop[@name='scan-type' and @ns='http://fedramp.gov/ns/oscal']) >= 1 or count($implemented-component/prop[@name='scan-type' and @ns='http://fedramp.gov/ns/oscal']) >= 1" level="ERROR">
                 <formal-name>Inventory Item Has Scan Type</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=inventory-item-has-scan-type"/>
                 <message>Every inventory-item MUST indicate one or more scan type(s), either within the inventory-item itself, or within the component linked by the inventory-item.</message>
             </expect>
              <expect id="inventory-item-has-valid-mac-address" target=".[prop[@name='mac-address']]/prop[@name='mac-address']" test="matches(@value, '^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})|([0-9a-fA-F]{4}\\.[0-9a-fA-F]{4}\\.[0-9a-fA-F]{4})$')" level="ERROR">
                 <formal-name>Inventory Item Has Valid Mac Address</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=inventory-item-has-valid-mac-address"/>
                 <message>In a FedRAMP SSP, each inventory item that has a MAC address MUST format the MAC address correctly.</message>
             </expect>
             <expect id="inventory-item-has-vendor-name" target=".[../component[@uuid=$component-uuid and @type=('hardware','software')]]" test="count(prop[@name='vendor-name' and @ns='http://fedramp.gov/ns/oscal']) >= 1 or count(../component[@uuid=$component-uuid]/prop[@name='vendor-name' and @ns='http://fedramp.gov/ns/oscal']) >= 1" level="ERROR">
                 <formal-name>Inventory Item Has Vendor Name</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=inventory-item-has-vendor-name"/>
                 <message>In a FedRAMP SSP, each inventory item MUST include the vendor name in the inventory item itself or within the linked component.</message>
             </expect>
             <expect id="inventory-item-not-system-or-validation" target="." test="not(../component[@uuid=$component-uuid]/@type=('system','validation'))" level="ERROR">
                 <formal-name>Inventory Item Not System or Validation</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=inventory-item-not-system-or-validation"/>
                 <message>In a FedRAMP SSP, an inventory item MUST NOT reference a "system" or "validation" component.</message>
             </expect>
             <expect id="inventory-item-or-component-has-virtual" target="." test="count(prop[@name='virtual']) = 1 or count(../component[@uuid=$component-uuid]/prop[@name='virtual']) = 1" level="ERROR">
                 <formal-name>Inventory Item or Component Has Virtual</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=inventory-item-or-component-has-virtual"/>
                 <message>In a FedRAMP SSP, each inventory item MUST state if it is virtual in the inventory item itself or the linked component.</message>
             </expect>
             <expect id="scan-type-has-remarks" target="..//prop[@name='scan-type' and @ns='http://fedramp.gov/ns/oscal' and @value=('other','not-applicable')]" test="exists(remarks)" level="ERROR">
                 <formal-name>Scan Type Has Remarks</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=scan-type-has-remarks"/>
                 <message>When scan-type is 'other' or 'not-applicable', remarks MUST be provided to explain the selection.</message>
             </expect>
         </constraints>
@@ -769,7 +769,7 @@
         <constraints>
             <expect id="fedramp-version" target="." test="exists(prop[@name='fedramp-version'][@ns='http://fedramp.gov/ns/oscal'])" level="ERROR">
                 <formal-name>Fedramp Version</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/general-concepts/4-expressing-common-fedramp-template-elements-in-oscal/#fedramp-version"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=fedramp-version"/>
                 <message>A FedRAMP document's metadata MUST define a valid FedRAMP version.</message>
                 <remarks>
                     <p>All documents in a digital authorization package for FedRAMP must specify the version that identifies which FedRAMP policies, guidance, and technical specifications its authors used during the creation and maintenance of the package.</p>
@@ -779,12 +779,12 @@
             </expect>
             <expect id="has-published-date" target="." test="exists(published)" level="ERROR">
                 <formal-name>Has Published Date</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/general-concepts/4-expressing-common-fedramp-template-elements-in-oscal/#title-page"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-published-date"/>
                 <message>All documents submitted to FedRAMP MUST define a valid publication date.</message>
             </expect>
             <expect id="marking" target="." test="exists(prop[@name='marking'])" level="ERROR">
                 <formal-name>FedRAMP data sensitivity classification identifier.</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/general-concepts/4-expressing-common-fedramp-template-elements-in-oscal/"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=marking"/>
                 <message>A FedRAMP document MUST have a marking that defines its data classification.</message>
             </expect>
         </constraints>
@@ -795,7 +795,7 @@
         <constraints>
             <expect id="party-has-name" target="." test="exists(name)" level="ERROR">
                 <formal-name>Party Has a Name</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/general-concepts/oscal-metadata/#working-with-party-assemblies"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=party-has-name"/>
                 <message>Every FedRAMP document MUST define a party with a name.</message>
             </expect>
         </constraints>
@@ -847,17 +847,17 @@
             <let var="component-uuid" expression="by-component/@component-uuid"/>
             <expect id="has-policy" target=".[@statement-id=$control-statement-ids]" test="some $uuid in $component-uuid satisfies count(../../../system-implementation/component[@uuid=$component-uuid and @type='policy']) >= 1" level="ERROR">
                 <formal-name>Has Policy</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/6-security-controls/#organization-policy-and-procedure-statements"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-policy"/>
                 <message>In a FedRAMP SSP, {$policy-messages(./@statement-id)}</message>
             </expect>
             <expect id="has-procedure" target=".[@statement-id=$control-statement-ids]" test="some $uuid in $component-uuid satisfies count(../../../system-implementation/component[@uuid=$component-uuid and @type='process-procedure']) >= 1" level="ERROR">
                 <formal-name>Has Procedure</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/6-security-controls/#organization-policy-and-procedure-statements"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-procedure"/>
                 <message>In a FedRAMP SSP, {$procedure-messages(./@statement-id)}</message>
             </expect>
             <expect id="statement-has-this-system-component" target="." test="count(../../../system-implementation/component[@type='this-system' and @uuid=$component-uuid]) = 1" level="ERROR">
                 <formal-name>Statement Has This System Component</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/6-security-controls/#response-this-system-component"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=statement-has-this-system-component"/>
                 <message>In a FedRAMP SSP, each control implementation statement MUST have one "this-system" by-component.</message>
             </expect>
         </constraints>
@@ -868,12 +868,12 @@
         <constraints>
             <expect id="by-component-has-responsible-role" target="." test="count(responsible-role) >= 1" level="ERROR">
                 <formal-name>By Component Has Responsible Role</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/6-security-controls/#responsible-roles-and-parameter-assignments"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=by-component-has-responsible-role"/>
                 <message>In a FedRAMP SSP, each by-component MUST have at least one responsible role.</message>
             </expect>
             <expect id="implementation-status-has-remarks" target="implementation-status[@state=('partial', 'planned', 'alternative', 'not-applicable' )]" test="exists(remarks)" level="ERROR">
                 <formal-name>Implementation Status Has Remarks</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/6-security-controls/#implementation-status"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=implementation-status-has-remarks"/>
                 <message>In a FedRAMP SSP, each by-component that is not implemented MUST have remarks to provide context.</message>
             </expect>
         </constraints>
@@ -887,7 +887,7 @@
             <let var="authorization-boundary-diagram-uuid" expression="../@uuid"/>
             <expect id="has-authorization-boundary-diagram-link-href-target" target=".[@rel='diagram' and ../../../authorization-boundary/diagram/@uuid = $authorization-boundary-diagram-uuid]" test="doc-available(resolve-uri(.[not(starts-with(@href, '#'))]/@href)) or count(../../../../back-matter/resource[@uuid=substring-after($authorization-boundary-href, '#') and prop[@name='type' and @value='image' and @class='authorization-boundary']]) = 1" level="ERROR">
                 <formal-name>Has Authorization Boundary Diagram Link Href Target</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#authorization-boundary"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-authorization-boundary-diagram-link-href-target"/>
                 <message>A FedRAMP SSP MUST include an authorization boundary diagram.</message>
             </expect>
         </constraints>
@@ -900,7 +900,7 @@
             <let var="data-flow-diagram-uuid" expression="../@uuid"/>
             <expect id="has-data-flow-diagram-link-href-target" target=".[@rel='diagram' and ../../../data-flow/diagram/@uuid = $data-flow-diagram-uuid]" test="doc-available(resolve-uri(.[not(starts-with(@href, '#'))]/@href)) or count(../../../../back-matter/resource[@uuid=substring-after($data-flow-href, '#') and prop[@name='type' and @value='image' and @class='data-flow']]) = 1" level="ERROR">
                 <formal-name>Has Data Flow Diagram Link Href Target</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#data-flow"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-data-flow-diagram-link-href-target"/>
                 <message>A FedRAMP SSP MUST include a data flow diagram.</message>
             </expect>
         </constraints>
@@ -913,7 +913,7 @@
             <let var="network-architecture-diagram-uuid" expression="../@uuid"/>
             <expect id="has-network-architecture-diagram-link-href-target" target=".[@rel='diagram' and ../../../network-architecture/diagram/@uuid = $network-architecture-diagram-uuid]" test="doc-available(resolve-uri(.[not(starts-with(@href, '#'))]/@href)) or count(../../../../back-matter/resource[@uuid=substring-after($network-architecture-href, '#') and prop[@name='type' and @value='image' and @class='network-architecture']]) = 1" level="ERROR">
                 <formal-name>Has Network Architecture Diagram Link Href Target</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#network-architecture"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=has-network-architecture-diagram-link-href-target"/>
                 <message>A FedRAMP SSP MUST include a network architecture diagram.</message>
             </expect>
         </constraints>
@@ -924,7 +924,7 @@
         <constraints>
             <matches id="last-accessed-is-datetime" target="prop[@ns='http://fedramp.gov/ns/oscal' and @name='last-accessed']/@value" datatype="dateTime-with-timezone" level="WARNING">
                 <formal-name>Last Accessed is Type DateTime</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#attachments"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=last-accessed-is-datetime"/>
                 <message>A FedRAMP document SHOULD specify the last accessed date for resources where the specification publication date is unknown.  In such cases, the last accessed date MUST be be a date with an explicit timezone, per RFC-3339.</message>
             </matches>
         </constraints>

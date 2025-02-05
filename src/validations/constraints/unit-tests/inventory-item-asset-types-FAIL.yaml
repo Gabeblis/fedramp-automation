@@ -1,0 +1,9 @@
+test-case:
+  name: Negative Test for inventory-item-asset-types
+  description: >-
+    This test case validates the behavior of constraint
+    inventory-item-asset-types
+  content: ../content/ssp-inventory-item-asset-types-INVALID.xml
+  expectations:
+    - constraint-id: inventory-item-asset-types
+      fail_count: 0

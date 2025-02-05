@@ -548,6 +548,16 @@
                 <enum value="no">No</enum>
             </allowed-values>
 
+            <allowed-values id="inventory-item-asset-types" target="//inventory-item/prop[@name='asset-type']/@value" allow-other="yes" level="ERROR">
+                <formal-name>Inventory Item Asset Types</formal-name>
+                <description>Identifies the inventory item asset types recognized by FedRAMP.</description>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/validation/catalog/?constraint-id=inventory-item-asset-types"/>
+                <enum value="hardware">Hardware</enum>
+                <enum value="infrastructure">Infrastructure</enum>
+                <enum value="network">Network</enum>
+                <enum value="software">Software</enum>
+            </allowed-values>
+
             <allowed-values id="inventory-item-public" target="(//inventory-item | //component)/prop[@name='public']/@value" allow-other="no" level="ERROR">
                 <formal-name>Public</formal-name>
                 <description>Indicates if the asset is exposed to the public Internet.</description>

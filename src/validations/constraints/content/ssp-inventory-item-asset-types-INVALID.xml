@@ -1,0 +1,7 @@
+<system-security-plan xmlns="http://csrc.nist.gov/ns/oscal/1.0" uuid="11111111-2222-4000-8000-000000000000">
+  <system-implementation>
+    <inventory-item uuid="77777777-0000-4000-9000-000000000007">
+      <prop name="asset-type" value="hardware"/>
+    </inventory-item>
+  </system-implementation>
+</system-security-plan>

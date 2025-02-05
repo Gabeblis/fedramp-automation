@@ -2493,7 +2493,7 @@ approved.</p>
       </description>
       <prop name='diagram-label' ns='http://fedramp.gov/ns/oscal' value='label'/>
       <prop name="asset-id" value="unique-asset-ID-04"/>
-      <prop name="asset-type" value="appliance"/>
+      <prop name="asset-type" value="hardware"/>
       <prop name="virtual" value="yes"/>
       <prop name="public" value="no"/>
       <prop name="ipv4-address" value="10.4.4.4"/>

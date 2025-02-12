@@ -18,7 +18,6 @@
             <allowed-values id="address-type" target="metadata/party/address/@type" allow-other="no" level="ERROR">
                 <formal-name>Address Type</formal-name>
                 <description>The type of address for the party</description>
-                <!-- <enum value="home">Home</enum>-->                <!-- would FedRAMP ever need a "home" address? -->
                 <enum value="work">Work</enum>
                 <remarks>
                     <p>FedRAMP requires work addresses.</p>

@@ -43,6 +43,9 @@ Examples:
   | component-has-non-provider-responsible-role |
   | component-has-provider-responsible-role |
   | component-has-used-by-link |
+  | component-has-valid-validation-details-link |
+  | component-has-validation-details-link |
+  | component-has-validation-reference |
   | component-type |
   | connection-security |
   | control-implementation-status |
@@ -195,6 +198,7 @@ Examples:
   | user-privilege-level |
   | user-sensitivity-level |
   | user-type |
+  | validation-reference-has-correct-format |
 #END_DYNAMIC_CONSTRAINT_IDS
 
 @constraints
@@ -246,6 +250,12 @@ Examples:
   | component-has-non-provider-responsible-role-PASS.yaml |
   | component-has-used-by-link-FAIL.yaml |
   | component-has-used-by-link-PASS.yaml |
+  | component-has-valid-validation-details-link-FAIL.yaml |
+  | component-has-valid-validation-details-link-PASS.yaml |
+  | component-has-validation-details-link-FAIL.yaml |
+  | component-has-validation-details-link-PASS.yaml |
+  | component-has-validation-reference-FAIL.yaml |
+  | component-has-validation-reference-PASS.yaml |
   | component-responsible-role-references-party-FAIL.yaml |
   | component-responsible-role-references-party-PASS.yaml |
   | component-type-FAIL.yaml |
@@ -552,6 +562,8 @@ Examples:
   | user-sensitivity-level-PASS.yaml |
   | user-type-FAIL.yaml |
   | user-type-PASS.yaml |
+  | validation-reference-has-correct-format-FAIL.yaml |
+  | validation-reference-has-correct-format-PASS.yaml |
 #END_DYNAMIC_TEST_CASES
 
 @style-guide

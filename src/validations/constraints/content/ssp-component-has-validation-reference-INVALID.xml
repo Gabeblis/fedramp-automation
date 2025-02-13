@@ -1,0 +1,9 @@
+<system-security-plan xmlns="http://csrc.nist.gov/ns/oscal/1.0" uuid="11111111-2222-4000-8000-000000000000">
+  <system-implementation>
+    <component uuid="11111111-2222-4000-8000-009000000000" type="validation">
+      <prop ns="http://fedramp.gov/ns/oscal" name="asset-type" value="cryptographic-module"/>
+      <prop name="validation-type" value="fips-140-2"/>
+      <!-- <prop name="validation-reference" value="3928"/> Missing validation reference. -->
+    </component>
+  </system-implementation>
+</system-security-plan>

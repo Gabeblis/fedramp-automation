@@ -1,0 +1,13 @@
+<system-security-plan xmlns="http://csrc.nist.gov/ns/oscal/1.0" uuid="11111111-2222-4000-8000-000000000000">
+  <system-implementation>
+    <component type="software" uuid="11111111-2222-4000-8000-009000300012">
+      <prop name="asset-type" value="cryptographic-module"/>
+      <!-- Not a valid value for the "function" prop. -->
+      <prop name="function" value="invalid-value" ns="http://fedramp.gov/ns/oscal">
+        <remarks>
+          <p>Used to encrypt and decrypt rows in the database.</p>
+        </remarks>
+      </prop>
+    </component>
+  </system-implementation>
+</system-security-plan>

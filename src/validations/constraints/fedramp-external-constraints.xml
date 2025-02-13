@@ -6,6 +6,32 @@
     <!-- ================== -->
 
     <context>
+        <metapath target="//component"/>
+        <constraints>
+            <expect id="cryptographic-module-component-has-function" target=".[@type='software' and prop[@name='asset-type' and @value='cryptographic-module']]" test="(count(prop[@name='function']) eq 1) and (if (prop[@name='function' and @value='other']) then exists(prop[@name='function' and @value='other']/remarks) else true())" level="ERROR">
+                <formal-name>Cryptographic Module Component Has Function</formal-name>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
+                <message>In a FedRAMP SSP, a crytographic module component MUST include its function and use remarks to describe its function.</message>
+            </expect>
+            <expect id="cryptographic-module-component-has-provided-by-link" target=".[@type='software' and prop[@name='asset-type' and @value='cryptographic-module']]" test="count(link[@rel='provided-by']) >= 1" level="ERROR">
+                <formal-name>Cryptographic Module Component Has Provided By Link</formal-name>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
+                <message>In a FedRAMP SSP, a crytographic module component MUST include at least one "provided by" link.</message>
+            </expect>
+            <expect id="cryptographic-module-component-has-used-by-link" target=".[@type='software' and prop[@name='asset-type' and @value='cryptographic-module']]" test="count(link[@rel='used-by']) >= 1" level="ERROR">
+                <formal-name>Cryptographic Module Component Has Used By Link</formal-name>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
+                <message>In a FedRAMP SSP, a crytographic module component MUST include at least one "used by" link.</message>
+            </expect>
+            <expect id="cryptographic-module-component-has-validation-link" target=".[@type='software' and prop[@name='asset-type' and @value='cryptographic-module']]" test="count(link[@rel='validation']) >= 1" level="ERROR">
+                <formal-name>Cryptographic Module Component Has Validation Link</formal-name>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
+                <message>In a FedRAMP SSP, a crytographic module component MUST include at least one "validation" link.</message>
+            </expect>
+        </constraints>
+    </context>
+
+    <context>
         <metapath target="//user"/>
         <constraints>
             <expect id="user-has-authorized-privilege" target="." test="count(authorized-privilege) gt 0" level="ERROR">

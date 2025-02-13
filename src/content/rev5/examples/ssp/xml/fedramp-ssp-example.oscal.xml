@@ -1813,6 +1813,30 @@ compliance (e.g., Module in Process).</p>
       </remarks>
     </component>
 
+    <component type="software" uuid="11111111-2222-4000-8000-009000300012">
+      <title>Database Row Encryption Module</title>
+      <description>
+        <p>Briefly describe the cryptographic module.</p>
+      </description>
+      <prop name="asset-type" value="cryptographic-module"/>
+      <prop name="vendor-name" value="Databases-R-Us" ns="http://fedramp.gov/ns/oscal"/>
+      <prop name="diagram-label" value="Database Queries" ns="http://fedramp.gov/ns/oscal"/>
+      <prop name="function" value="data-at-rest" ns="http://fedramp.gov/ns/oscal">
+        <remarks>
+          <p>Used to encrypt and decrypt rows in the database.</p>
+        </remarks>
+      </prop>
+      <link rel="validation" href="#11111111-2222-4000-8000-009001200001">
+        <text>A link to the 3rd party validation information related to this cryptographic module.</text>
+      </link>
+      <link rel="provided-by" href="#11111111-2222-4000-8000-009000300004">
+        <text>A link to the operating system component that has this module embedded.</text>
+      </link>
+      <link rel="used-by" href="#11111111-2222-4000-8000-009000300002">
+        <text>A link to the software component that uses this module for encrypted communication.</text>
+      </link>
+      <status state="operational"/>
+    </component>
 
     <component uuid="11111111-2222-4000-8000-009000400001" type="hardware">
       <title>[SAMPLE]Product</title>

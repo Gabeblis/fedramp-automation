@@ -1,0 +1,10 @@
+test-case:
+  name: Negative Test for cryptographic-module-component-has-provided-by-link
+  description: >-
+    This test case validates the behavior of constraint
+    cryptographic-module-component-has-provided-by-link
+  content: >-
+    ../content/ssp-cryptographic-module-component-has-provided-by-link-INVALID.xml
+  expectations:
+    - constraint-id: cryptographic-module-component-has-provided-by-link
+      result: fail

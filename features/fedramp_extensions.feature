@@ -46,6 +46,10 @@ Examples:
   | component-type |
   | connection-security |
   | control-implementation-status |
+  | cryptographic-module-component-has-function |
+  | cryptographic-module-component-has-provided-by-link |
+  | cryptographic-module-component-has-used-by-link |
+  | cryptographic-module-component-has-validation-link |
   | data-center-alternate |
   | data-center-count |
   | data-center-country-code |
@@ -59,6 +63,7 @@ Examples:
   | fedramp-version |
   | fully-operational-date-is-valid |
   | fully-operational-date-type |
+  | function |
   | has-authenticator-assurance-level |
   | has-authorization-boundary-diagram |
   | has-authorization-boundary-diagram-caption |
@@ -243,6 +248,14 @@ Examples:
   | connection-security-PASS.yaml |
   | control-implementation-status-FAIL.yaml |
   | control-implementation-status-PASS.yaml |
+  | cryptographic-module-component-has-function-FAIL.yaml |
+  | cryptographic-module-component-has-function-PASS.yaml |
+  | cryptographic-module-component-has-provided-by-link-FAIL.yaml |
+  | cryptographic-module-component-has-provided-by-link-PASS.yaml |
+  | cryptographic-module-component-has-used-by-link-FAIL.yaml |
+  | cryptographic-module-component-has-used-by-link-PASS.yaml |
+  | cryptographic-module-component-has-validation-link-FAIL.yaml |
+  | cryptographic-module-component-has-validation-link-PASS.yaml |
   | data-center-alternate-FAIL.yaml |
   | data-center-alternate-PASS.yaml |
   | data-center-count-FAIL.yaml |
@@ -269,6 +282,8 @@ Examples:
   | fully-operational-date-is-valid-PASS.yaml |
   | fully-operational-date-type-FAIL.yaml |
   | fully-operational-date-type-PASS.yaml |
+  | function-FAIL.yaml |
+  | function-PASS.yaml |
   | has-authenticator-assurance-level-FAIL.yaml |
   | has-authenticator-assurance-level-PASS.yaml |
   | has-authorization-boundary-diagram-FAIL.yaml |

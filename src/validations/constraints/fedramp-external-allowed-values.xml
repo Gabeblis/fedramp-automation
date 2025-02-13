@@ -162,6 +162,13 @@
                 <enum value="fedramp-3.0.0rc1-oscal-1.1.2">FedRAMP Version</enum>
             </allowed-values>
 
+            <allowed-values id="function" target="//component/prop[@name='function' and @ns='http://fedramp.gov/ns/oscal']/@value" allow-other="no" level="ERROR">
+                <formal-name>Function</formal-name>
+                <description>Identifies the data affected by a component.</description>
+                <enum value="data-at-rest">Data at Rest</enum>
+                <enum value="data-in-transit">Data in Transit</enum>
+                <enum value="other">Other</enum>
+            </allowed-values>
 
             <allowed-values id="information-type" target="//component/prop[@name='information-type' and @ns='http://fedramp.gov/ns/oscal']/@class" allow-other="no" level="ERROR">
                 <formal-name>Information Type</formal-name>

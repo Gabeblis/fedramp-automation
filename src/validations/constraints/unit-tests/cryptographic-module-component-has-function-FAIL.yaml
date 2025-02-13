@@ -1,0 +1,9 @@
+test-case:
+  name: Negative Test for cryptographic-module-component-has-function
+  description: >-
+    This test case validates the behavior of constraint
+    cryptographic-module-component-has-function
+  content: ../content/ssp-cryptographic-module-component-has-function-INVALID.xml
+  expectations:
+    - constraint-id: cryptographic-module-component-has-function
+      result: fail

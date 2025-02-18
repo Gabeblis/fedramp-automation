@@ -586,7 +586,7 @@
     <prop name="authenticator-assurance-level" value="2"/>
     <prop name="federation-assurance-level" value="2"/>
     <prop ns="http://fedramp.gov/ns/oscal" name="fully-operational-date"
-      value="2023-12-31T00:00:00Z"/>
+      value="2023-12-31Z"/>
     <prop ns="http://fedramp.gov/ns/oscal" name="authorization-type" value="fedramp-agency"/>
     <security-sensitivity-level>fips-199-high</security-sensitivity-level>
     <system-information>
@@ -1122,6 +1122,7 @@
         <p>Describe the purpose of the external system/service; specifically, provide reasons for
           connectivity (e.g., system monitoring, system alerting, download updates, etc.)</p>
       </description>
+      <prop name="diagram-label" value="Authorized Connection" ns="http://fedramp.gov/ns/oscal"/>
       <prop name="nature-of-agreement" value="contract" ns="http://fedramp.gov/ns/oscal"/>
       <prop name="authentication-method" value="yes" ns="http://fedramp.gov/ns/oscal">
         <remarks>
@@ -1488,6 +1489,7 @@
           boundary.</p>
       </description>
       <prop name="asset-type" value="cli"/>
+      <prop name="diagram-label" value="Management CLI" ns="http://fedramp.gov/ns/oscal"/>
       <prop name="implementation-point" value="internal"/>
       <prop name="information-type" class="incoming" value="C.3.5.1"
         ns="http://fedramp.gov/ns/oscal"/>
@@ -1578,6 +1580,7 @@
           this system..</p>
       </description>
       <prop name="asset-type" value="cli"/>
+      <prop name="diagram-label" value="Management CLI" ns="http://fedramp.gov/ns/oscal"/>
       <prop name="implementation-point" value="external"/>
       <prop name="information-type" class="incoming" value="C.3.5.1"
         ns="http://fedramp.gov/ns/oscal"/>
@@ -1811,6 +1814,7 @@
         <p>Briefly describe the cryptographic module.</p>
       </description>
       <prop name="asset-type" value="cryptographic-module"/>
+      <prop name="diagram-label" value="DB Encryption Module" ns="http://fedramp.gov/ns/oscal"/>
       <prop name="software-name" value="abc"/>
       <prop name="software-version" value="1.2.3"/>
       <prop name="vendor-name" value="Databases-R-Us" ns="http://fedramp.gov/ns/oscal"/>
@@ -1822,7 +1826,7 @@
       <status state="operational"/>
     </component>
 
-    <component type="validation" uuid="11111111-2222-4000-8000-009000300012">
+    <component type="validation" uuid="11111111-2222-4000-8000-009001200004">
       <title>Database Row Encryption Module (DREM)</title>
       <description>
         <p>Briefly describe the cryptographic module.</p>
@@ -1849,6 +1853,7 @@
           compliance (e.g., Module in Process).</p>
       </description>
       <prop name="asset-type" value="cryptographic-module"/>
+      <prop name="diagram-label" value="Encryption Module" ns="http://fedramp.gov/ns/oscal"/>
       <prop name="software-name" value="OpenSSL"/>
       <prop name="software-version" value="3.0.8"/>
       <prop name="vendor-name" value="OpenSSL FIPS Provider" ns="http://fedramp.gov/ns/oscal"/>
@@ -1874,6 +1879,7 @@
           compliance (e.g., Module in Process).</p>
       </description>
       <prop name="asset-type" value="cryptographic-module"/>
+      <prop name="diagram-label" value="Encryption Module" ns="http://fedramp.gov/ns/oscal"/>
       <prop name="software-name" value="OpenSSL"/>
       <prop name="software-version" value="3.0.9"/>
       <prop name="vendor-name" value="OpenSSL FIPS Provider" ns="http://fedramp.gov/ns/oscal"/>
@@ -1910,7 +1916,7 @@
         <p>.</p>
       </remarks>
     </component>
-    <component uuid="11111111-2222-4000-8000-009001200001" type="validation">
+    <component uuid="11111111-2222-4000-8000-009001200003" type="validation">
       <title>OpenSSL Some Other Validation</title>
       <description>
         <p>This is another validation of the OpenSSL Cryptographic module that has nothing to do
@@ -1948,6 +1954,7 @@
         <p>This is an API server that communicates with a database via an encrypted connection</p>
       </description>
       <prop name="asset-type" value="api-server"/>
+      <prop name="diagram-label" value="API" ns="http://fedramp.gov/ns/oscal"/>
       <prop name="allows-authenticated-scan" value="no"/>
       <prop name="scan-type" value="web" ns="http://fedramp.gov/ns/oscal"/>
       <link rel="validation" href="#11111111-2222-4000-8000-009001200002"/>
@@ -1963,6 +1970,7 @@
       </description>
       <prop name="asset-type" value="operating-system"/>
       <prop name="allows-authenticated-scan" value="yes"/>
+      <prop name="diagram-label" value="Operating System" ns="http://fedramp.gov/ns/oscal"/>
       <prop name="scan-type" value="web" ns="http://fedramp.gov/ns/oscal"/>
       <link rel="baseline" href="#11111111-2222-4000-8000-001000000059"/>
       <status state="operational"/>
@@ -1975,6 +1983,7 @@
         <p>Describe the service and what it is used for.</p>
       </description>
       <prop name="implementation-point" value="internal"/>
+      <prop name="public" value="no"/>
       <status state="operational"/>
     </component>
     <component uuid="11111111-2222-4000-8000-009000300008" type="software">
@@ -1984,6 +1993,7 @@
       </description>
       <prop name="asset-type" value="image"/>
       <prop name="asset-id" value="image"/>
+      <prop name="diagram-label" value="Container Image" ns="http://fedramp.gov/ns/oscal"/>
       <prop name="checksum" value="a1b2c3" ns="http://fedramp.gov/ns/oscal"/>
       <link href="#11111111-2222-4000-8000-001000000059" rel="attachment"/>
       <status state="operational"/>
@@ -1997,6 +2007,7 @@
         <p>FUNCTION: Describe typical component function.</p>
       </description>
       <prop name="asset-type" value="operating-system"/>
+      <prop name="diagram-label" value="Operating System Name" ns="http://fedramp.gov/ns/oscal"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
       <prop name="vendor-name" value="Vendor Name"/>
       <prop name="model" value="Model Number"/>
@@ -2029,6 +2040,7 @@
         <p>FUNCTION: Describe typical component function.</p>
       </description>
       <prop name="asset-type" value="database"/>
+      <prop name="diagram-label" value="Database Name" ns="http://fedramp.gov/ns/oscal"/>
       <prop name="scan-type" value="infrastructure" ns="http://fedramp.gov/ns/oscal"/>
       <prop name="scan-type" value="database" ns="http://fedramp.gov/ns/oscal"/>
       <prop name="vendor-name" value="Vendor Name"/>
@@ -2051,6 +2063,7 @@
         <p>None</p>
       </description>
       <prop name="asset-type" value="operating-system"/>
+      <prop name="diagram-label" value="Operating System Name" ns="http://fedramp.gov/ns/oscal"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
       <prop name="allows-authenticated-scan" value="yes"/>
       <link rel="baseline" href="#11111111-2222-4000-8000-001000000059"/>
@@ -2062,6 +2075,7 @@
         <p>None</p>
       </description>
       <prop name="asset-type" value="database"/>
+      <prop name="diagram-label" value="Database Name" ns="http://fedramp.gov/ns/oscal"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="database"/>
       <prop name="allows-authenticated-scan" value="yes"/>
       <link href="#11111111-2222-4000-8000-009000500006" rel="used-by"/>
@@ -2078,6 +2092,7 @@
         <p>None</p>
       </description>
       <prop name="asset-type" value="appliance"/>
+      <prop name="diagram-label" value="Virtual Appliance" ns="http://fedramp.gov/ns/oscal"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="web"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="login-url"
         value="https://admin.offering.com/login"/>
@@ -2360,6 +2375,7 @@
       <prop name="asset-id" value="unique-asset-ID-10"/>
       <prop name="ipv4-address" value="10.10.10.100"/>
       <prop name="ipv6-address" value="0000:0000:0000:0000:0000:ffff:0a08:0808"/>
+      <prop name="public" value="yes" />
       <prop name="virtual" value="yes"/>
       <prop name="is-scanned" value="yes"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
@@ -2372,6 +2388,7 @@
       <prop name="asset-id" value="unique-asset-ID-11"/>
       <prop name="ipv4-address" value="10.10.10.100"/>
       <prop name="ipv6-address" value="0000:0000:0000:0000:0000:ffff:0a08:0808"/>
+      <prop name="public" value="yes" />
       <prop name="virtual" value="yes"/>
       <prop name="is-scanned" value="yes"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
@@ -2385,6 +2402,7 @@
       <prop name="asset-id" value="unique-asset-ID-12"/>
       <prop name="ipv4-address" value="10.10.10.100"/>
       <prop name="ipv6-address" value="0000:0000:0000:0000:0000:ffff:0a08:0808"/>
+      <prop name="public" value="yes" />
       <prop name="virtual" value="yes"/>
       <prop name="is-scanned" value="yes"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
@@ -2398,6 +2416,7 @@
       <prop name="asset-id" value="unique-asset-ID-13"/>
       <prop name="ipv4-address" value="10.10.10.100"/>
       <prop name="ipv6-address" value="0000:0000:0000:0000:0000:ffff:0a08:0808"/>
+      <prop name="public" value="yes" />
       <prop name="virtual" value="yes"/>
       <prop name="is-scanned" value="yes"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
@@ -2411,6 +2430,7 @@
       <prop name="asset-id" value="unique-asset-ID-14"/>
       <prop name="ipv4-address" value="10.10.10.100"/>
       <prop name="ipv6-address" value="0000:0000:0000:0000:0000:ffff:0a08:0808"/>
+      <prop name="public" value="yes" />
       <prop name="virtual" value="yes"/>
       <prop name="is-scanned" value="yes"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
@@ -2424,6 +2444,7 @@
       <prop name="asset-id" value="unique-asset-ID-15"/>
       <prop name="ipv4-address" value="10.10.10.100"/>
       <prop name="ipv6-address" value="0000:0000:0000:0000:0000:ffff:0a08:0808"/>
+      <prop name="public" value="yes" />
       <prop name="virtual" value="yes"/>
       <prop name="is-scanned" value="yes"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
@@ -2440,6 +2461,7 @@
       <prop name="ipv4-address" class="subnet-mask" value="255.255.255.0"/>
       <prop name="ipv4-address" class="gateway" value="10.10.20.1"/>
       <prop name="ipv6-address" value="0000:0000:0000:0000:0000:ffff:0a08:0808"/>
+      <prop name="public" value="no" />
       <prop name="virtual" value="yes"/>
       <prop name="is-scanned" value="yes"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
@@ -2455,6 +2477,7 @@
       <prop name="ipv4-address" class="subnet-mask" value="255.255.255.0"/>
       <prop name="ipv4-address" class="gateway" value="10.20.20.1"/>
       <prop name="ipv6-address" value="0000:0000:0000:0000:0000:ffff:0a08:0808"/>
+      <prop name="public" value="no" />
       <prop name="virtual" value="yes"/>
       <prop name="is-scanned" value="yes"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
@@ -2470,6 +2493,7 @@
       <prop name="ipv4-address" class="subnet-mask" value="255.255.255.0"/>
       <prop name="ipv4-address" class="gateway" value="30.30.30.1"/>
       <prop name="ipv6-address" value="0000:0000:0000:0000:0000:ffff:0a08:0808"/>
+      <prop name="public" value="no" />
       <prop name="virtual" value="yes"/>
       <prop name="is-scanned" value="yes"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>

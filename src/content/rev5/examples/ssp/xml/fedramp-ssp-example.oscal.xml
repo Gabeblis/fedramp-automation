@@ -1868,7 +1868,7 @@
       <status state="operational"/>
     </component>
 
-    <component type="validation" uuid="11111111-2222-4000-8000-009000300012">
+    <component type="validation" uuid="11111111-2222-4000-8000-009000300013">
       <title>Database Row Encryption Module (DREM)</title>
       <description>
         <p>Briefly describe the cryptographic module.</p>
@@ -1885,7 +1885,7 @@
       </remarks>
     </component>
 
-    <component type="software" uuid="11111111-2222-4000-8000-009001200003">
+    <component type="software" uuid="11111111-2222-4000-8000-009001200014">
       <title>OpenSSL</title>
       <description>
         <p>Provide a description and any pertinent note regarding the use of this CM.</p>
@@ -1961,7 +1961,7 @@
         <p>.</p>
       </remarks>
     </component>
-    <component uuid="11111111-2222-4000-8000-009001200001" type="validation">
+    <component uuid="11111111-2222-4000-8000-009001200003" type="validation">
       <title>OpenSSL Some Other Validation</title>
       <description>
         <p>This is another validation of the OpenSSL Cryptographic module that has nothing to do
@@ -2863,34 +2863,34 @@
       </statement>
     </implemented-requirement>
     <implemented-requirement control-id="ac-2" uuid="11111111-2222-4000-8000-012000020000">
-      <set-parameter param-id="ac-2_odp.01">
+      <set-parameter param-id="ac-02_odp.01">
         <value>[SAMPLE]privileged, non-privileged</value>
       </set-parameter>
-      <set-parameter param-id="ac-2_odp.02">
+      <set-parameter param-id="ac-02_odp.02">
         <value>[SAMPLE]all</value>
       </set-parameter>
-      <set-parameter param-id="ac-2_odp.03">
+      <set-parameter param-id="ac-02_odp.03">
         <value>[SAMPLE]The Access Control Procedure</value>
       </set-parameter>
-      <set-parameter param-id="ac-2_odp.04">
+      <set-parameter param-id="ac-02_odp.04">
         <value>at least annually</value>
       </set-parameter>
-      <set-parameter param-id="ac-2_odp.05">
+      <set-parameter param-id="ac-02_odp.05">
         <value>at least annually</value>
       </set-parameter>
-      <set-parameter param-id="ac-2_odp.06">
+      <set-parameter param-id="ac-02_odp.06">
         <value>at least annually</value>
       </set-parameter>
-      <set-parameter param-id="ac-2_odp.07">
+      <set-parameter param-id="ac-02_odp.07">
         <value>at least annually</value>
       </set-parameter>
-      <set-parameter param-id="ac-2_odp.08">
+      <set-parameter param-id="ac-02_odp.08">
         <value>at least annually</value>
       </set-parameter>
-      <set-parameter param-id="ac-2_odp.09">
+      <set-parameter param-id="ac-02_odp.09">
         <value>at least annually</value>
       </set-parameter>
-      <set-parameter param-id="ac-2_odp.10">
+      <set-parameter param-id="ac-02_odp.10">
         <value>at least annually</value>
       </set-parameter>
 
@@ -2908,7 +2908,7 @@
           </responsible-role>
         </by-component>
         <by-component component-uuid="11111111-2222-4000-8000-009000000000"
-          uuid="11111111-2222-4000-8000-012000020102">
+          uuid="11111111-2222-4000-8000-012000020120">
           <description>
             <h1>Description for the "this-system" component.</h1>
             <p>Describe how AC-2, part a is satisfied within this system.</p>
@@ -3029,159 +3029,164 @@
           </responsible-role>
         </by-component>
       </statement>
+      
+      <statement statement-id="ac-2_smt.b" uuid="11111111-2222-4000-8000-012000020101">
+        <by-component component-uuid="11111111-2222-4000-8000-009000000000"
+          uuid="11111111-2222-4000-8000-012000020121">
+          <description>
+            <p>Describe how AC-2, part b is satisfied within this system.</p>
+            <p>This points to the "This System" component, and is used any time a more specific
+              component reference is not available.</p>
+          </description>
+          <implementation-status state="implemented"/>
+          <responsible-role role-id="isso">
+            <party-uuid>11111111-2222-4000-8000-004000000008</party-uuid>
+          </responsible-role>
+        </by-component>
+      </statement>
+      <statement statement-id="ac-2_smt.c" uuid="11111111-2222-4000-8000-012000020102">
+        <by-component component-uuid="11111111-2222-4000-8000-009000000000"
+          uuid="11111111-2222-4000-8000-012000020122">
+          <description>
+            <p>Describe how AC-2, part c is satisfied within this system.</p>
+            <p>This points to the "This System" component, and is used any time a more specific
+              component reference is not available.</p>
+          </description>
+          <implementation-status state="implemented"/>
+          <responsible-role role-id="isso">
+            <party-uuid>11111111-2222-4000-8000-004000000008</party-uuid>
+          </responsible-role>
+        </by-component>
+      </statement>
+      <statement statement-id="ac-2_smt.d" uuid="11111111-2222-4000-8000-012000020103">
+        <by-component component-uuid="11111111-2222-4000-8000-009000000000"
+          uuid="11111111-2222-4000-8000-012000020123">
+          <description>
+            <p>Describe how AC-2, part d is satisfied within this system.</p>
+            <p>This points to the "This System" component, and is used any time a more specific
+              component reference is not available.</p>
+          </description>
+          <implementation-status state="implemented"/>
+          <responsible-role role-id="isso">
+            <party-uuid>11111111-2222-4000-8000-004000000008</party-uuid>
+          </responsible-role>
+        </by-component>
+      </statement>
+      <statement statement-id="ac-2_smt.e" uuid="11111111-2222-4000-8000-012000020104">
+        <by-component component-uuid="11111111-2222-4000-8000-009000000000"
+          uuid="11111111-2222-4000-8000-012000020124">
+          <description>
+            <p>Describe how AC-2, part e is satisfied within this system.</p>
+            <p>This points to the "This System" component, and is used any time a more specific
+              component reference is not available.</p>
+          </description>
+          <implementation-status state="implemented"/>
+          <responsible-role role-id="isso">
+            <party-uuid>11111111-2222-4000-8000-004000000008</party-uuid>
+          </responsible-role>
+        </by-component>
+      </statement>
+      <statement statement-id="ac-2_smt.f" uuid="11111111-2222-4000-8000-012000020105">
+        <by-component component-uuid="11111111-2222-4000-8000-009000000000"
+          uuid="11111111-2222-4000-8000-012000020125">
+          <description>
+            <p>Describe how AC-2, part f is satisfied within this system.</p>
+            <p>This points to the "This System" component, and is used any time a more specific
+              component reference is not available.</p>
+          </description>
+          <implementation-status state="implemented"/>
+          <responsible-role role-id="isso">
+            <party-uuid>11111111-2222-4000-8000-004000000008</party-uuid>
+          </responsible-role>
+        </by-component>
+      </statement>
+      <statement statement-id="ac-2_smt.g" uuid="11111111-2222-4000-8000-012000020106">
+        <by-component component-uuid="11111111-2222-4000-8000-009000000000"
+          uuid="11111111-2222-4000-8000-012000020126">
+          <description>
+            <p>Describe how AC-2, part g is satisfied within this system.</p>
+            <p>This points to the "This System" component, and is used any time a more specific
+              component reference is not available.</p>
+          </description>
+          <implementation-status state="implemented"/>
+          <responsible-role role-id="isso">
+            <party-uuid>11111111-2222-4000-8000-004000000008</party-uuid>
+          </responsible-role>
+        </by-component>
+      </statement>
+      <statement statement-id="ac-2_smt.h" uuid="11111111-2222-4000-8000-012000020107">
+        <by-component component-uuid="11111111-2222-4000-8000-009000000000"
+          uuid="11111111-2222-4000-8000-012000020127">
+          <description>
+            <p>Describe how AC-2, part h is satisfied within this system.</p>
+            <p>This points to the "This System" component, and is used any time a more specific
+              component reference is not available.</p>
+          </description>
+          <implementation-status state="implemented"/>
+          <responsible-role role-id="isso">
+            <party-uuid>11111111-2222-4000-8000-004000000008</party-uuid>
+          </responsible-role>
+        </by-component>
+      </statement>
+      <statement statement-id="ac-2_smt.i" uuid="11111111-2222-4000-8000-012000020108">
+        <by-component component-uuid="11111111-2222-4000-8000-009000000000"
+          uuid="11111111-2222-4000-8000-012000020128">
+          <description>
+            <p>Describe how AC-2, part i is satisfied within this system.</p>
+            <p>This points to the "This System" component, and is used any time a more specific
+              component reference is not available.</p>
+          </description>
+          <implementation-status state="implemented"/>
+          <responsible-role role-id="isso">
+            <party-uuid>11111111-2222-4000-8000-004000000008</party-uuid>
+          </responsible-role>
+        </by-component>
+      </statement>
+      <statement statement-id="ac-2_smt.j" uuid="11111111-2222-4000-8000-012000020109">
+        <by-component component-uuid="11111111-2222-4000-8000-009000000000"
+          uuid="11111111-2222-4000-8000-012000020129">
+          <description>
+            <p>Describe how AC-2, part j is satisfied within this system.</p>
+            <p>This points to the "This System" component, and is used any time a more specific
+              component reference is not available.</p>
+          </description>
+          <implementation-status state="implemented"/>
+          <responsible-role role-id="isso">
+            <party-uuid>11111111-2222-4000-8000-004000000008</party-uuid>
+          </responsible-role>
+        </by-component>
+      </statement>
+      <statement statement-id="ac-2_smt.k" uuid="11111111-2222-4000-8000-012000020110">
+        <by-component component-uuid="11111111-2222-4000-8000-009000000000"
+          uuid="11111111-2222-4000-8000-012000020130">
+          <description>
+            <p>Describe how AC-2, part k is satisfied within this system.</p>
+            <p>This points to the "This System" component, and is used any time a more specific
+              component reference is not available.</p>
+          </description>
+          <implementation-status state="implemented"/>
+          <responsible-role role-id="isso">
+            <party-uuid>11111111-2222-4000-8000-004000000008</party-uuid>
+          </responsible-role>
+        </by-component>
+      </statement>
+      <statement statement-id="ac-2_smt.l" uuid="11111111-2222-4000-8000-012000020111">
+        <by-component component-uuid="11111111-2222-4000-8000-009000000000"
+          uuid="11111111-2222-4000-8000-012000020131">
+          <description>
+            <p>Describe how AC-2, part l is satisfied within this system.</p>
+            <p>This points to the "This System" component, and is used any time a more specific
+              component reference is not available.</p>
+          </description>
+          <implementation-status state="implemented"/>
+          <responsible-role role-id="isso">
+            <party-uuid>11111111-2222-4000-8000-004000000008</party-uuid>
+          </responsible-role>
+        </by-component>
+      </statement>
+    
     </implemented-requirement>
-    <implemented-requirement control-id="ia-1" uuid="11111111-2222-4000-8000-012000030000">
-      <prop ns="http://fedramp.gov/ns/oscal" name="control-origination" value="sp-system"/>
-      <set-parameter param-id="ac-01_odp.01">
-        <value>all managers, administrators and users of the system</value>
-        <remarks>
-          <p>[Assignment: organization-defined personnel or roles]</p>
-          <p>This focuses on roles the POLICY is disseminated to.</p>
-        </remarks>
-      </set-parameter>
-      <set-parameter param-id="ac-01_odp.02">
-        <value>all managers and administrators of the system</value>
-        <remarks>
-          <p>[Assignment: organization-defined personnel or roles]</p>
-          <p>This focuses on roles PROCEDURES are disseminated to.</p>
-        </remarks>
-      </set-parameter>
-      <set-parameter param-id="ac-01_odp.03">
-        <value>System-level</value>
-        <remarks>
-          <p>[Selection (one or more): Organization-level; Mission/business process-level;
-            Systemlevel]</p>
-          <p>This is a SELECT parameter. Use one "value" field for each selection.</p>
-        </remarks>
-      </set-parameter>
-      <set-parameter param-id="ac-01_odp.04">
-        <value>System Architect</value>
-        <remarks>
-          <p>[Assignment: organization-defined official]</p>
-        </remarks>
-      </set-parameter>
-      <set-parameter param-id="ac-01_odp.05">
-        <value>at least every 3 years</value>
-        <remarks>
-          <p>[Assignment: organization-defined frequency]</p>
-        </remarks>
-      </set-parameter>
-      <set-parameter param-id="ac-01_odp.06">
-        <value>change in organizational legal status or ownership</value>
-        <remarks>
-          <p>[Assignment:organization-defined events]</p>
-        </remarks>
-      </set-parameter>
-      <set-parameter param-id="ac-01_odp.07">
-        <value>at least annually</value>
-        <remarks>
-          <p>[Assignment: organization-defined frequency]</p>
-        </remarks>
-      </set-parameter>
-      <set-parameter param-id="ac-01_odp.08">
-        <value>change in policy or a security incident involving a failure of access control mechanisms</value>
-        <remarks>
-          <p>[Assignment:organization-defined events]</p>
-        </remarks>
-      </set-parameter>
-      <statement statement-id="ia-1_smt.a" uuid="11111111-2222-4000-8000-012000030100">
-        <by-component component-uuid="11111111-2222-4000-8000-009000000000"
-          uuid="11111111-2222-4000-8000-012000030101">
-          <description>
-            <p>Describe how Part a is satisfied within the system.</p>
-            <p>Legacy approach. If no policy component is defined, describe here how the policy
-              satisfies part a.</p>
-            <p>In this case, a link must be provided to the policy.</p>
-            <p>FedRAMP prefers all policies and procedures be attached as a resource in the
-              back-matter. The link points to a resource.</p>
-          </description>
-          <responsible-role role-id="isso">
-            <party-uuid>11111111-2222-4000-8000-004000000008</party-uuid>
-          </responsible-role>
-          <remarks>
-            <p>The specified component is the system itself.</p>
-            <p>Any control implementation response that can not be associated with another component
-              is associated with the component representing the system.</p>
-          </remarks>
-        </by-component>
-        <by-component component-uuid="11111111-2222-4000-8000-009000600001"
-          uuid="11111111-2222-4000-8000-012000030102">
-          <description>
-            <p>Describe how this policy satisfies part a.</p>
-            <p>Component approach. This links to a component representing the Identity Management
-              and Access Control Policy.</p>
-            <p>That component contains a link to the policy, so it does not have to be linked here
-              too.</p>
-          </description>
-          <implementation-status state="implemented"/>
-          <responsible-role role-id="isso">
-            <party-uuid>11111111-2222-4000-8000-004000000008</party-uuid>
-          </responsible-role>
-        </by-component>
-        <by-component component-uuid="11111111-2222-4000-8000-009000800001"
-          uuid="11111111-2222-4000-8000-012000030103">
-          <description>
-            <p>Describe how this procedure satisfies part a.</p>
-            <p>Component approach. This links to a component representing the Identity Management
-              and Access Control Policy.</p>
-            <p>That component contains a link to the policy, so it does not have to be linked here
-              too.</p>
-          </description>
-          <implementation-status state="implemented"/>
-          <responsible-role role-id="isso">
-            <party-uuid>11111111-2222-4000-8000-004000000008</party-uuid>
-          </responsible-role>
-        </by-component>
-      </statement>
-      <statement statement-id="ia-1_smt.b" uuid="11111111-2222-4000-8000-012000030200">
-        <by-component component-uuid="11111111-2222-4000-8000-009000000000"
-          uuid="11111111-2222-4000-8000-012000030201">
-          <description>
-            <p>There </p>
-          </description>
-          <prop ns="http://fedramp.gov/ns/oscal" name="planned-completion-date" value="2024-01-31Z"/>
-          <implementation-status state="partial">
-            <remarks>
-              <p>Describe the plan to complete the implementation.</p>
-            </remarks>
-          </implementation-status>
-          <responsible-role role-id="isso">
-            <party-uuid>11111111-2222-4000-8000-004000000008</party-uuid>
-          </responsible-role>
-        </by-component>
-        <by-component component-uuid="11111111-2222-4000-8000-009000000013"
-          uuid="11111111-2222-4000-8000-012000030202">
-          <description>
-            <p>Describe how this policy currently satisfies part a.</p>
-          </description>
-          <prop ns="http://fedramp.gov/ns/oscal" name="planned-completion-date" value="2024-01-31Z">
-            <remarks>
-              <p>Describe the plan for addressing the missing policy elements.</p>
-            </remarks>
-          </prop>
-          <implementation-status state="partial">
-            <remarks>
-              <p>Identify what is currently missing from this policy.</p>
-            </remarks>
-          </implementation-status>
-          <responsible-role role-id="isso">
-            <party-uuid>11111111-2222-4000-8000-004000000008</party-uuid>
-          </responsible-role>
-        </by-component>
-      </statement>
-      <statement statement-id="ia-1_smt.c" uuid="11111111-2222-4000-8000-012000030300">
-        <by-component component-uuid="11111111-2222-4000-8000-009000000000"
-          uuid="11111111-2222-4000-8000-014000000005">
-          <description>
-            <p>Describe how Part b-1 is satisfied.</p>
-          </description>
-          <implementation-status state="implemented"/>
-          <responsible-role role-id="isso">
-            <party-uuid>11111111-2222-4000-8000-004000000008</party-uuid>
-          </responsible-role>
-        </by-component>
-      </statement>
-    </implemented-requirement>
+    
 
     <implemented-requirement control-id="ac-2.1" uuid="11111111-2222-4000-8000-012000030000">
       <set-parameter param-id="ac-02.01_odp">
@@ -8409,6 +8414,158 @@
           uuid="11111111-2222-4000-8000-012001680001">
           <description>
             <p>This is the 'this-system' component that must be present for every statement</p>
+          </description>
+          <implementation-status state="implemented"/>
+          <responsible-role role-id="isso">
+            <party-uuid>11111111-2222-4000-8000-004000000008</party-uuid>
+          </responsible-role>
+        </by-component>
+      </statement>
+    </implemented-requirement>
+    <implemented-requirement control-id="ia-1" uuid="11111111-2222-4000-8000-012000030000">
+      <prop ns="http://fedramp.gov/ns/oscal" name="control-origination" value="sp-system"/>
+      <set-parameter param-id="ia-01_odp.01">
+        <value>all managers, administrators and users of the system</value>
+        <remarks>
+          <p>[Assignment: organization-defined personnel or roles]</p>
+          <p>This focuses on roles the POLICY is disseminated to.</p>
+        </remarks>
+      </set-parameter>
+      <set-parameter param-id="ia-01_odp.02">
+        <value>all managers and administrators of the system</value>
+        <remarks>
+          <p>[Assignment: organization-defined personnel or roles]</p>
+          <p>This focuses on roles PROCEDURES are disseminated to.</p>
+        </remarks>
+      </set-parameter>
+      <set-parameter param-id="ia-01_odp.03">
+        <value>System-level</value>
+        <remarks>
+          <p>[Selection (one or more): Organization-level; Mission/business process-level;
+            Systemlevel]</p>
+          <p>This is a SELECT parameter. Use one "value" field for each selection.</p>
+        </remarks>
+      </set-parameter>
+      <set-parameter param-id="ia-01_odp.04">
+        <value>System Architect</value>
+        <remarks>
+          <p>[Assignment: organization-defined official]</p>
+        </remarks>
+      </set-parameter>
+      <set-parameter param-id="ia-01_odp.05">
+        <value>at least every 3 years</value>
+        <remarks>
+          <p>[Assignment: organization-defined frequency]</p>
+        </remarks>
+      </set-parameter>
+      <set-parameter param-id="ia-01_odp.06">
+        <value>change in organizational legal status or ownership</value>
+        <remarks>
+          <p>[Assignment:organization-defined events]</p>
+        </remarks>
+      </set-parameter>
+      <set-parameter param-id="ia-01_odp.07">
+        <value>at least annually</value>
+        <remarks>
+          <p>[Assignment: organization-defined frequency]</p>
+        </remarks>
+      </set-parameter>
+      <set-parameter param-id="ia-01_odp.08">
+        <value>change in policy or a security incident involving a failure of access control mechanisms</value>
+        <remarks>
+          <p>[Assignment:organization-defined events]</p>
+        </remarks>
+      </set-parameter>
+      <statement statement-id="ia-1_smt.a" uuid="11111111-2222-4000-8000-012000030100">
+        <by-component component-uuid="11111111-2222-4000-8000-009000000000"
+          uuid="11111111-2222-4000-8000-012000030101">
+          <description>
+            <p>Describe how Part a is satisfied within the system.</p>
+            <p>Legacy approach. If no policy component is defined, describe here how the policy
+              satisfies part a.</p>
+            <p>In this case, a link must be provided to the policy.</p>
+            <p>FedRAMP prefers all policies and procedures be attached as a resource in the
+              back-matter. The link points to a resource.</p>
+          </description>
+          <responsible-role role-id="isso">
+            <party-uuid>11111111-2222-4000-8000-004000000008</party-uuid>
+          </responsible-role>
+          <remarks>
+            <p>The specified component is the system itself.</p>
+            <p>Any control implementation response that can not be associated with another component
+              is associated with the component representing the system.</p>
+          </remarks>
+        </by-component>
+        <by-component component-uuid="11111111-2222-4000-8000-009000600001"
+          uuid="11111111-2222-4000-8000-012000030102">
+          <description>
+            <p>Describe how this policy satisfies part a.</p>
+            <p>Component approach. This links to a component representing the Identity Management
+              and Access Control Policy.</p>
+            <p>That component contains a link to the policy, so it does not have to be linked here
+              too.</p>
+          </description>
+          <implementation-status state="implemented"/>
+          <responsible-role role-id="isso">
+            <party-uuid>11111111-2222-4000-8000-004000000008</party-uuid>
+          </responsible-role>
+        </by-component>
+        <by-component component-uuid="11111111-2222-4000-8000-009000800001"
+          uuid="11111111-2222-4000-8000-012000030103">
+          <description>
+            <p>Describe how this procedure satisfies part a.</p>
+            <p>Component approach. This links to a component representing the Identity Management
+              and Access Control Policy.</p>
+            <p>That component contains a link to the policy, so it does not have to be linked here
+              too.</p>
+          </description>
+          <implementation-status state="implemented"/>
+          <responsible-role role-id="isso">
+            <party-uuid>11111111-2222-4000-8000-004000000008</party-uuid>
+          </responsible-role>
+        </by-component>
+      </statement>
+      <statement statement-id="ia-1_smt.b" uuid="11111111-2222-4000-8000-012000030200">
+        <by-component component-uuid="11111111-2222-4000-8000-009000000000"
+          uuid="11111111-2222-4000-8000-012000030201">
+          <description>
+            <p>There </p>
+          </description>
+          <prop ns="http://fedramp.gov/ns/oscal" name="planned-completion-date" value="2024-01-31Z"/>
+          <implementation-status state="partial">
+            <remarks>
+              <p>Describe the plan to complete the implementation.</p>
+            </remarks>
+          </implementation-status>
+          <responsible-role role-id="isso">
+            <party-uuid>11111111-2222-4000-8000-004000000008</party-uuid>
+          </responsible-role>
+        </by-component>
+        <by-component component-uuid="11111111-2222-4000-8000-009000000013"
+          uuid="11111111-2222-4000-8000-012000030202">
+          <description>
+            <p>Describe how this policy currently satisfies part a.</p>
+          </description>
+          <prop ns="http://fedramp.gov/ns/oscal" name="planned-completion-date" value="2024-01-31Z">
+            <remarks>
+              <p>Describe the plan for addressing the missing policy elements.</p>
+            </remarks>
+          </prop>
+          <implementation-status state="partial">
+            <remarks>
+              <p>Identify what is currently missing from this policy.</p>
+            </remarks>
+          </implementation-status>
+          <responsible-role role-id="isso">
+            <party-uuid>11111111-2222-4000-8000-004000000008</party-uuid>
+          </responsible-role>
+        </by-component>
+      </statement>
+      <statement statement-id="ia-1_smt.c" uuid="11111111-2222-4000-8000-012000030300">
+        <by-component component-uuid="11111111-2222-4000-8000-009000000000"
+          uuid="11111111-2222-4000-8000-014000000005">
+          <description>
+            <p>Describe how Part b-1 is satisfied.</p>
           </description>
           <implementation-status state="implemented"/>
           <responsible-role role-id="isso">

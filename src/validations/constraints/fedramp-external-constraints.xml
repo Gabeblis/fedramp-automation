@@ -46,7 +46,7 @@
             <expect id="validation-reference-has-correct-format" target=".[@type='validation' and prop[@name='asset-type' and @value='cryptographic-module'] and prop[@name='validation-type' and @value=('fips-140-2', 'fips-140-3')]]/prop[@name='validation-reference']" test="matches(@value, '^\d{4}$')" level="ERROR">
                 <formal-name>Validation Reference Has Correct Format</formal-name>
                 <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/5-attachments/#system-inventory-approach"/>
-                <message>In a FedRAMP SSP, a validation component MUST include a validation reference with the correct 4-digit format.</message>
+                <message>In a FedRAMP SSP, a cryptography validation component MUST include a validation reference with the correct 4-digit format.</message>
             </expect>
         </constraints>
     </context>

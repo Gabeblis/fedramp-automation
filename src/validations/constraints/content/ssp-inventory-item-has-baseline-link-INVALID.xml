@@ -1,0 +1,15 @@
+<system-security-plan xmlns="http://csrc.nist.gov/ns/oscal/1.0" uuid="11111111-2222-4000-8000-000000000000">
+  <system-implementation>
+    <component uuid="11111111-2222-4000-8000-009000500006" type="software">
+      <!-- <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000005"/> Missing baseline-configuration-name href. -->
+    </component>
+    <inventory-item uuid="11111111-2222-4000-8000-011000000004">
+      <!-- <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000005"/> Missing baseline-configuration-name href. -->
+      <implemented-component component-uuid="11111111-2222-4000-8000-009000500006"/>
+    </inventory-item>
+  </system-implementation>
+  <back-matter>
+    <resource uuid="11111111-2222-4000-8000-001000000005">
+    </resource>
+  </back-matter>
+</system-security-plan>

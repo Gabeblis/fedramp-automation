@@ -1558,6 +1558,7 @@ leveraged-authorization assembly:</p>
       </prop>
 
       <!-- <link href="11111111-2222-4000-8000-009000000000" rel="used-by"/> -->
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000005"/>
       <link rel="api" href="https://api.example.com/v1"/>
       <link rel="used-by" href="#11111111-2222-4000-8000-009000000000"/>
       <status state="operational"/>
@@ -1640,6 +1641,7 @@ property.</p>
           <p/>
         </remarks>
       </prop>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000005"/>
       <link rel="provided-by" href="#11111111-2222-4000-8000-009000100001"/>
       <status state="operational"/>
       <responsible-role role-id="provider">
@@ -1665,6 +1667,7 @@ property.</p>
       <prop name="allows-authenticated-scan" value="yes"/>
       <prop name="public" value="yes"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000005"/>
       <status state="operational"/>
       
     </component>
@@ -1690,6 +1693,7 @@ property.</p>
         <p>Describe the hardware and what it is used for.</p>
       </description>
       <prop name="implementation-point" value="internal"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000005"/>
       <status state="operational"/>
     </component>
 
@@ -1756,6 +1760,7 @@ compliance (e.g., Module in Process).</p>
       <prop name="model" value="Model Number"/>
       <prop name="version" value="Version Number"/>
       <prop name="patch-level" value="Patch Level"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000005"/>
       <link rel="validation" href="#11111111-2222-4000-8000-009000000002"/>
       <status state="operational"/>
       <responsible-role role-id="admin-unix">
@@ -1778,6 +1783,7 @@ compliance (e.g., Module in Process).</p>
       <prop name="model" value="Model Number"/>
       <prop name="version" value="Version Number"/>
       <prop name="patch-level" value="Patch Level"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000005"/>
       <link rel="validation" href="#11111111-2222-4000-8000-009000000002"/>
       <status state="operational"/>
       <responsible-role role-id="admin-unix">
@@ -1802,6 +1808,7 @@ compliance (e.g., Module in Process).</p>
       <prop name="version" value="11"/>
       <prop name="patch-level" value="Patch Level"/>
       <prop name="asset-id" value="unique-asset-ID-03"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000005"/>
       <link rel="validation" href="#11111111-2222-4000-8000-009000000002"/>
       <link href="https://hub.docker.com/layers/library/debian/stable/images/sha256-e83913597ca9deb9d699316a9a9d806c2a87ed61195ac66ae0a8ac55089a84b9"/>
       <status state="operational"/>
@@ -1826,6 +1833,7 @@ compliance (e.g., Module in Process).</p>
           <p>Used to encrypt and decrypt rows in the database.</p>
         </remarks>
       </prop>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000005"/>
       <link rel="validation" href="#11111111-2222-4000-8000-009001200001">
         <text>A link to the 3rd party validation information related to this cryptographic module.</text>
       </link>
@@ -1850,6 +1858,7 @@ compliance (e.g., Module in Process).</p>
       <prop name="vendor-name" value="Vendor Name"/>
       <prop name="model" value="Model Number"/>
       <prop name="version" value="Version Number"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000005"/>
       <status state="operational"/>
       <responsible-role role-id="asset-administrator">
         <party-uuid>11111111-2222-4000-8000-004000000017</party-uuid>
@@ -1871,6 +1880,7 @@ compliance (e.g., Module in Process).</p>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
       <prop name="baseline-configuration-name" value="Baseline Config. Name"/>
       <prop name="allows-authenticated-scan" value="yes"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000005"/>
       <status state="operational"/>
     </component>
     <component uuid="11111111-2222-4000-8000-009000300005" type="service">
@@ -1932,6 +1942,7 @@ compliance (e.g., Module in Process).</p>
           <p>Vendor appliance. No admin-level access.</p>
         </remarks>
       </prop>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000005"/>
       <status state="operational"/>
     </component>
 
@@ -2324,6 +2335,7 @@ approved.</p>
       <prop ns="http://fedramp.gov/ns/oscal" name="ipv6-address" class="local" value="::ffff:10.1.1.5"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="ipv4-address" class="remote" value="10.2.2.5"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="ipv6-address" class="remote" value="::ffff:10.2.2.5"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000005"/>
 
       <link href="#11111111-2222-4000-8000-009000500005" rel="used-by"/>
       <!-- is-scanned prop applies to inventory-item (not component) -->
@@ -2434,6 +2446,7 @@ approved.</p>
           <p>Optional, longer, formatted description.</p>
         </remarks>
       </prop>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000005"/>
       <link rel="validation" href="#11111111-2222-4000-8000-009000000002"/>
       <responsible-party role-id="asset-owner">
         <party-uuid>11111111-2222-4000-8000-004000000016</party-uuid>
@@ -2477,6 +2490,7 @@ approved.</p>
       </prop>
 
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000005"/>
       <responsible-party role-id="asset-owner">
         <party-uuid>11111111-2222-4000-8000-004000000010</party-uuid>
       </responsible-party>
@@ -2512,6 +2526,7 @@ approved.</p>
           <p>Required, longer, formatted description.</p>
         </remarks>
       </prop>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000005"/>
       <implemented-component component-uuid="11111111-2222-4000-8000-009000000008"/>
     </inventory-item>
     <inventory-item uuid="11111111-2222-4000-8000-011000000004">
@@ -2531,6 +2546,7 @@ approved.</p>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="other">
         <remarks><p>a different kind of scan</p></remarks>
       </prop>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000005"/>
       <implemented-component component-uuid="11111111-2222-4000-8000-009000500006"/>
     </inventory-item>
     <inventory-item uuid="11111111-2222-4000-8000-011000000005">
@@ -2554,6 +2570,7 @@ approved.</p>
           <p>Required, longer, formatted description.</p>
         </remarks>
       </prop>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000005"/>
      <implemented-component component-uuid="11111111-2222-4000-8000-009000000011"/>
     </inventory-item>
     <inventory-item uuid="11111111-2222-4000-8000-011000000006">
@@ -2581,6 +2598,7 @@ approved.</p>
       </prop>
 
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000005"/>
       <implemented-component component-uuid="11111111-2222-4000-8000-009000500007"/>
     </inventory-item>
     <inventory-item uuid="11111111-2222-4000-8000-011000000007">
@@ -2603,6 +2621,7 @@ approved.</p>
           <p>Optional, longer, formatted description.</p>
         </remarks>
       </prop>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000005"/>
       <implemented-component component-uuid="11111111-2222-4000-8000-009000000008"/>
     </inventory-item>
     <inventory-item uuid="11111111-2222-4000-8000-011000000008">
@@ -2629,6 +2648,7 @@ approved.</p>
         </remarks>
       </prop>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000005"/>
       <implemented-component component-uuid="11111111-2222-4000-8000-009000500005"/>
     </inventory-item>
     <inventory-item uuid="11111111-2222-4000-8000-011000000009">
@@ -2647,6 +2667,7 @@ approved.</p>
       <prop ns="http://fedramp.gov/ns/oscal" name="vendor-name" value="Vendor"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
       <prop name='function' value='virtual'><remarks><p>virtual function</p></remarks></prop>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000005"/>
       <implemented-component component-uuid="11111111-2222-4000-8000-009000000018"/>
     </inventory-item>
   </system-implementation>

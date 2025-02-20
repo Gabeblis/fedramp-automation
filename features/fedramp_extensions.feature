@@ -39,6 +39,7 @@ Examples:
   | cloud-service-model |
   | component-has-authenticated-scan |
   | component-has-authentication-method |
+  | component-has-baseline-link |
   | component-has-diagram-label |
   | component-has-non-provider-responsible-role |
   | component-has-provider-responsible-role |
@@ -136,6 +137,7 @@ Examples:
   | inventory-item-asset-types |
   | inventory-item-has-asset-type |
   | inventory-item-has-authenticated-scan |
+  | inventory-item-has-baseline-link |
   | inventory-item-has-diagram-label |
   | inventory-item-has-function |
   | inventory-item-has-is-scanned |
@@ -240,6 +242,8 @@ Examples:
   | component-has-authenticated-scan-PASS.yaml |
   | component-has-authentication-method-FAIL.yaml |
   | component-has-authentication-method-PASS.yaml |
+  | component-has-baseline-link-FAIL.yaml |
+  | component-has-baseline-link-PASS.yaml |
   | component-has-diagram-label-FAIL.yaml |
   | component-has-diagram-label-PASS.yaml |
   | component-has-non-provider-responsible-role-FAIL.yaml |
@@ -434,6 +438,8 @@ Examples:
   | inventory-item-has-asset-type-PASS.yaml |
   | inventory-item-has-authenticated-scan-FAIL.yaml |
   | inventory-item-has-authenticated-scan-PASS.yaml |
+  | inventory-item-has-baseline-link-FAIL.yaml |
+  | inventory-item-has-baseline-link-PASS.yaml |
   | inventory-item-has-diagram-label-FAIL.yaml |
   | inventory-item-has-diagram-label-PASS.yaml |
   | inventory-item-has-function-FAIL.yaml |

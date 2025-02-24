@@ -1458,6 +1458,7 @@
         </remarks>
       </prop>
       <prop name="scan-type" value="infrastructure" ns="http://fedramp.gov/ns/oscal"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000059"/>
       <link rel="used-by" href="#11111111-2222-4000-8000-009000100003"/>
       <link rel="used-by" href="#11111111-2222-4000-8000-009000100004"/>
       <link rel="poam-item" href="#11111111-2222-4000-8000-001000000048"
@@ -1555,6 +1556,7 @@
         </remarks>
       </prop>
       <prop name="scan-type" value="infrastructure" ns="http://fedramp.gov/ns/oscal"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000059"/>
       <link rel="communicates-with" href="#11111111-2222-4000-8000-009000100001"/>
       <link rel="poam-item" href="#11111111-2222-4000-8000-001000000048"
         resource-fragment="11111111-3333-4000-8000-000000000005"/>
@@ -1639,6 +1641,7 @@
           <p>Terms of Use</p>
         </remarks>
       </prop>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000059"/>
       <link rel="communicates-with" href="#11111111-2222-4000-8000-009000100001"/>
       <link rel="poam-item" href="#11111111-2222-4000-8000-001000000048"
         resource-fragment="11111111-3333-4000-8000-000000000005"/>
@@ -1857,6 +1860,7 @@
       <prop name="allows-authenticated-scan" value="yes"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="database"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="vendor-name" value="Small Biz Software, LLC"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000059"/>
       <link rel="used-by" href="#11111111-2222-4000-8000-009000500006"/>
       <link rel="receives" href="#11111111-2222-4000-8000-009001400001"/>
       <link rel="initiates" href="#11111111-2222-4000-8000-009001400002"/>
@@ -1885,6 +1889,7 @@
           <p>Used to encrypt and decrypt rows in the database.</p>
         </remarks>
       </prop>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000059"/>
       <link rel="provided-by" href="#11111111-2222-4000-8000-009000100001"/>
       <link rel="used-by" href="#11111111-2222-4000-8000-009000000000">
         <text>UUID of "this system" or a component within this system's boundary</text>
@@ -1904,9 +1909,8 @@
       <prop name="asset-type" value="cryptographic-module"/>
 
       <prop name="validation-type" value="fips-140-2"/>
-      <prop name="validation-reference" value="0000"/>
-      <link rel="validation-details"
-        href="https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/0000"/>
+      <prop name="validation-reference" value="4811"/>
+      <link rel="validation-details" href="https://csrc.nist.gov/CSRC/media/projects/cryptographic-module-validation-program/documents/certificates/September%202024_011024_0217.pdf"/>
       <status state="operational"/>
       <remarks>
         <p>.</p>
@@ -1932,6 +1936,7 @@
           <p>Usage statement</p>
         </remarks>
       </prop>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000059"/>
       <link rel="validation" href="#11111111-2222-4000-8000-009001200001">
         <text>A link to the 3rd party validation information related to this cryptographic
           module.</text>
@@ -1961,6 +1966,7 @@
           <p>Usage statement</p>
         </remarks>
       </prop>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000059"/>
       <link rel="validation" href="#11111111-2222-4000-8000-009001200001">
         <text>A link to the 3rd party validation information related to this cryptographic
           module.</text>
@@ -1982,8 +1988,7 @@
       <prop name="asset-type" value="cryptographic-module"/>
       <prop name="validation-type" value="fips-140-2"/>
       <prop name="validation-reference" value="4811"/>
-      <link rel="validation-details"
-        href="https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4811"/>
+      <link rel="validation-details" href="https://csrc.nist.gov/CSRC/media/projects/cryptographic-module-validation-program/documents/certificates/September%202024_011024_0217.pdf"/>
       <status state="operational"/>
       <remarks>
         <p>.</p>
@@ -1997,10 +2002,10 @@
         <p>It may be present as a way of ensuring complete documentation, but may be ignored by
           FedRAMP automation.</p>
       </description>
+      <prop name="asset-type" value="cryptographic-module"/>
       <prop name="validation-type" value="fips-140-2"/>
       <prop name="validation-reference" value="4811"/>
-      <link rel="validation-details"
-        href="https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4811"/>
+      <link rel="validation-details" href="https://csrc.nist.gov/CSRC/media/projects/cryptographic-module-validation-program/documents/certificates/September%202024_011024_0217.pdf"/>
       <status state="operational"/>
       <remarks>
         <p>.</p>
@@ -2016,9 +2021,8 @@
       </description>
       <prop name="asset-type" value="cryptographic-module"/>
       <prop name="validation-type" value="fips-140-3"/>
-      <prop name="validation-reference" value="3920"/>
-      <link rel="validation-details"
-        href="https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/3920"/>
+      <prop name="validation-reference" value="4811"/>
+      <link rel="validation-details" href="https://csrc.nist.gov/CSRC/media/projects/cryptographic-module-validation-program/documents/certificates/September%202024_011024_0217.pdf"/>
       <status state="operational"/>
     </component>
     <component uuid="11111111-2222-4000-8000-009000300200" type="software">
@@ -2031,7 +2035,7 @@
       <prop name="allows-authenticated-scan" value="no"/>
       <prop name="scan-type" value="web" ns="http://fedramp.gov/ns/oscal"/>
       <link rel="validation" href="#11111111-2222-4000-8000-009001200002"/>
-      <link rel="baseline" href="#11111111-2222-4000-8000-001000000059"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000059"/>
       <link rel="initiates" href="#11111111-2222-4000-8000-009001400001"/>
       <link rel="initiates" href="#11111111-2222-4000-8000-009001400002"/>
       <status state="operational"/>
@@ -2045,7 +2049,7 @@
       <prop name="diagram-label" value="Linux Operating System" ns="http://fedramp.gov/ns/oscal"/>
       <prop name="allows-authenticated-scan" value="yes"/>
       <prop name="scan-type" value="web" ns="http://fedramp.gov/ns/oscal"/>
-      <link rel="baseline" href="#11111111-2222-4000-8000-001000000059"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000059"/>
       <status state="operational"/>
     </component>
 
@@ -2059,6 +2063,7 @@
       <prop name="diagram-label" value="Service E" ns="http://fedramp.gov/ns/oscal"/>
       <prop name="allows-authenticated-scan" value="yes"/>
       <prop name="public" value="yes"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000059"/>
       <status state="operational"/>
     </component>
     <component uuid="11111111-2222-4000-8000-009000300008" type="software">
@@ -2070,6 +2075,7 @@
       <prop name="diagram-label" value="Container Image" ns="http://fedramp.gov/ns/oscal"/>
       <prop name="asset-id" value="image"/>
       <prop name="checksum" value="a1b2c3" ns="http://fedramp.gov/ns/oscal"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000059"/>
       <link href="#11111111-2222-4000-8000-001000000059" rel="attachment"/>
       <status state="operational"/>
       <responsible-role role-id="administrator">
@@ -2088,6 +2094,7 @@
       <prop name="model" value="Model Number"/>
       <prop name="version" value="Version Number"/>
       <prop name="patch-level" value="Patch Level"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000059"/>
       <link rel="validation" href="#11111111-2222-4000-8000-009000000002"/>
       <status state="operational"/>
       <responsible-role role-id="admin-unix">
@@ -2143,6 +2150,7 @@
       <prop name="vendor-name" value="Vendor Name"/>
       <prop name="model" value="Model Number"/>
       <prop name="version" value="Version Number"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000059"/>
       <status state="operational"/>
       <responsible-role role-id="asset-administrator">
         <party-uuid>11111111-2222-4000-8000-004000000017</party-uuid>
@@ -2163,7 +2171,7 @@
       <prop name="diagram-label" value="OS Sample" ns="http://fedramp.gov/ns/oscal"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
       <prop name="allows-authenticated-scan" value="yes"/>
-      <link rel="baseline" href="#11111111-2222-4000-8000-001000000059"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000059"/>
       <status state="operational"/>
     </component>
     <component uuid="11111111-2222-4000-8000-009000300006" type="software">
@@ -2179,7 +2187,7 @@
         <text>UUID of "this system" or a component within this system's boundary</text>
       </link>
       <link href="#11111111-2222-4000-8000-009000500006" rel="used-by"/>
-      <link rel="baseline" href="#11111111-2222-4000-8000-001000000059"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000059"/>
       <status state="operational"/>
       <!-- <protocol name="postgresql">
         <port-range start="5432" end="5432" transport="TCP"/>
@@ -2201,7 +2209,7 @@
           <p>Vendor appliance. No admin-level access.</p>
         </remarks>
       </prop>
-      <link rel="baseline" href="#11111111-2222-4000-8000-001000000059"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000059"/>
       <status state="operational"/>
     </component>
     <component type="network" uuid="11111111-2222-4000-8000-009000000015">
@@ -2314,7 +2322,7 @@
         </remarks>
       </prop>
       <link rel="validation" href="#11111111-2222-4000-8000-009000000002"/>
-      <link rel="baseline" href="#11111111-2222-4000-8000-001000000059"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000059"/>
       <responsible-party role-id="asset-owner">
         <party-uuid>11111111-2222-4000-8000-004000000016</party-uuid>
       </responsible-party>
@@ -2350,7 +2358,7 @@
         </remarks>
       </prop>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
-      <link rel="baseline" href="#11111111-2222-4000-8000-001000000059"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000059"/>
       <responsible-party role-id="asset-owner">
         <party-uuid>11111111-2222-4000-8000-004000000010</party-uuid>
       </responsible-party>
@@ -2376,6 +2384,7 @@
       <prop name="ipv6-address" value="0000:0000:0000:0000:0000:ffff:0a03:0303"/>
       <prop name="is-scanned" value="yes"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000059"/>
       <responsible-party role-id="asset-owner">
         <party-uuid>11111111-2222-4000-8000-004000000016</party-uuid>
       </responsible-party>
@@ -2394,6 +2403,7 @@
       <prop name="ipv6-address" value="0000:0000:0000:0000:0000:ffff:0a04:0404"/>
       <prop name="is-scanned" value="yes"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000059"/>
       <responsible-party role-id="asset-owner">
         <party-uuid>11111111-2222-4000-8000-004000000016</party-uuid>
       </responsible-party>
@@ -2411,6 +2421,7 @@
       <prop name="public" value="yes"/>
       <prop name="is-scanned" value="yes"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000059"/>
       <responsible-party role-id="asset-owner">
         <party-uuid>11111111-2222-4000-8000-004000000016</party-uuid>
       </responsible-party>
@@ -2431,6 +2442,7 @@
           <p>Asset wasn't running at time of scan.</p>
         </remarks>
       </prop>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000059"/>
       <responsible-party role-id="asset-owner">
         <party-uuid>11111111-2222-4000-8000-004000000016</party-uuid>
       </responsible-party>
@@ -2453,6 +2465,7 @@
           <p>Remarks</p>
         </remarks>
       </prop>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000059"/>
       <responsible-party role-id="asset-owner">
         <party-uuid>11111111-2222-4000-8000-004000000016</party-uuid>
       </responsible-party>
@@ -2474,6 +2487,7 @@
           <p>Asset wasn't running at time of scan.</p>
         </remarks>
       </prop>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000059"/>
       <responsible-party role-id="asset-owner">
         <party-uuid>11111111-2222-4000-8000-004000000016</party-uuid>
       </responsible-party>
@@ -2492,6 +2506,7 @@
       <prop name="public" value="no"/>
       <prop name="is-scanned" value="yes"/>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000059"/>
       <responsible-party role-id="asset-owner">
         <party-uuid>11111111-2222-4000-8000-004000000016</party-uuid>
       </responsible-party>
@@ -2515,6 +2530,7 @@
         </remarks>
       </prop>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000059"/>
       <responsible-party role-id="asset-owner">
         <party-uuid>11111111-2222-4000-8000-004000000016</party-uuid>
       </responsible-party>
@@ -2537,6 +2553,7 @@
         </remarks>
       </prop>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000059"/>
       <responsible-party role-id="asset-owner">
         <party-uuid>11111111-2222-4000-8000-004000000016</party-uuid>
       </responsible-party>
@@ -2560,6 +2577,7 @@
         </remarks>
       </prop>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000059"/>
       <responsible-party role-id="asset-owner">
         <party-uuid>11111111-2222-4000-8000-004000000016</party-uuid>
       </responsible-party>
@@ -2583,6 +2601,7 @@
         </remarks>
       </prop>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000059"/>
       <responsible-party role-id="asset-owner">
         <party-uuid>11111111-2222-4000-8000-004000000016</party-uuid>
       </responsible-party>
@@ -2606,6 +2625,7 @@
           <p>Usage statement</p>
         </remarks>
       </prop>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000059"/>
       <responsible-party role-id="asset-owner">
         <party-uuid>11111111-2222-4000-8000-004000000016</party-uuid>
       </responsible-party>
@@ -2629,6 +2649,7 @@
         </remarks>
       </prop>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000059"/>
       <responsible-party role-id="asset-owner">
         <party-uuid>11111111-2222-4000-8000-004000000016</party-uuid>
       </responsible-party>
@@ -2656,6 +2677,7 @@
         </remarks>
       </prop>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000059"/>
       <responsible-party role-id="asset-owner">
         <party-uuid>11111111-2222-4000-8000-004000000016</party-uuid>
       </responsible-party>
@@ -2682,6 +2704,7 @@
         </remarks>
       </prop>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000059"/>
       <responsible-party role-id="asset-owner">
         <party-uuid>11111111-2222-4000-8000-004000000016</party-uuid>
       </responsible-party>
@@ -2708,6 +2731,7 @@
         </remarks>
       </prop>
       <prop ns="http://fedramp.gov/ns/oscal" name="scan-type" value="infrastructure"/>
+      <link rel="baseline-configuration-name" href="#11111111-2222-4000-8000-001000000059"/>
       <responsible-party role-id="asset-owner">
         <party-uuid>11111111-2222-4000-8000-004000000016</party-uuid>
       </responsible-party>

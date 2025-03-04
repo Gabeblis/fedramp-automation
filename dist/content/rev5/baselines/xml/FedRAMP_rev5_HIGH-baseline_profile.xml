@@ -2525,6 +2525,8 @@
                         <p>This response must address all control sub-statement requirements.</p>
                     </remarks>
                 </prop>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="policy" value="In a FedRAMP SSP, a policy that addresses Access Control MUST be associated with AC-1 part a."/>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="procedure" value="In a FedRAMP SSP, at least one procedure that addresses Access Control MUST be associated with AC-1 part a."/>
             </add>
             <add position="starting" by-id="ac-1_smt.b">
                 <prop name="response-point" ns="http://fedramp.gov/ns/oscal"
@@ -3913,6 +3915,8 @@
                         <p>This response must address all control sub-statement requirements.</p>
                     </remarks>
                 </prop>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="policy" value="In a FedRAMP SSP, a policy that addresses Awareness and Training MUST be associated with AT-1 part a."/>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="procedure" value="In a FedRAMP SSP, at least one procedure that addresses Awareness and Training MUST be associated with AT-1 part a."/>
             </add>
             <add position="starting" by-id="at-1_smt.b">
                 <prop name="response-point" ns="http://fedramp.gov/ns/oscal"
@@ -4150,6 +4154,8 @@
                         <p>This response must address all control sub-statement requirements.</p>
                     </remarks>
                 </prop>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="policy" value="In a FedRAMP SSP, a policy that addresses Audit and Accountability MUST be associated with AU-1 part a."/>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="procedure" value="In a FedRAMP SSP, at least one procedure that addresses Audit and Accountability MUST be associated with AU-1 part a."/>
             </add>
             <add position="starting" by-id="au-1_smt.b">
                 <prop name="response-point" ns="http://fedramp.gov/ns/oscal"
@@ -4860,6 +4866,8 @@
                         <p>This response must address all control sub-statement requirements.</p>
                     </remarks>
                 </prop>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="policy" value="In a FedRAMP SSP, a policy that addresses Assessment, Authorization, and Monitoring MUST be associated with CA-1 part a."/>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="procedure" value="In a FedRAMP SSP, at least one procedure that addresses Assessment, Authorization, and Monitoring MUST be associated with CA-1 part a."/>
             </add>
             <add position="starting" by-id="ca-1_smt.b">
                 <prop name="response-point" ns="http://fedramp.gov/ns/oscal"
@@ -5517,6 +5525,8 @@
                         <p>This response must address all control sub-statement requirements.</p>
                     </remarks>
                 </prop>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="policy" value="In a FedRAMP SSP, a policy that addresses Configuration Management MUST be associated with CM-1 part a."/>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="procedure" value="In a FedRAMP SSP, at least one procedure that addresses Configuration Management MUST be associated with CM-1 part a."/>
             </add>
             <add position="starting" by-id="cm-1_smt.b">
                 <prop name="response-point" ns="http://fedramp.gov/ns/oscal"
@@ -6666,6 +6676,8 @@
                         <p>This response must address all control sub-statement requirements.</p>
                     </remarks>
                 </prop>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="policy" value="In a FedRAMP SSP, a policy that addresses Contingency Planning MUST be associated with CP-1 part a."/>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="procedure" value="In a FedRAMP SSP, at least one procedure that addresses Contingency Planning MUST be associated with CP-1 part a."/>
             </add>
             <add position="starting" by-id="cp-1_smt.b">
                 <prop name="response-point" ns="http://fedramp.gov/ns/oscal"
@@ -7695,6 +7707,8 @@
                         <p>This response must address all control sub-statement requirements.</p>
                     </remarks>
                 </prop>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="policy" value="In a FedRAMP SSP, a policy that addresses Identification and Authentication MUST be associated with IA-1 part a."/>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="procedure" value="In a FedRAMP SSP, at least one procedure that addresses Incident Response MUST be associated with IA-1 part a."/>
             </add>
             <add position="starting" by-id="ia-1_smt.b">
                 <prop name="response-point" ns="http://fedramp.gov/ns/oscal"
@@ -8608,6 +8622,8 @@
                         <p>This response must address all control sub-statement requirements.</p>
                     </remarks>
                 </prop>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="policy" value="In a FedRAMP SSP, a policy that addresses Incident Response MUST be associated with IR-1 part a."/>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="procedure" value="In a FedRAMP SSP, at least one procedure that addresses Incident Response MUST be associated with IR-1 part a."/>
             </add>
             <add position="starting" by-id="ir-1_smt.b">
                 <prop name="response-point" ns="http://fedramp.gov/ns/oscal"
@@ -9312,6 +9328,8 @@
                         <p>This response must address all control sub-statement requirements.</p>
                     </remarks>
                 </prop>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="policy" value="In a FedRAMP SSP, a policy that addresses Maintenance MUST be associated with MA-1 part a."/>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="procedure" value="In a FedRAMP SSP, at least one procedure that addresses Maintenance MUST be associated with MA-1 part a."/>
             </add>
             <add position="starting" by-id="ma-1_smt.b">
                 <prop name="response-point" ns="http://fedramp.gov/ns/oscal"
@@ -9728,6 +9746,8 @@
                         <p>This response must address all control sub-statement requirements.</p>
                     </remarks>
                 </prop>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="policy" value="In a FedRAMP SSP, a policy that addresses Media Protection MUST be associated with MP-1 part a."/>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="procedure" value="In a FedRAMP SSP, at least one procedure that addresses Media Protection MUST be associated with MP-1 part a."/>
             </add>
             <add position="starting" by-id="mp-1_smt.b">
                 <prop name="response-point" ns="http://fedramp.gov/ns/oscal"
@@ -10093,6 +10113,8 @@
                         <p>This response must address all control sub-statement requirements.</p>
                     </remarks>
                 </prop>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="policy" value="In a FedRAMP SSP, a policy that addresses Physical and Environmental Protection MUST be associated with PE-1 part a."/>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="procedure" value="In a FedRAMP SSP, at least one procedure that addresses Physical and Environmental Protection MUST be associated with PE-1 part a."/>
             </add>
             <add position="starting" by-id="pe-1_smt.b">
                 <prop name="response-point" ns="http://fedramp.gov/ns/oscal"
@@ -10880,6 +10902,8 @@
                         <p>This response must address all control sub-statement requirements.</p>
                     </remarks>
                 </prop>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="policy" value="In a FedRAMP SSP, a policy that addresses Planning MUST be associated with PL-1 part a."/>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="procedure" value="In a FedRAMP SSP, at least one procedure that addresses Planning MUST be associated with PL-1 part a."/>
             </add>
             <add position="starting" by-id="pl-1_smt.b">
                 <prop name="response-point" ns="http://fedramp.gov/ns/oscal"
@@ -11364,6 +11388,8 @@
                         <p>This response must address all control sub-statement requirements.</p>
                     </remarks>
                 </prop>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="policy" value="In a FedRAMP SSP, a policy that addresses Personnel Security MUST be associated with PS-1 part a."/>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="procedure" value="In a FedRAMP SSP, at least one procedure that addresses Personnel Security MUST be associated with PS-1 part a."/>
             </add>
             <add position="starting" by-id="ps-1_smt.b">
                 <prop name="response-point" ns="http://fedramp.gov/ns/oscal"
@@ -11764,6 +11790,8 @@
                         <p>This response must address all control sub-statement requirements.</p>
                     </remarks>
                 </prop>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="policy" value="In a FedRAMP SSP, a policy that addresses Risk Assessment MUST be associated with RA-1 part a."/>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="procedure" value="In a FedRAMP SSP, at least one procedure that addresses Risk Assessment MUST be associated with RA-1 part a."/>
             </add>
             <add position="starting" by-id="ra-1_smt.b">
                 <prop name="response-point" ns="http://fedramp.gov/ns/oscal"
@@ -12268,6 +12296,8 @@
                         <p>This response must address all control sub-statement requirements.</p>
                     </remarks>
                 </prop>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="policy" value="In a FedRAMP SSP, a policy that addresses System and Services Acquisition MUST be associated with SA-1 part a."/>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="procedure" value="In a FedRAMP SSP, at least one procedure that addresses System and Services Acquisition MUST be associated with SA-1 part a."/>
             </add>
             <add position="starting" by-id="sa-1_smt.b">
                 <prop name="response-point" ns="http://fedramp.gov/ns/oscal"
@@ -13500,6 +13530,8 @@
                         <p>This response must address all control sub-statement requirements.</p>
                     </remarks>
                 </prop>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="policy" value="In a FedRAMP SSP, a policy that addresses System and Communications Protection MUST be associated with SC-1 part a."/>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="procedure" value="In a FedRAMP SSP, at least one procedure that addresses System and Communications Protection MUST be associated with SC-1 part a."/>
             </add>
             <add position="starting" by-id="sc-1_smt.b">
                 <prop name="response-point" ns="http://fedramp.gov/ns/oscal"
@@ -14639,6 +14671,8 @@
                         <p>This response must address all control sub-statement requirements.</p>
                     </remarks>
                 </prop>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="policy" value="In a FedRAMP SSP, a policy that addresses System and Information Integrity MUST be associated with SI-1 part a."/>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="procedure" value="In a FedRAMP SSP, at least one procedure that addresses System and Information Integrity MUST be associated with SI-1 part a."/>
             </add>
             <add position="starting" by-id="si-1_smt.b">
                 <prop name="response-point" ns="http://fedramp.gov/ns/oscal"
@@ -15587,6 +15621,8 @@
                         <p>This response must address all control sub-statement requirements.</p>
                     </remarks>
                 </prop>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="policy" value="In a FedRAMP SSP, a policy that addresses Supply Chain Risk Management MUST be associated with SR-1 part a."/>
+                <prop ns="http://fedramp.gov/ns/oscal" name="requires-attachment" class="procedure" value="In a FedRAMP SSP, at least one procedure that addresses Supply Chain Risk Management MUST be associated with SR-1 part a."/>
             </add>
             <add position="starting" by-id="sr-1_smt.b">
                 <prop name="response-point" ns="http://fedramp.gov/ns/oscal"

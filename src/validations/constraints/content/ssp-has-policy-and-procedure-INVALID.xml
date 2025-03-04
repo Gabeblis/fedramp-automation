@@ -1,4 +1,12 @@
 <system-security-plan xmlns="http://csrc.nist.gov/ns/oscal/1.0" uuid="11111111-2222-4000-8000-000000000000">
+  <import-profile
+      href="../../../../dist/content/rev5/baselines/xml/FedRAMP_rev5_HIGH-baseline_profile.xml">
+      <remarks>
+        <p>This example points to the FedRAMP Rev 5 Moderate baseline that is part of the official
+          FedRAMP 3.0.0 release.</p>
+        <p>Must adjust accordingly for applicable baseline and revision.</p>
+      </remarks>
+    </import-profile>
   <system-implementation>
     <component uuid="11111111-2222-4000-8000-009000000000" type="this-system">
     </component>

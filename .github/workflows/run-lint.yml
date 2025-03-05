@@ -16,7 +16,7 @@ on:
 jobs:
   # one job that runs tests
   run-tests:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     # Checkout repository and its submodules
     steps:
       # Check-out the repository under $GITHUB_WORKSPACE

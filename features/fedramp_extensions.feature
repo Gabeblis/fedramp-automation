@@ -167,6 +167,10 @@ Examples:
   | leveraged-authorization-has-system-identifier |
   | leveraged-authorization-has-valid-impact-level |
   | leveraged-authorization-nature-of-agreement |
+  | li-saas-has-saas-cloud-service-model |
+  | li-saas-has-valid-impact-levels |
+  | li-saas-has-valid-sensitivity-level |
+  | li-saas-imports-li-saas-profile |
   | marking |
   | misplaced-response-components |
   | missing-response-components |
@@ -505,6 +509,14 @@ Examples:
   | leveraged-authorization-has-valid-impact-level-PASS.yaml |
   | leveraged-authorization-nature-of-agreement-FAIL.yaml |
   | leveraged-authorization-nature-of-agreement-PASS.yaml |
+  | li-saas-has-saas-cloud-service-model-FAIL.yaml |
+  | li-saas-has-saas-cloud-service-model-PASS.yaml |
+  | li-saas-has-valid-impact-levels-FAIL.yaml |
+  | li-saas-has-valid-impact-levels-PASS.yaml |
+  | li-saas-has-valid-sensitivity-level-FAIL.yaml |
+  | li-saas-has-valid-sensitivity-level-PASS.yaml |
+  | li-saas-imports-li-saas-profile-FAIL.yaml |
+  | li-saas-imports-li-saas-profile-PASS.yaml |
   | marking-FAIL.yaml |
   | marking-PASS.yaml |
   | misplaced-response-components-FAIL.yaml |

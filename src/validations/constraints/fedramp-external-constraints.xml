@@ -101,6 +101,12 @@
                 else if (system-characteristics/security-sensitivity-level = 'fips-199-moderate')
                     then ('fips-199-moderate', 'fips-199-high')
                 else ('fips-199-low', 'fips-199-moderate', 'fips-199-high')"/>
+            <let var="highest-security-impact-level" expression=
+                "if (//security-impact-level//* = 'fips-199-high')
+                    then ('fips-199-high')
+                else if (//security-impact-level//* = 'fips-199-moderate')
+                    then ('fips-199-moderate')
+                else ('fips-199-low')"/>
             <let var="non-authorized-components" expression="//component[(@type='system' and prop[@name='leveraged-authorization-uuid']) or (@type=('service', 'software') and not(prop[@name='leveraged-authorization-uuid']) and prop[@name='implementation-point' and @value='external']) or (@type='interconnection') or (@type=('service', 'software') and prop[@name='implementation-point' and @value='internal'] and prop[@name='communicates-externally' and @value='yes' and @ns='http://fedramp.gov/ns/oscal'])]"/>
             <let var="system-implementation-users" expression="system-implementation/user"/>
             <let var="non-provider-user-has-function-performed" expression="count($system-implementation-users[@uuid = $non-authorized-components/responsible-role/prop[@name='privilege-uuid' and @ns='http://fedramp.gov/ns/oscal']/@value]/authorized-privilege/function-performed) >= 1"/>
@@ -198,6 +204,26 @@
                 <formal-name>Leveraged Authorization Has Valid Impact Level</formal-name>
                 <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#leveraged-fedramp-authorized-services"/>
                 <message>The FIPS-199 impact level of the leveraged system MUST be the same or higher than the impact level of this system.</message>
+            </expect>
+            <expect id="li-saas-has-saas-cloud-service-model" target=".[system-characteristics/prop[@name='authorization-type' and @value='fedramp-li-saas']]" test="exists(system-characteristics/prop[@name='cloud-service-model' and @value='saas'])" level="ERROR">
+                <formal-name>LI-Saas Has SaaS Cloud Service Model</formal-name>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/#tbd"/>
+                <message>A FedRAMP SSP MUST set the cloud service model to "saas" if it is an LI-SaaS.</message>
+            </expect>
+            <expect id="li-saas-has-valid-impact-levels" target=".[system-characteristics/prop[@name='authorization-type' and @value='fedramp-li-saas']]" test="$highest-security-impact-level = 'fips-199-low'" level="ERROR">
+                <formal-name>LI-Saas Has Valid Impact Levels</formal-name>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/#tbd"/>
+                <message>A FedRAMP SSP MUST set the security impact levels to "fips-199-low" if it is an LI-SaaS.</message>
+            </expect>
+            <expect id="li-saas-has-valid-sensitivity-level" target=".[system-characteristics/prop[@name='authorization-type' and @value='fedramp-li-saas']]" test="system-characteristics/security-sensitivity-level = 'fips-199-low'" level="ERROR">
+                <formal-name>LI-Saas Has Valid Sensitivity Level</formal-name>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/#tbd"/>
+                <message>A FedRAMP SSP MUST set the security sensitivity level to "fips-199-low" if it is an LI-SaaS.</message>
+            </expect>
+            <expect id="li-saas-imports-li-saas-profile" target=".[system-characteristics/prop[@name='authorization-type' and @value='fedramp-li-saas']]" test="exists(resolve-profile(doc(resolve-uri($resolved-import-profile-href)))//control//prop[@ns='http://fedramp.gov/ns/oscal' and @class='FedRAMP-Tailored-LI-SaaS'])" level="CRITICAL">
+                <formal-name>LI-Saas Imports LI-SaaS Profile</formal-name>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/#tbd"/>
+                <message>A FedRAMP SSP MUST import an LI-SaaS profile or catalog if it is an LI-SaaS.</message>
             </expect>
             <expect id="non-provider-responsible-role-references-user" target="." test="$non-provider-user-has-function-performed" level="ERROR">
                 <formal-name>Non-Provider Responsible Role References User</formal-name>

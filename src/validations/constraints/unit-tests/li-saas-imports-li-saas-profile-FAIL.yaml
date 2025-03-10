@@ -1,0 +1,9 @@
+test-case:
+  name: Negative Test for li-saas-imports-li-saas-profile
+  description: >-
+    This test case validates the behavior of constraint
+    li-saas-imports-li-saas-profile
+  content: ../content/ssp-li-saas-imports-li-saas-profile-INVALID.xml
+  expectations:
+    - constraint-id: li-saas-imports-li-saas-profile
+      result: fail

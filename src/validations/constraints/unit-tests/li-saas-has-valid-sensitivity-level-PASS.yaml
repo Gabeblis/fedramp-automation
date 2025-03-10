@@ -1,0 +1,9 @@
+test-case:
+  name: Positive Test for li-saas-has-valid-sensitivity-level
+  description: >-
+    This test case validates the behavior of constraint
+    li-saas-has-valid-sensitivity-level
+  content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-li-saas-example.xml
+  expectations:
+    - constraint-id: li-saas-has-valid-sensitivity-level
+      result: pass

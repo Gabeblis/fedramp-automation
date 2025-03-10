@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system-security-plan xmlns="http://csrc.nist.gov/ns/oscal/1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://csrc.nist.gov/ns/oscal/1.0 https://github.com/usnistgov/OSCAL/releases/download/v1.1.2/oscal_ssp_schema.xsd" uuid="12345678-1234-4321-8765-123456789012">
+    <metadata>
+    </metadata>
+
+    <import-profile href="../../../baselines/xml/FedRAMP_rev5_LI-SaaS-baseline_profile.xml"/>
+
+    <system-characteristics>
+        <prop name="cloud-service-model" value="saas">
+            <remarks>
+                <p>Remarks are required if service model is "other". Optional otherwise.</p>
+            </remarks>
+        </prop>
+        <prop ns="http://fedramp.gov/ns/oscal" name="authorization-type" value="fedramp-li-saas"/>
+        <security-sensitivity-level>fips-199-low</security-sensitivity-level>
+        <security-impact-level>
+            <security-objective-confidentiality>fips-199-low</security-objective-confidentiality>
+            <security-objective-integrity>fips-199-low</security-objective-integrity>
+            <security-objective-availability>fips-199-low</security-objective-availability>
+        </security-impact-level>
+    </system-characteristics>
+
+    <system-implementation>
+    </system-implementation>
+
+    <control-implementation>
+    </control-implementation>
+
+    <back-matter>
+    </back-matter>
+</system-security-plan>

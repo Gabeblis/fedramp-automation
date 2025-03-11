@@ -276,12 +276,12 @@
             </expect>
             <expect id="resource-has-base64-or-rlink" target="resource" test="count(./rlink) >= 1 or count(./base64) >= 1" level="WARNING">
                 <formal-name>Resource Has Base64 Or Rlink</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/general-concepts/4-expressing-common-fedramp-template-elements-in-oscal/#fedramp-standard-attachments-acronyms-lawsregulations#including-multiple-rlink-and-base64-fields"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp"/>
                 <message>Every supporting artifact found in a citation MUST have at least one base64 or rlink element.</message>
             </expect>
             <expect id="resource-has-title" target="resource" test="exists(title)" level="WARNING">
                 <formal-name>Resource Has Title</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/general-concepts/4-expressing-common-fedramp-template-elements-in-oscal/#fedramp-standard-attachments-acronyms-lawsregulations#citation-and-attachment-details"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp"/>
                 <message>Every supporting artifact found in a citation SHOULD have a title.</message>
             </expect>
         </constraints>

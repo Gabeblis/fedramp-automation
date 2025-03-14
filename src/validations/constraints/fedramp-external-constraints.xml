@@ -56,17 +56,17 @@
         <constraints>
             <expect id="user-has-authorized-privilege" target="." test="count(authorized-privilege) gt 0" level="ERROR">
                 <formal-name>User Has Authorized Privilege</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/oscal-representation/owner-and-responsibility/#parties-and-roles-in-oscal"/>
                 <message>A FedRAMP document MUST define a user with at least one authorized privilege by a privilege identifier.</message>
             </expect>
             <expect id="user-has-role-id" target="." test="count(role-id) gt 0" level="ERROR">
                 <formal-name>User Has Role ID</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/oscal-representation/owner-and-responsibility/#parties-and-roles-in-oscal"/>
                 <message>A FedRAMP document MUST define a user with at least one role by a role identifier.</message>
             </expect>
             <expect id="user-has-user-type" target="." test="count(prop[@name='type']) = 1" level="ERROR">
                 <formal-name>User Has User Type</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/oscal-representation/owner-and-responsibility/#parties-and-roles-in-oscal"/>
                 <message>A FedRAMP document MUST define a user with a type.</message>
             </expect>
         </constraints>
@@ -276,12 +276,12 @@
             </expect>
             <expect id="resource-has-base64-or-rlink" target="resource" test="count(./rlink) >= 1 or count(./base64) >= 1" level="WARNING">
                 <formal-name>Resource Has Base64 Or Rlink</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/general-concepts/oscal-attachments/#attachments"/>
                 <message>Every supporting artifact found in a citation MUST have at least one base64 or rlink element.</message>
             </expect>
             <expect id="resource-has-title" target="resource" test="exists(title)" level="WARNING">
                 <formal-name>Resource Has Title</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/general-concepts/oscal-attachments/#citation-and-attachment-details"/>
                 <message>Every supporting artifact found in a citation SHOULD have a title.</message>
             </expect>
         </constraints>
@@ -351,7 +351,7 @@
             </index>
             <index-has-key id="responsible-party-is-person" name="index-person-party-uuid" target="./responsible-party[(@role-id='system-owner') or (@role-id='information-system-security-officer')]" level="ERROR">
                 <formal-name>Responsible Party Is Person</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/oscal-representation/owner-and-responsibility/#parties-and-roles-in-oscal"/>
                 <key-field target="party-uuid"/>
                 <message>For roles 'system-owner' and 'information-system-security-officer', the responsible-role party MUST be a party of type 'person'.</message>
             </index-has-key>
@@ -378,7 +378,7 @@
             <expect id="role-defined-authorizing-official-poc" target="." test="exists(role[@id eq 'authorizing-official-poc'])" level="ERROR">
                 <formal-name>Role Defined Authorizing Official POC</formal-name>
                 <!-- TODO: Add supporting documentation to automate.fedramp.gov -->
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/oscal-representation/owner-and-responsibility/#parties-and-roles-in-oscal"/>
                 <message>A FedRAMP SSP MUST define a role for the point of contact for an authorizing official.</message>
             </expect>
             <expect id="role-defined-information-system-security-officer" target="." test="exists(role[@id eq 'information-system-security-officer'])" level="ERROR">
@@ -416,32 +416,32 @@
                 else ('fips-199-low')"/>
             <expect id="categorization-has-correct-system-attribute" target="system-information/information-type/categorization" test="@system eq 'https://doi.org/10.6028/NIST.SP.800-60v2r1'" level="ERROR">
                 <formal-name>Categorization Has Correct System Attribute</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/oscal-representation/system-information/#system-information-and-information-types"/>
                 <message>A FedRAMP SSP information-type categorization MUST have a correct system attribute. FedRAMP only supports the system value 'https://doi.org/10.6028/NIST.SP.800-60v2r1'.</message>
             </expect>
             <expect id="categorization-has-information-type-id" target="system-information/information-type/categorization" test="exists(information-type-id)" level="ERROR">
                 <formal-name>Categorization Has Information Type ID</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/oscal-representation/system-information/#system-information-and-information-types"/>
                 <message>A FedRAMP SSP information type categorization MUST have at least one information type identifier.</message>
             </expect>
             <expect id="cia-impact-has-adjustment-justification" target="system-information/information-type/(confidentiality-impact | integrity-impact | availability-impact)" test="if (base ne selected) then exists(adjustment-justification) else true()" level="ERROR">
                 <formal-name>Cia Impact Has Adjustment Justification</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/oscal-representation/system-information/#system-information-and-information-types"/>
                 <message>When SP 800-60 base and selected impacts levels differ for a given information type, the SSP MUST include a justification for the difference.</message>
             </expect>
             <expect id="cia-impact-has-selected" target="system-information/information-type/(confidentiality-impact | integrity-impact | availability-impact)" test="exists(selected)" level="ERROR">
                 <formal-name>Cia Impact Has Selected</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/oscal-representation/system-information/#system-information-and-information-types"/>
                 <message>A FedRAMP SSP information type confidentiality, integrity, or availability impact MUST specify the selected impact.</message>
             </expect>
             <expect id="fully-operational-date-is-valid" target="prop[@ns='http://fedramp.gov/ns/oscal' and @name='fully-operational-date']/@value" test=". &lt;= current-dateTime()" level="ERROR">                <!-- TODO - Need metapath current-date() function -->
                 <formal-name>Fully Operational Date Is Valid</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/oscal-representation/system-information/#system-status"/>
                 <message>A system MUST be fully implemented prior to submitting the SSP to FedRAMP.</message>
             </expect>
             <matches id="fully-operational-date-type" target="prop[@ns='http://fedramp.gov/ns/oscal' and @name='fully-operational-date']/@value" datatype="date-with-timezone" level="ERROR">
                 <formal-name>Fully Operational Date Type</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/oscal-representation/system-information/#system-status"/>
                 <message>A FedRAMP SSP MUST specify the system's fully operational data as a "full-date" per RFC3339 with the addition of a timezone.</message>
             </matches>
             <expect id="has-authenticator-assurance-level" target="." test="count(prop[@name eq 'authenticator-assurance-level']) = 1" level="ERROR">
@@ -481,12 +481,12 @@
             </expect>
             <expect id="has-cloud-deployment-model" target="." test="exists(prop[@name eq 'cloud-deployment-model'])" level="ERROR">
                 <formal-name>Has Cloud Deployment Model</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/oscal-representation/system-information/#deployment-model"/>
                 <message>A FedRAMP SSP MUST define a cloud deployment model.</message>
             </expect>
             <expect id="has-cloud-deployment-model-remarks" target="." test="if (count(prop[@name eq 'cloud-deployment-model']) > 1) then every $p in prop[@name eq 'cloud-deployment-model'] satisfies exists($p/remarks) else every $p in prop[@name eq 'cloud-deployment-model' and @value eq 'other'] satisfies exists($p/remarks)" level="ERROR">
                 <formal-name>Has Cloud Deployment Model Remarks</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/oscal-representation/system-information/#deployment-model"/>
                 <message>A FedRAMP SSP with more than one cloud deployment model or a cloud deployment model of "other" MUST supply remarks to clarify this selection.</message>
                 <remarks>
                     <p>A FedRAMP SSP MUST use precise classifications for cloud deployment models. It MUST NOT use generic classifications like "hybrid-cloud".</p>
@@ -494,12 +494,12 @@
             </expect>
             <expect id="has-cloud-service-model" target="." test="exists(prop[@name eq 'cloud-service-model'])" level="ERROR">
                 <formal-name>Has Cloud Service Model</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/oscal-representation/system-information/#service-model"/>
                 <message>A FedRAMP SSP MUST define a cloud service model.</message>
             </expect>
             <expect id="has-cloud-service-model-remarks" target="." test="every $p in prop[@name eq 'cloud-service-model' and @value eq 'other'] satisfies exists($p/remarks)" level="ERROR">
                 <formal-name>Has Cloud Service Model Remarks</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/oscal-representation/system-information/#service-model"/>
                 <message>A FedRAMP SSP with a cloud service model of "other" MUST supply remarks to explain this choice.</message>
             </expect>
             <expect id="has-data-flow" target="." test="exists(data-flow)" level="WARNING">
@@ -554,7 +554,7 @@
             </expect>
             <expect id="has-fully-operational-date" target="." test="exists(prop[@ns='http://fedramp.gov/ns/oscal' and @name='fully-operational-date'])" level="ERROR">
                 <formal-name>Fully Operational Date</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/oscal-representation/system-information/#system-status"/>
                 <message>A FedRAMP SSP MUST define the system's fully operational date.</message>
             </expect>
             <expect id="has-identity-assurance-level" target="." test="count(prop[@name eq 'identity-assurance-level']) = 1" level="ERROR">
@@ -599,37 +599,37 @@
             </expect>
             <expect id="has-security-impact-level" target="." test="exists(security-impact-level)" level="ERROR">
                 <formal-name>Has Security Impact Level</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/oscal-representation/fips-199-categorization/#fips-199-categorization"/>
                 <message>A FedRAMP SSP document MUST specify a security impact level.</message>
             </expect>
             <expect id="has-security-sensitivity-level" target="." test="exists(security-sensitivity-level)" level="ERROR">
                 <formal-name>Has Security Sensitivity Level</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/oscal-representation/fips-199-categorization/#fips-199-categorization"/>
                 <message>A FedRAMP SSP document MUST specify a FIPS 199 categorization.</message>
             </expect>
             <expect id="has-system-id" target="." test="exists(system-id[@identifier-type eq 'http://fedramp.gov/ns/oscal'])" level="ERROR">
                 <formal-name>Has System Id</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/oscal-representation/owner-and-responsibility/#parties-and-roles-in-oscal"/>
                 <message>A FedRAMP SSP MUST have a FedRAMP system identifier.</message>
             </expect>
             <expect id="has-system-name-short" target="." test="exists(system-name-short)" level="ERROR">
                 <formal-name>Has System Name Short</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/oscal-representation/system-information/#system-name-abbreviation-and-fedramp-unique-identifier"/>
                 <message>A FedRAMP SSP MUST have a short system name.</message>
             </expect>
             <expect id="information-type-has-availability-impact" target="system-information/information-type" test="exists(availability-impact)" level="ERROR">
                 <formal-name>Information Type Has Availability Impact</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/oscal-representation/system-information/#system-information-and-information-types"/>
                 <message>A FedRAMP SSP information type MUST have an availability impact.</message>
             </expect>
             <expect id="information-type-has-confidentiality-impact" target="system-information/information-type" test="exists(confidentiality-impact)" level="ERROR">
                 <formal-name>Information Type Has Confidentiality Impact</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/oscal-representation/system-information/#system-information-and-information-types"/>
                 <message>A FedRAMP SSP information type MUST have a confidentiality impact.</message>
             </expect>
             <expect id="information-type-has-integrity-impact" target="system-information/information-type" test="exists(integrity-impact)" level="ERROR">
                 <formal-name>Information Type Has Integrity Impact</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/oscal-representation/system-information/#system-information-and-information-types"/>
                 <message>A FedRAMP SSP information type MUST have an integrity impact.</message>
             </expect>
             <expect id="saas-has-leveraged-authorization" target="." test="if ($is-saas) then (count(..//leveraged-authorization) >= 1) else (true())" level="ERROR">
@@ -639,7 +639,7 @@
             </expect>
             <expect id="security-sensitivity-level-matches-security-impact-level" target="security-sensitivity-level" test="$security-impact-level = 'fips-199-low' and matches(., '(fips-199-low|fips-199-moderate|fips-199-high)') or $security-impact-level = 'fips-199-moderate' and matches(., '(fips-199-moderate|fips-199-high)') or $security-impact-level = 'fips-199-high' and matches(., 'fips-199-high')" level="ERROR">
                 <formal-name>Security Sensitivity Level Matches Security Impact Level</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/oscal-representation/fips-199-categorization/#fips-199-categorization"/>
                 <message>A FedRAMP SSP MUST define its FIPS-199 security sensitivity level to be as high or higher than the highest security impact level/objective.</message>
             </expect>
         </constraints>
@@ -695,7 +695,7 @@
             </expect>
             <expect id="inter-boundary-component-has-information-type" target="$inter-boundary-component" test="count(prop[@name='information-type' and @ns='http://fedramp.gov/ns/oscal']) &gt;= 1" level="ERROR">
                 <formal-name>Inter-Boundary Component Has Information Type</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/oscal-representation/system-information/#system-information-and-information-types"/>
                 <message>An inter-boundary communication component {@uuid} ({path(.)}) MUST have at least one information-type property.</message>
             </expect>
             <expect id="inter-boundary-component-information-type-has-class-attribute" target="$inter-boundary-component" test="prop[@name='information-type' and @ns='http://fedramp.gov/ns/oscal']/@class => exists()" level="ERROR">
@@ -927,7 +927,7 @@
             </expect>
             <expect id="marking" target="." test="exists(prop[@name='marking'])" level="ERROR">
                 <formal-name>FedRAMP data sensitivity classification identifier.</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/common-fedramp-elements/title-page-information"/>
                 <message>A FedRAMP document MUST have a marking that defines its data classification.</message>
             </expect>
         </constraints>
@@ -938,7 +938,7 @@
         <constraints>
             <expect id="party-has-name" target="." test="exists(name)" level="ERROR">
                 <formal-name>Party Has a Name</formal-name>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/"/>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/oscal-representation/owner-and-responsibility/#parties-and-roles-in-oscal"/>
                 <message>Every FedRAMP document MUST define a party with a name.</message>
             </expect>
         </constraints>

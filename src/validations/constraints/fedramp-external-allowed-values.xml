@@ -156,7 +156,7 @@
                 <enum value="sla">A service-level agreement between the CSP and the organization that owns the external system.</enum>
             </allowed-values>
 
-            <allowed-values id="fedramp-version" target="metadata/prop[@name='fedramp-version'][@ns='http://fedramp.gov/ns/oscal']/@value" allow-other="no" level="ERROR">
+            <allowed-values id="fedramp-version-value" target="metadata/prop[@name='fedramp-version'][@ns='http://fedramp.gov/ns/oscal']/@value" allow-other="no" level="ERROR">
                 <formal-name>FedRAMP Version</formal-name>
                 <description>Identifies the FedRAMP version of the document.</description>
                 <enum value="fedramp-3.0.0rc1-oscal-1.1.2">FedRAMP Version</enum>
@@ -590,7 +590,7 @@
                 <enum value="sla">A service-level agreement between the CSP and the organization that owns the leveraged system.</enum>
             </allowed-values>
 
-            <allowed-values id="marking" target="metadata/prop[@name='marking']/@value" allow-other="yes" level="ERROR">
+            <allowed-values id="marking-value" target="metadata/prop[@name='marking']/@value" allow-other="yes" level="ERROR">
                 <formal-name>FedRAMP Data Sensitivity Classification</formal-name>
                 <description>Identifies the FedRAMP data sensitivity classification of the document.</description>
                 <enum value="cui">Controlled Unclassified Information</enum>

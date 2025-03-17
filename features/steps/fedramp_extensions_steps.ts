@@ -1,4 +1,10 @@
-import { BeforeAll, Given, Then, When, setDefaultTimeout } from "@cucumber/cucumber";
+import {
+  BeforeAll,
+  Given,
+  Then,
+  When,
+  setDefaultTimeout,
+} from "@cucumber/cucumber";
 import { expect } from "chai";
 import {
   existsSync,
@@ -9,16 +15,22 @@ import {
   writeFileSync,
 } from "fs";
 import { load } from "js-yaml";
-import { JSDOM } from 'jsdom';
-import { executeOscalCliCommand, formatSarifOutput, resolveProfileDocument, validateDocument } from "oscal";
-import { checkServerStatus } from 'oscal/dist/server.js';
+import { JSDOM } from "jsdom";
+import {
+  executeOscalCliCommand,
+  formatSarifOutput,
+  resolveProfileDocument,
+  validateDocument,
+} from "oscal";
+import { checkServerStatus } from "oscal/dist/server.js";
 import { dirname, join, parse, resolve } from "path";
 import { Log } from "sarif";
 import { fileURLToPath } from "url";
 import { promisify } from "util";
 import { parseString } from "xml2js";
-let executor: 'oscal-cli'|'oscal-server' = process.env.OSCAL_EXECUTOR as 'oscal-cli'|'oscal-server' || 'oscal-cli'
-const quiet = process.env.OSCAL_TEST_QUIET === 'true'
+let executor: "oscal-cli" | "oscal-server" =
+  (process.env.OSCAL_EXECUTOR as "oscal-cli" | "oscal-server") || "oscal-cli";
+const quiet = process.env.OSCAL_TEST_QUIET === "true";
 
 const parseXmlString = promisify(parseString);
 const DEFAULT_TIMEOUT = 60000;
@@ -31,12 +43,11 @@ let currentTestCase: {
   pipelines: [];
   expectations: [{ "constraint-id": string; result: string }];
 };
-let currentTestCaseFileName:string;
+let currentTestCaseFileName: string;
 let processedContentPath: string;
 let ignoreDocument: string = "oscal-external-constraints.xml";
 let metaschemaDocuments: string[] = [];
 const validationCache = new Map<string, Log>();
-
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -88,7 +99,8 @@ function getConstraintTests() {
   );
   const files = readdirSync(constraintTestDir);
   const filteredFiles = files
-    .filter((file) => file.endsWith(".yaml") || file.endsWith(".yml")).sort()
+    .filter((file) => file.endsWith(".yaml") || file.endsWith(".yml"))
+    .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
     .map((file) => `  | ${file} |`)
     .join("\n");
   return filteredFiles;
@@ -104,7 +116,8 @@ async function getConstraintIds() {
   );
   const files = readdirSync(constraintDir);
   const xmlFiles = files
-    .filter((file) => file.endsWith(".xml")).sort()
+    .filter((file) => file.endsWith(".xml"))
+    .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
     .filter((file) => !file.endsWith(ignoreDocument));
   let allConstraintIds = [];
 
@@ -112,11 +125,13 @@ async function getConstraintIds() {
     const filePath = join(constraintDir, file);
     const fileContent = readFileSync(filePath, "utf8");
     const result = (await parseXmlString(fileContent)) as any;
-    const fileConstraints=extractConstraints(result)
-    allConstraintIds=[...allConstraintIds,...fileConstraints];
+    const fileConstraints = extractConstraints(result);
+    allConstraintIds = [...allConstraintIds, ...fileConstraints];
   }
   // Remove duplicates and sort
-  allConstraintIds = [...new Set(allConstraintIds)].sort();
+  allConstraintIds = [...new Set(allConstraintIds)].sort((a, b) =>
+    a.localeCompare(b, undefined, { numeric: true })
+  );
 
   return allConstraintIds.map((id) => `  | ${id} |`).join("\n");
 }
@@ -137,15 +152,15 @@ function getConstraintFiles() {
     .join("\n");
   return xmlFiles;
 }
-BeforeAll(async ()=>{
-  if(executor==='oscal-server'){
-    const isHealthy=await checkServerStatus()
-    if(!isHealthy){
-      console.warn("Server not healthy, switching to CLI")
-      executor='oscal-cli';
+BeforeAll(async () => {
+  if (executor === "oscal-server") {
+    const isHealthy = await checkServerStatus();
+    if (!isHealthy) {
+      console.warn("Server not healthy, switching to CLI");
+      executor = "oscal-cli";
     }
-  }  
-})
+  }
+});
 
 Given("I have Metaschema extensions documents", function (dataTable) {
   const constraintDir = join(
@@ -158,7 +173,8 @@ Given("I have Metaschema extensions documents", function (dataTable) {
   );
   const files = readdirSync(constraintDir);
   metaschemaDocuments = files
-    .filter((file) => file.endsWith(".xml")).sort()
+    .filter((file) => file.endsWith(".xml"))
+    .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
     .filter((x) => !x.startsWith("oscal")) //temporary
     .map((file) => join(constraintDir, file));
 });
@@ -181,9 +197,11 @@ When("I process the constraint unit test {string}", async function (testFile) {
 
 Then("the constraint unit test should pass", async function () {
   const result = await processTestCase(currentTestCase);
-  const testType = currentTestCaseFileName.includes("FAIL") ? "Negative" : "Positive";
-  
-  const errorMessage = result.errorMessage 
+  const testType = currentTestCaseFileName.includes("FAIL")
+    ? "Negative"
+    : "Positive";
+
+  const errorMessage = result.errorMessage
     ? `${testType} test failed: ${result.errorMessage}`
     : `${testType} test failed without a specific error message`;
 
@@ -195,7 +213,9 @@ async function processTestCase({ "test-case": testCase }: any) {
   !quiet && console.log(`Description: ${testCase.description}`);
 
   // Load the content file
-  const contentFiles = Array.isArray(testCase.content) ? testCase.content : [testCase.content];
+  const contentFiles = Array.isArray(testCase.content)
+    ? testCase.content
+    : [testCase.content];
 
   for (let i = 0; i < contentFiles.length; i++) {
     const contentFile = contentFiles[i];
@@ -211,79 +231,91 @@ async function processTestCase({ "test-case": testCase }: any) {
       contentFile
     );
     !quiet && console.log(`Loaded content from: ${contentPath}`);
-  const cacheKey = (typeof testCase.pipeline === 'undefined' ? "" : "resolved-") + parse(contentPath).name;
+    const cacheKey =
+      (typeof testCase.pipeline === "undefined" ? "" : "resolved-") +
+      parse(contentPath).name;
 
+    // Process the pipeline
+    processedContentPath = join(
+      ".",
+      `${testCase.name.replace(/\s+/g, "-").toLowerCase()}.xml`
+    );
 
-  // Process the pipeline
-  processedContentPath = join(
-    ".",
-    `${testCase.name.replace(/\s+/g, "-").toLowerCase()}.xml`
-  );
-  
-  if (testCase.pipeline) {
-    for (const step of testCase.pipeline) {
-      if (step.action === "resolve-profile") {
-        await resolveProfileDocument(
-          contentPath,
-          processedContentPath,
+    if (testCase.pipeline) {
+      for (const step of testCase.pipeline) {
+        if (step.action === "resolve-profile") {
+          await resolveProfileDocument(
+            contentPath,
+            processedContentPath,
+            {
+              quiet,
+              outputFormat: "xml",
+            },
+            executor
+          );
+          !quiet && console.log("Profile resolved");
+        }
+        // Add other pipeline steps as needed
+      }
+    } else {
+      processedContentPath = contentPath;
+    }
+
+    //Validate processed content
+    // Check expectations
+    try {
+      let sarifResponse;
+
+      if (validationCache.has(cacheKey)) {
+        !quiet &&
+          console.log("Using cached validation result from " + cacheKey);
+        sarifResponse = validationCache.get(cacheKey)!;
+      } else {
+        let flags = [];
+        if (
+          currentTestCaseFileName.includes("FAIL") ||
+          currentTestCase["test-case"].content ===
+            "../../../content/rev5/examples/ssp/xml/fedramp-ssp-li-saas-example.xml"
+        ) {
+          flags.push("disable-schema");
+        }
+        const { isValid, log } = await validateDocument(
+          resolve(processedContentPath),
           {
             quiet,
-            outputFormat:'xml'
-          },executor)
-        !quiet && console.log("Profile resolved");
+            extensions: metaschemaDocuments.flatMap((x) => resolve(x)),
+            flags,
+          },
+          executor
+        );
+        sarifResponse = log;
+        validationCache.set(cacheKey, sarifResponse);
       }
-      // Add other pipeline steps as needed
-    }
-  } else {
-    processedContentPath = contentPath;
-  }
+      if (typeof sarifResponse.runs[0].tool.driver.rules === "undefined") {
+        const [result, error] = await executeOscalCliCommand("validate", [
+          processedContentPath,
+          ...metaschemaDocuments.flatMap((x) => ["-c", x]),
+        ]);
+        return { status: "fail", errorMessage: error };
+      }
+      if (processedContentPath != contentPath) {
+        unlinkSync(processedContentPath);
+      }
 
-  //Validate processed content
-  // Check expectations
-  try {
-    let sarifResponse;
-    
-    if (validationCache.has(cacheKey)) {
-      !quiet && console.log("Using cached validation result from "+cacheKey);
-      sarifResponse = validationCache.get(cacheKey)!;
-    }else{
-      let flags = [];
-      if(currentTestCaseFileName.includes("FAIL") || currentTestCase['test-case'].content === '../../../content/rev5/examples/ssp/xml/fedramp-ssp-li-saas-example.xml'){
-        flags.push("disable-schema")
-      }
-    const {isValid,log} = await validateDocument(resolve(processedContentPath),{quiet,
-      extensions:metaschemaDocuments.flatMap((x) => resolve(x)),
-      flags},executor)
-      sarifResponse=log;
-    validationCache.set(cacheKey,sarifResponse);
-  }
-  if (typeof sarifResponse.runs[0].tool.driver.rules === "undefined") {
-      const [result, error] = await executeOscalCliCommand("validate", [
-        processedContentPath,
-        ...metaschemaDocuments.flatMap((x) => ["-c", x]),
-      ]);
-      return { status: "fail", errorMessage: error };
-    }
-    if (processedContentPath != contentPath) {
-      unlinkSync(processedContentPath);
-    }
-    
-    writeFileSync(
-      join(
-        __dirname,
-        "../../sarif/",
-        cacheKey.toString()+".sarif"
-      ),
-      JSON.stringify(sarifResponse, null,"\t")
-    );
-    const result = await checkConstraints(sarifResponse, testCase.expectations);
+      writeFileSync(
+        join(__dirname, "../../sarif/", cacheKey.toString() + ".sarif"),
+        JSON.stringify(sarifResponse, null, "\t")
+      );
+      const result = await checkConstraints(
+        sarifResponse,
+        testCase.expectations
+      );
       if (result.status === "fail") {
         return result;
       }
-      if (i === contentFiles.length -1) {
+      if (i === contentFiles.length - 1) {
         return result;
       }
-
     } catch (e) {
       return { status: "fail", errorMessage: e.toString() };
     }
@@ -323,11 +355,12 @@ async function checkConstraints(
     for (const expectation of constraints) {
       const constraint_id = expectation["constraint-id"];
       const expectedResult = expectation.result;
-      !quiet && console.log(
-        `Checking status of constraint: ${constraint_id} expecting: ${
-          expectedResult || "mixed"
-        }`
-      );
+      !quiet &&
+        console.log(
+          `Checking status of constraint: ${constraint_id} expecting: ${
+            expectedResult || "mixed"
+          }`
+        );
 
       const constraintResults = results.filter(
         (x) => x.ruleId === constraint_id
@@ -335,20 +368,25 @@ async function checkConstraints(
       if (constraintResults.length === 0) {
         errors.push(
           `Constraint rule not found: ${constraint_id}. The constraint may not be applicable to this content, or there was a runtime error.`
-        );        
+        );
         continue;
       }
 
       const kinds = constraintResults.map((c) => {
-        if(c.level==='warning'){
-          return 'fail'
-        }else{
-          return c.kind
-      }});
+        if (c.level === "warning") {
+          return "fail";
+        } else {
+          return c.kind;
+        }
+      });
       const passCount = kinds.filter((k) => k === "pass").length;
       const failCount = kinds.filter((k) => k === "fail").length;
-      const warnCount = constraintResults.filter((k) => k.level === "warning").length;
-      const infoCount = constraintResults.filter((k) => k.kind === "informational").length;
+      const warnCount = constraintResults.filter(
+        (k) => k.level === "warning"
+      ).length;
+      const infoCount = constraintResults.filter(
+        (k) => k.kind === "informational"
+      ).length;
 
       const result = kinds.reduce((acc, kind) => {
         if (acc === "mixed" || (acc !== kind && acc !== "initial")) {
@@ -357,18 +395,14 @@ async function checkConstraints(
         return kind;
       }, "initial");
 
-      !quiet && console.log(
-        `Received: ${constraintResults.length} matching ${result} results (${passCount} pass, ${failCount} fail)`
-      );
-      if(warnCount>0)
-        !quiet && console.log(
-          `Received: ${warnCount} warn)`
+      !quiet &&
+        console.log(
+          `Received: ${constraintResults.length} matching ${result} results (${passCount} pass, ${failCount} fail)`
         );
-        if(infoCount>0)
-          !quiet && console.log(
-            `Received: ${infoCount} informational)`
-          );
-      
+      if (warnCount > 0) !quiet && console.log(`Received: ${warnCount} warn)`);
+      if (infoCount > 0)
+        !quiet && console.log(`Received: ${infoCount} informational)`);
+
       if (result === "initial") {
         throw Error("Unknown Error");
       }
@@ -410,10 +444,24 @@ async function checkConstraints(
           errors.push(
             `${constraint_id}: invalid results received. ${passPercentage}. ` +
               `Expected: pass_count ${JSON.stringify(
-                expectation.pass_count||expectedResult==="pass"?"all":"none"
+                expectation.pass_count || expectedResult === "pass"
+                  ? "all"
+                  : "none"
               )}, ` +
-              `fail_count ${JSON.stringify(expectation.fail_count||expectedResult==="fail"?"all":"none")}. ` +
-              `Actual: ${typeof passCount!=='undefined'?passCount:result==="pass"?"all":"none"} pass, ${failCount?failCount:result==="fail"?"all":"none"} fail.`
+              `fail_count ${JSON.stringify(
+                expectation.fail_count || expectedResult === "fail"
+                  ? "all"
+                  : "none"
+              )}. ` +
+              `Actual: ${
+                typeof passCount !== "undefined"
+                  ? passCount
+                  : result === "pass"
+                  ? "all"
+                  : "none"
+              } pass, ${
+                failCount ? failCount : result === "fail" ? "all" : "none"
+              } fail.`
           );
         } else {
           errors.push(
@@ -421,7 +469,18 @@ async function checkConstraints(
               `The content may need adjustment to properly test this constraint.`
           );
         }
-        !quiet && console.error(formatSarifOutput({version:"2.1.0",runs:[{tool:{driver:{name:"oscal-js"}},results:constraintResults}]}))
+        !quiet &&
+          console.error(
+            formatSarifOutput({
+              version: "2.1.0",
+              runs: [
+                {
+                  tool: { driver: { name: "oscal-js" } },
+                  results: constraintResults,
+                },
+              ],
+            })
+          );
         errors.push(""); // Add a blank line for readability
       }
     }
@@ -458,11 +517,13 @@ Given("I have loaded all Metaschema extensions documents", function () {
   );
   const files = readdirSync(constraintDir);
   metaschemaDocuments = files
-    .filter((file) => file.endsWith(".xml")).sort()
-    .map((file) => join(constraintDir, file))
-  !quiet && console.log(
-    `Loaded ${metaschemaDocuments.length} Metaschema extension documents`
-  );
+    .filter((file) => file.endsWith(".xml"))
+    .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
+    .map((file) => join(constraintDir, file));
+  !quiet &&
+    console.log(
+      `Loaded ${metaschemaDocuments.length} Metaschema extension documents`
+    );
 });
 
 When(
@@ -478,10 +539,14 @@ When(
       const constraints = extractConstraints(result);
       constraintIds = [...constraintIds, ...constraints];
     }
-    constraintIds = [...new Set(constraintIds)].sort();
+    constraintIds = [...new Set(constraintIds)].sort((a, b) =>
+      a.localeCompare(b, undefined, { numeric: true })
+    );
 
-    !quiet && console.log(`Extracted ${constraintIds.length} unique constraint IDs`);
-    !quiet && console.log(`Extracted ${constraintIds.length} unique constraint IDs`);
+    !quiet &&
+      console.log(`Extracted ${constraintIds.length} unique constraint IDs`);
+    !quiet &&
+      console.log(`Extracted ${constraintIds.length} unique constraint IDs`);
   }
 );
 function extractConstraints(xmlObject: any): string[] {
@@ -572,7 +637,8 @@ Given(
       "unit-tests"
     );
     yamlTestFiles = readdirSync(testDir)
-      .filter((file) => file.endsWith(".yaml") || file.endsWith(".yml")).sort()
+      .filter((file) => file.endsWith(".yaml") || file.endsWith(".yml"))
+      .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
       .map((file) => join(testDir, file));
     !quiet && console.log(`Collected ${yamlTestFiles.length} YAML test files`);
   }
@@ -648,128 +714,190 @@ When("I analyze the YAML test files for each constraint ID", function () {
 });
 
 // New step definition for the "Ensuring full test coverage for "<constraint_id>"" scenario
-Then("I should have both FAIL and PASS tests for constraint ID {string}", function (constraintId) {
-  const testCoverage = testResults[constraintId];
+Then(
+  "I should have both FAIL and PASS tests for constraint ID {string}",
+  function (constraintId) {
+    const testCoverage = testResults[constraintId];
 
-  if (!testCoverage) {
-    !quiet && console.log(`${constraintId}: No tests found`);
-    expect.fail(`Constraint ${constraintId} has no tests`);
-  } else if (!testCoverage.pass) {
-    !quiet && console.log(`${constraintId}: Missing at least one positive test`);
-    expect.fail(`Constraint ${constraintId} is missing a positive test`);
-  } else if (!testCoverage.fail) {
-    !quiet && console.log(`${constraintId}: Missing at least one negative test`);
-    expect.fail(`Constraint ${constraintId} is missing a negative test`);
-  } else {
-    !quiet && console.log(`${constraintId}: Has minimal required coverage`);
+    if (!testCoverage) {
+      !quiet && console.log(`${constraintId}: No tests found`);
+      expect.fail(`Constraint ${constraintId} has no tests`);
+    } else if (!testCoverage.pass) {
+      !quiet &&
+        console.log(`${constraintId}: Missing at least one positive test`);
+      expect.fail(`Constraint ${constraintId} is missing a positive test`);
+    } else if (!testCoverage.fail) {
+      !quiet &&
+        console.log(`${constraintId}: Missing at least one negative test`);
+      expect.fail(`Constraint ${constraintId} is missing a negative test`);
+    } else {
+      !quiet && console.log(`${constraintId}: Has minimal required coverage`);
+    }
+
+    expect(constraintIds).to.include(
+      constraintId,
+      `Constraint ${constraintId} is not in the extracted constraints list`
+    );
   }
+);
 
-  expect(constraintIds).to.include(
-    constraintId,
-    `Constraint ${constraintId} is not in the extracted constraints list`
-  );
-});
-
-Then('I should have valid results {string}', async function (fileToValidate) {
+Then("I should have valid results {string}", async function (fileToValidate) {
   const fullPath = resolve(
     __dirname,
     "..",
     "..",
     "src",
-    "validations","constraints","content",fileToValidate
+    "validations",
+    "constraints",
+    "content",
+    fileToValidate
   );
-  const {isValid,log}=await validateDocument(fullPath,{quiet,
-    extensions:metaschemaDocuments.flatMap((x) => resolve(x))},executor);
-  expect(isValid,formatSarifOutput(log)).to.be.true;
+  const { isValid, log } = await validateDocument(
+    fullPath,
+    { quiet, extensions: metaschemaDocuments.flatMap((x) => resolve(x)) },
+    executor
+  );
+  expect(isValid, formatSarifOutput(log)).to.be.true;
 });
 
-Then('I should verify that all constraints follow the style guide constraint', async function () {
-  const baseDir = join(__dirname, '..', '..');
-  const styleGuidePath = join(baseDir, 'src', 'validations', 'styleguides', 'fedramp-constraint-style.xml');
-  const constraintDir = join(baseDir, 'src', 'validations', 'constraints');
-  const constraintFiles = readdirSync(constraintDir).filter(file => 
-    file.startsWith('fedramp') && file.endsWith('.xml')
-  );
+Then(
+  "I should verify that all constraints follow the style guide constraint",
+  async function () {
+    const baseDir = join(__dirname, "..", "..");
+    const styleGuidePath = join(
+      baseDir,
+      "src",
+      "validations",
+      "styleguides",
+      "fedramp-constraint-style.xml"
+    );
+    const constraintDir = join(baseDir, "src", "validations", "constraints");
+    const constraintFiles = readdirSync(constraintDir).filter(
+      (file) => file.startsWith("fedramp") && file.endsWith(".xml")
+    );
 
-  const errors: string[] = [];
-  const compareIds = (a: string, b: string) => a.localeCompare(b, undefined, { numeric: true });
+    const errors: string[] = [];
+    const compareIds = (a: string, b: string) =>
+      a.localeCompare(b, undefined, { numeric: true });
 
-  for (const fileName of constraintFiles) {
-    const filePath = join(constraintDir, fileName);
-    
-    try {
-      const fileContent = readFileSync(filePath, 'utf8');
-      const dom = new JSDOM(fileContent, { contentType: 'text/xml' });
-      const document = dom.window.document;
-      const {isValid,log} = await validateDocument(filePath,{flags:['disable-schema'],quiet,extensions:[styleGuidePath],module:"http://csrc.nist.gov/ns/oscal/metaschema/1.0"},executor)
-      writeFileSync(
-        join(
-          __dirname,
-          "../../sarif/",
-          fileName.split(".xml").join("").toString()+".sarif"
-        ),JSON.stringify(log, null,"\t"))  
-      const formattedErrors = (formatSarifOutput(log));
-      formattedErrors&&errors.push(formattedErrors)
-      // Process each 'constraints' block separately
-      document.querySelectorAll('constraints').forEach(constraintsNode => {
-        // Get direct child elements with IDs within this constraints block
-        const constraints = Array.from(constraintsNode.children).filter(node => 
-          node.hasAttribute && node.hasAttribute('id')
+    for (const fileName of constraintFiles) {
+      const filePath = join(constraintDir, fileName);
+
+      try {
+        const fileContent = readFileSync(filePath, "utf8");
+        const dom = new JSDOM(fileContent, { contentType: "text/xml" });
+        const document = dom.window.document;
+        const { isValid, log } = await validateDocument(
+          filePath,
+          {
+            flags: ["disable-schema"],
+            quiet,
+            extensions: [styleGuidePath],
+            module: "http://csrc.nist.gov/ns/oscal/metaschema/1.0",
+          },
+          executor
         );
-        
-        // Check order within this constraints block
-        for (let i = 0; i < constraints.length - 1; i++) {
-          const currentId = constraints[i].getAttribute('id');
-          const nextId = constraints[i + 1].getAttribute('id');
-          
-          if (currentId && nextId && compareIds(currentId, nextId) > 0) {
-            const line = fileContent.substring(0, fileContent.indexOf(currentId)).split('\n').length;
-            errors.push(
-              `[ERROR] frr103 ${fileName}:${line}: "${currentId}" is out of order. It should come after "${nextId}"`
-            );
+        writeFileSync(
+          join(
+            __dirname,
+            "../../sarif/",
+            fileName.split(".xml").join("").toString() + ".sarif"
+          ),
+          JSON.stringify(log, null, "\t")
+        );
+        const formattedErrors = formatSarifOutput(log);
+        formattedErrors && errors.push(formattedErrors);
+        // Process each 'constraints' block separately
+        document.querySelectorAll("constraints").forEach((constraintsNode) => {
+          // Get direct child elements with IDs within this constraints block
+          const constraints = Array.from(constraintsNode.children).filter(
+            (node) => node.hasAttribute && node.hasAttribute("id")
+          );
+
+          // Check order within this constraints block
+          for (let i = 0; i < constraints.length - 1; i++) {
+            const currentId = constraints[i].getAttribute("id");
+            const nextId = constraints[i + 1].getAttribute("id");
+
+            if (currentId && nextId && compareIds(currentId, nextId) > 0) {
+              const line = fileContent
+                .substring(0, fileContent.indexOf(currentId))
+                .split("\n").length;
+              errors.push(
+                `[ERROR] frr103 ${fileName}:${line}: "${currentId}" is out of order. It should come after "${nextId}"`
+              );
+            }
           }
-        }
-      });
-      !quiet && console.info(fileName+" passed style guide")
-    } catch (error) {
-      errors.push(`Error processing ${fileName}: ${error instanceof Error ? error.message : String(error)}`);
-    }
-  }
-
-  if (errors.length > 0) {
-    console.error('Validation errors found:\n' + errors.join('\n'));
-  }
-
-  expect(errors, 'No style guide validation errors should be found\n'+errors.join("\n")).to.be.empty;
-});
-
-Then('I should verify that all invalid sample content is smaller than 100 lines', async function () {
-  const baseDir = join(__dirname, '..', '..');
-  const contentDir = join(baseDir, 'src', 'validations', 'constraints', 'content');
-  const contentFiles = readdirSync(contentDir).filter(file => file.includes('INVALID'));
- 
-  const errors: string[] = [];
- 
-  for (const fileName of contentFiles) {
-    const filePath = join(contentDir, fileName);
-    
-    try {
-      const fileContent = readFileSync(filePath, 'utf8');
-      const lineCount = fileContent.split('\n').length;
-      
-      if (lineCount > 100) {
+        });
+        !quiet && console.info(fileName + " passed style guide");
+      } catch (error) {
         errors.push(
-          `[ERROR] frr119 ${fileName}: Content exceeds 100 lines (actual: ${lineCount} lines)`
+          `Error processing ${fileName}: ${
+            error instanceof Error ? error.message : String(error)
+          }`
         );
       }
-    } catch (error) {
-      errors.push(`Error processing ${fileName}: ${error instanceof Error ? error.message : String(error)}`);
     }
+
+    if (errors.length > 0) {
+      console.error("Validation errors found:\n" + errors.join("\n"));
+    }
+
+    expect(
+      errors,
+      "No style guide validation errors should be found\n" + errors.join("\n")
+    ).to.be.empty;
   }
- 
-  if (errors.length > 0) {
-    console.error('Sample content validation errors found:\n' + errors.join('\n'));
+);
+
+Then(
+  "I should verify that all invalid sample content is smaller than 100 lines",
+  async function () {
+    const baseDir = join(__dirname, "..", "..");
+    const contentDir = join(
+      baseDir,
+      "src",
+      "validations",
+      "constraints",
+      "content"
+    );
+    const contentFiles = readdirSync(contentDir).filter((file) =>
+      file.includes("INVALID")
+    );
+
+    const errors: string[] = [];
+
+    for (const fileName of contentFiles) {
+      const filePath = join(contentDir, fileName);
+
+      try {
+        const fileContent = readFileSync(filePath, "utf8");
+        const lineCount = fileContent.split("\n").length;
+
+        if (lineCount > 100) {
+          errors.push(
+            `[ERROR] frr119 ${fileName}: Content exceeds 100 lines (actual: ${lineCount} lines)`
+          );
+        }
+      } catch (error) {
+        errors.push(
+          `Error processing ${fileName}: ${
+            error instanceof Error ? error.message : String(error)
+          }`
+        );
+      }
+    }
+
+    if (errors.length > 0) {
+      console.error(
+        "Sample content validation errors found:\n" + errors.join("\n")
+      );
+    }
+
+    expect(
+      errors,
+      "No sample content validation errors should be found\n" +
+        errors.join("\n")
+    ).to.be.empty;
   }
- 
-  expect(errors, 'No sample content validation errors should be found\n'+errors.join("\n")).to.be.empty;
- });
+);

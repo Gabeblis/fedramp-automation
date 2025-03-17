@@ -146,7 +146,7 @@
                 <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#external-systems-and-services-not-having-fedramp-authorization"/>
                 <message>A FedRAMP SSP MUST have each component describing leveraged systems, interconnections, or authorized services identify a "provider" role that references one responsible party.</message>
             </expect>
-                        <index-has-key id='extraneous-implemented-requirements' target="//implemented-requirement" name="index-imported-controls" level="WARNING">
+                        <index-has-key id="extraneous-implemented-requirements" target="//implemented-requirement" name="index-imported-controls" level="WARNING">
                 <formal-name>Additional Controls Implemented Not in Baseline</formal-name>
                 <description>A FedRAMP SSP SHOULD NOT include extraneous controls outside of the FedRAMP baseline.</description>
                 <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/6-security-controls/#implementation-status"/>
@@ -195,7 +195,7 @@
             <index name="index-implemented-requirements" target="$implemented-requirements-map">
                 <key-field target="@control-id"/>
             </index>
-            <index-has-key id='incomplete-implemented-requirements' target="$imported-controls-map" name="index-implemented-requirements" level="ERROR">
+            <index-has-key id="incomplete-implemented-requirements" target="$imported-controls-map" name="index-implemented-requirements" level="ERROR">
                 <formal-name>Incomplete Implemented Requirements</formal-name>
                 <description>A FedRAMP SSP MUST contain an implemented requirement for each imported control.</description>
                 <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/6-security-controls/#implementation-status"/>

@@ -65,6 +65,7 @@ Examples:
   | extraneous-implemented-requirements |
   | fedramp-citations-has-correct-link |
   | fedramp-version |
+  | fedramp-version-value |
   | fully-operational-date-is-valid |
   | fully-operational-date-type |
   | function |
@@ -172,6 +173,7 @@ Examples:
   | li-saas-has-valid-sensitivity-level |
   | li-saas-imports-li-saas-profile |
   | marking |
+  | marking-value |
   | misplaced-response-components |
   | missing-response-components |
   | network-component-has-connection-security-prop |
@@ -305,6 +307,8 @@ Examples:
   | fedramp-citations-has-correct-link-PASS.yaml |
   | fedramp-version-FAIL.yaml |
   | fedramp-version-PASS.yaml |
+  | fedramp-version-value-FAIL.yaml |
+  | fedramp-version-value-PASS.yaml |
   | fully-operational-date-is-valid-FAIL.yaml |
   | fully-operational-date-is-valid-PASS.yaml |
   | fully-operational-date-type-FAIL.yaml |
@@ -519,6 +523,8 @@ Examples:
   | li-saas-imports-li-saas-profile-PASS.yaml |
   | marking-FAIL.yaml |
   | marking-PASS.yaml |
+  | marking-value-FAIL.yaml |
+  | marking-value-PASS.yaml |
   | misplaced-response-components-FAIL.yaml |
   | misplaced-response-components-PASS.yaml |
   | missing-response-components-FAIL.yaml |

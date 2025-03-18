@@ -1,0 +1,9 @@
+test-case:
+  name: Negative Test for frr124
+  description: >-
+    This test case validates the behavior of constraint
+    frr124
+  content: ../content/ssp-frr124-INVALID.xml
+  expectations:
+    - constraint-id: frr124
+      result: fail

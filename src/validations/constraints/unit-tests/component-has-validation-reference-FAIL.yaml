@@ -1,9 +1,0 @@
-test-case:
-  name: Negative Test for component-has-validation-reference
-  description: >-
-    This test case validates the behavior of constraint
-    component-has-validation-reference
-  content: ../content/ssp-component-has-validation-reference-INVALID.xml
-  expectations:
-    - constraint-id: component-has-validation-reference
-      result: fail

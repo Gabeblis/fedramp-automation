@@ -1,0 +1,8 @@
+# Driver for the valid frr221 constraint unit test.
+test-case:
+  name: The valid frr221 constraint unit test.
+  description: Test that the SSP "information-type-id" element contains a valid value.
+  content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
+  expectations:
+  - constraint-id: frr221
+    result: pass

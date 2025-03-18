@@ -1,7 +1,0 @@
-test-case:
-  name: Positive Test for has-authorization-boundary-diagram-description
-  description: Test that a SSP authorization-boundary diagram element has a description element.
-  content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
-  expectations:
-    - constraint-id: has-authorization-boundary-diagram-description
-      result: pass

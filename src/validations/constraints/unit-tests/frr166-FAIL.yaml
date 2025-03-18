@@ -1,0 +1,7 @@
+test-case:
+  name: Negative Test for frr166
+  description: Test that a SSP authorization-boundary element does not have a diagram element.
+  content: ../content/ssp-frr166-INVALID.xml
+  expectations:
+    - constraint-id: frr166
+      result: fail

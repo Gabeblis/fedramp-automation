@@ -1,0 +1,7 @@
+test-case:
+  name: Positive Test for frr278
+  description: Test that a SSP back-matter resource element has a base64 or rlink element.
+  content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
+  expectations:
+    - constraint-id: frr278
+      result: pass

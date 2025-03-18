@@ -1,9 +1,0 @@
-test-case:
-  name: Positive Test for role-defined-prepared-for
-  description: >-
-    This test case validates the behavior of constraint
-    role-defined-prepared-for
-  content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
-  expectations:
-    - constraint-id: role-defined-prepared-for
-      result: pass

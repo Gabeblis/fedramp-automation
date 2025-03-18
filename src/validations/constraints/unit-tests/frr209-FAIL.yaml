@@ -1,0 +1,7 @@
+test-case:
+  name: Negative Test for frr209
+  description: Test that an SSP system-characteristics element does not have a security-impact-level element.
+  content: ../content/ssp-frr209-INVALID.xml
+  expectations:
+    - constraint-id: frr209
+      result: fail

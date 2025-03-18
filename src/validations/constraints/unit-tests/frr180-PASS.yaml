@@ -1,0 +1,7 @@
+test-case:
+  name: Positive Test for frr180
+  description: Test that a SSP data-flow element has a diagram element.
+  content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
+  expectations:
+    - constraint-id: frr180
+      result: pass

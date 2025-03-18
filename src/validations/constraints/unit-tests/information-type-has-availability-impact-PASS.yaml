@@ -1,7 +1,0 @@
-test-case:
-  name: Positive Test for information-type-has-availability-impact
-  description: Test that an SSP system-characteristics system-information information-type element has an availability-impact element.
-  content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
-  expectations:
-    - constraint-id: information-type-has-availability-impact
-      result: pass

@@ -1,9 +1,0 @@
-test-case:
-  name: Positive Test for responsible-party-prepared-for
-  description: >-
-    This test case validates the behavior of constraint
-    responsible-party-prepared-for
-  content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
-  expectations:
-    - constraint-id: responsible-party-prepared-for
-      result: pass

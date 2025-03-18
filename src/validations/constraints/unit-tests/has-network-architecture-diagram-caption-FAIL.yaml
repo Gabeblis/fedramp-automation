@@ -1,7 +1,0 @@
-test-case:
-  name: Negative Test for has-network-architecture-diagram-caption
-  description: Test that a SSP network-architecture diagram element does not have a caption element.
-  content: ../content/ssp-has-network-architecture-diagram-caption-INVALID.xml
-  expectations:
-    - constraint-id: has-network-architecture-diagram-caption
-      result: fail

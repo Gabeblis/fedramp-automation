@@ -1,0 +1,7 @@
+test-case:
+  name: Negative Test for frr298
+  description: This test case validates the behavior of constraint frr298
+  content: ../content/ssp-frr298-INVALID.xml
+  expectations:
+    - constraint-id: frr298
+      result: fail

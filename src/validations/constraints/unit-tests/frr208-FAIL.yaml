@@ -1,0 +1,7 @@
+test-case:
+  name: Negative Test for frr208
+  description: Test that a SSP back-matter resource element does not have a rules-of-behavior element.
+  content: ../content/ssp-frr208-INVALID.xml
+  expectations:
+    - constraint-id: frr208
+      result: fail

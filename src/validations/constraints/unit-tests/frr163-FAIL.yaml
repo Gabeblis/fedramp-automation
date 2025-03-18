@@ -1,0 +1,12 @@
+test-case:
+  name: Negative Test for frr163
+  description: >-
+    This test case validates the behavior of constraint frr163. 
+    Scenario 1 test: just year, not a full date.
+    Scenario 2 test: no timezone.
+  content: 
+    - ../content/ssp-frr163-INVALID-1.xml
+    - ../content/ssp-frr163-INVALID-2.xml
+  expectations:
+    - constraint-id: frr163
+      result: fail

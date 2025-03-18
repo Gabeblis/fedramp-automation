@@ -1,0 +1,7 @@
+test-case:
+  name: Negative Test for frr167
+  description: Test that a SSP authorization-boundary diagram element does not have a caption element.
+  content: ../content/ssp-frr167-INVALID.xml
+  expectations:
+    - constraint-id: frr167
+      result: fail

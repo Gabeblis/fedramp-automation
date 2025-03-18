@@ -1,9 +1,0 @@
-test-case:
-  name: Negative Test for component-has-baseline-link
-  description: >-
-    This test case validates the behavior of constraint
-    component-has-baseline-link
-  content: ../content/ssp-component-has-baseline-link-INVALID.xml
-  expectations:
-    - constraint-id: component-has-baseline-link
-      result: fail

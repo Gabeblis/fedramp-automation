@@ -1,0 +1,9 @@
+test-case:
+  name: Positive Test for frr134
+  description: >-
+    This test case validates the behavior of constraint
+    frr134
+  content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
+  expectations:
+    - constraint-id: frr134
+      result: pass

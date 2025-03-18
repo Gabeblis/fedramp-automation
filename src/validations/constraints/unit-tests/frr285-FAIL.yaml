@@ -1,0 +1,8 @@
+# Driver for the invalid frr285 constraint unit test.
+test-case:
+  name: The invalid frr285 constraint unit test.
+  description: Test that SSP metadata does not contain the authorizing-official-poc role.
+  content: ../content/ssp-frr285-INVALID.xml
+  expectations:
+  - constraint-id: frr285
+    result: fail

@@ -1,9 +1,0 @@
-test-case:
-  name: Negative Test for inventory-item-has-valid-mac-address
-  description: >-
-    This test case validates the behavior of constraint
-    inventory-item-has-valid-mac-address
-  content: ../content/ssp-inventory-item-has-valid-mac-address-INVALID.xml
-  expectations:
-    - constraint-id: inventory-item-has-valid-mac-address
-      result: fail

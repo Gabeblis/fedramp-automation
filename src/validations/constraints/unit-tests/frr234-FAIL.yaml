@@ -1,0 +1,9 @@
+test-case:
+  name: Negative Test for frr234
+  description: >-
+    This test case validates the behavior of constraint
+    frr234
+  content: ../content/ssp-frr234-INVALID.xml
+  expectations:
+    - constraint-id: frr234
+      fail_count: 0

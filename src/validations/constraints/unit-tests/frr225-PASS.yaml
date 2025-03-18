@@ -1,0 +1,7 @@
+test-case:
+  name: Positive Test for frr225
+  description: Test that an SSP system-characteristics system-information information-type element has an integrity-impact element.
+  content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
+  expectations:
+    - constraint-id: frr225
+      result: pass

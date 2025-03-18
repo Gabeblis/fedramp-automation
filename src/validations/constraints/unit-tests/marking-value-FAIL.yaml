@@ -1,7 +1,0 @@
-test-case:
-  name: Negative Test for marking-value
-  description: This test case validates the behavior of constraint marking-value
-  content: ../content/ssp-marking-value-INVALID.xml
-  expectations:
-    - constraint-id: marking-value
-      fail_count: 0

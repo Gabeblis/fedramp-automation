@@ -1,7 +1,0 @@
-test-case:
-  name: Negative Test for data-center-alternate
-  description: This test case validates the behavior of constraint data-center-alternate
-  content: ../content/ssp-data-center-alternate-INVALID.xml
-  expectations:
-    - constraint-id: data-center-alternate
-      result: fail

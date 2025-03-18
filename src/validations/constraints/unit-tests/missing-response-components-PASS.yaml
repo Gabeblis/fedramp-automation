@@ -1,9 +1,0 @@
-test-case:
-  name: Positive Test for missing-response-components
-  description: >-
-    This test case validates the behavior of constraint
-    missing-response-components
-  content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
-  expectations:
-    - constraint-id: missing-response-components
-      result: pass

@@ -1,9 +1,0 @@
-test-case:
-  name: Negative Test for component-has-validation-details-link
-  description: >-
-    This test case validates the behavior of constraint
-    component-has-validation-details-link
-  content: ../content/ssp-component-has-validation-details-link-INVALID.xml
-  expectations:
-    - constraint-id: component-has-validation-details-link
-      result: fail

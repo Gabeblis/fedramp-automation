@@ -1,9 +1,0 @@
-test-case:
-  name: Positive Test for leveraged-authorization-has-nature-of-agreement
-  description: >-
-    This test case validates the behavior of constraint
-    leveraged-authorization-has-nature-of-agreement
-  content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
-  expectations:
-    - constraint-id: leveraged-authorization-has-nature-of-agreement
-      result: pass

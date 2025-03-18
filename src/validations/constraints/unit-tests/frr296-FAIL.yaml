@@ -1,0 +1,11 @@
+test-case:
+  name: Negative Test for frr296
+  description: >-
+    This test case validates the behavior of constraint
+    frr296
+  content: ../content/ssp-frr296-INVALID.xml
+  expectations:
+    - constraint-id: frr296
+      fail_count:
+        type: "exact"
+        value: 1

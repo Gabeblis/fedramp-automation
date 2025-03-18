@@ -1,0 +1,13 @@
+test-case:
+  name: Positive Test for frr200
+  description: >-
+    This test case validates the behavior of constraint frr200.
+    Scenario 1: Tests an @href that references a resource in the back-matter.
+    Scenario 2: Tests a link provided directly in the @href.
+  content:
+    - ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
+    - ../content/ssp-frr200-VALID-1.xml
+    - ../content/ssp-frr170-frr184-frr200-VALID.xml
+  expectations:
+    - constraint-id: frr200
+      result: pass

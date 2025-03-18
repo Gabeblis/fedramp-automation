@@ -1,0 +1,7 @@
+test-case:
+  name: Positive Test for frr192
+  description: Test that a SSP back-matter resource element has an incident-response-plan element.
+  content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
+  expectations:
+    - constraint-id: frr192
+      result: pass

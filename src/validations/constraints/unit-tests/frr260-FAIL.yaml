@@ -1,0 +1,12 @@
+test-case:
+  name: Negative Test for frr260
+  description: >-
+    This test case validates the behavior of constraint frr260
+    Scenario 1: missing system component for a leveraged authorization.
+    Scenario 2: more than one system component for a leveraged authorization.
+  content: 
+    - ../content/ssp-frr260-INVALID.xml
+    - ../content/ssp-frr260-INVALID-1.xml
+  expectations:
+    - constraint-id: frr260
+      result: fail

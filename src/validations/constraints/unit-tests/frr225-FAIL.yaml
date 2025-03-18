@@ -1,0 +1,7 @@
+test-case:
+  name: Negative Test for frr225
+  description: Test that an SSP system-characteristics system-information information-type element does not have an integrity-impact element.
+  content: ../content/ssp-frr225-INVALID.xml
+  expectations:
+    - constraint-id: frr225
+      result: fail

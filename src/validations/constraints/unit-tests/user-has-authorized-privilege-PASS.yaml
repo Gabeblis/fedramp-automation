@@ -1,9 +1,0 @@
-test-case:
-  name: Positive Test for user-has-authorized-privilege
-  description: >-
-    This test case validates the behavior of constraint
-    user-has-authorized-privilege
-  content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
-  expectations:
-    - constraint-id: user-has-authorized-privilege
-      result: pass

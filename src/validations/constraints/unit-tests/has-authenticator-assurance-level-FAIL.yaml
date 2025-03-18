@@ -1,9 +1,0 @@
-test-case:
-  name: Negative Test for has-authenticator-assurance-level
-  description: Test that a SSP system-characteristics element does not have exactly one prop with a name equal to "authenticator-assurance-level".
-  content: 
-    - ../content/ssp-has-authenticator-assurance-level-INVALID.xml
-    - ../content/ssp-has-authenticator-assurance-level-INVALID-1.xml
-  expectations:
-    - constraint-id: has-authenticator-assurance-level
-      result: fail

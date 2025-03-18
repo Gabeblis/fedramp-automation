@@ -1,7 +1,0 @@
-test-case:
-  name: Negative Test for has-data-flow-diagram-link-rel
-  description: Test that a SSP data-flow diagram link element does not have a rel attribute.
-  content: ../content/ssp-has-data-flow-diagram-link-rel-INVALID.xml
-  expectations:
-    - constraint-id: has-data-flow-diagram-link-rel
-      result: fail

@@ -1,9 +1,0 @@
-test-case:
-  name: Positive Test for component-has-diagram-label
-  description: >-
-    This test case validates the behavior of constraint
-    component-has-diagram-label
-  content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
-  expectations:
-    - constraint-id: component-has-diagram-label
-      result: pass

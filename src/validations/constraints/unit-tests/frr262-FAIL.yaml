@@ -1,0 +1,9 @@
+test-case:
+  name: Negative Test for frr262
+  description: >-
+    This test case validates the behavior of constraint
+    leveraged-authorization-matches-impact-level
+  content: ../content/ssp-frr262-INVALID.xml
+  expectations:
+    - constraint-id: frr262
+      result: fail

@@ -1,9 +1,0 @@
-test-case:
-  name: Negative Test for cryptographic-module-component-has-used-by-link
-  description: >-
-    This test case validates the behavior of constraint
-    cryptographic-module-component-has-used-by-link
-  content: ../content/ssp-cryptographic-module-component-has-used-by-link-INVALID.xml
-  expectations:
-    - constraint-id: cryptographic-module-component-has-used-by-link
-      result: fail

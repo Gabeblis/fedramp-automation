@@ -1,0 +1,8 @@
+# Driver for the valid frr231 constraint unit test.
+test-case:
+  name: The valid interconnection security test.
+  description: Test that the specified interconnection security is valid.
+  content: ../content/ssp-frr231-VALID.xml
+  expectations:
+  - constraint-id: frr231
+    result: pass

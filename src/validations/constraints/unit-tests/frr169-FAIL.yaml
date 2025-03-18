@@ -1,0 +1,7 @@
+test-case:
+  name: Negative Test for frr169
+  description: Test that a SSP authorization-boundary diagram element does not have a link element.
+  content: ../content/ssp-frr169-INVALID.xml
+  expectations:
+    - constraint-id: frr169
+      result: fail

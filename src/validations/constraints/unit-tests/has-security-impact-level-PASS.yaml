@@ -1,7 +1,0 @@
-test-case:
-  name: Positive Test for has-security-impact-level
-  description: Test that an SSP system-characteristics element has a security-impact-level element.
-  content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
-  expectations:
-    - constraint-id: has-security-impact-level
-      result: pass

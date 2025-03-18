@@ -1,0 +1,7 @@
+test-case:
+  name: Negative Test for frr156
+  description: This test case validates the behavior of constraint frr156
+  content: ../content/ssp-frr156-INVALID.xml
+  expectations:
+    - constraint-id: frr156
+      result: fail

@@ -1,9 +1,0 @@
-test-case:
-  name: Negative Test for component-has-authenticated-scan
-  description: >-
-    This test case validates the behavior of constraint
-    component-has-authenticated-scan
-  content: ../content/ssp-component-has-authenticated-scan-INVALID.xml
-  expectations:
-    - constraint-id: component-has-authenticated-scan
-      result: fail

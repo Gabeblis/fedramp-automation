@@ -1,0 +1,7 @@
+test-case:
+  name: Negative Test for frr196
+  description: Test that a SSP network-architecture element does not have a diagram element.
+  content: ../content/ssp-frr196-INVALID.xml
+  expectations:
+    - constraint-id: frr196
+      result: fail

@@ -1,0 +1,7 @@
+test-case:
+  name: Test for frr132
+  description: This test case validates the behavior of constraint frr132
+  content: ../content/ssp-frr132-INVALID.xml
+  expectations:
+    - constraint-id: frr132
+      result: fail

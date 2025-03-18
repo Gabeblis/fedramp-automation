@@ -1,0 +1,7 @@
+test-case:
+  name: Negative Test for frr131
+  description: Test that an SSP system-characteristics system-information information-type (confidentiality-impact/integrity-impact/availability-impact) element does not have a selected element.
+  content: ../content/ssp-frr131-INVALID.xml
+  expectations:
+    - constraint-id: frr131
+      result: fail

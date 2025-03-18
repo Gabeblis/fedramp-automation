@@ -1,8 +1,0 @@
-# Driver for the valid inter-boundary-component-information-type-has-class-attribute constraint unit test.
-test-case:
-  name: The valid inter-boundary-component-information-type-has-class-attribute constraint unit test.
-  description: Test that the FedRAMP SSP inter-boundary communication component's information-type property has the @class attribute.
-  content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
-  expectations:
-  - constraint-id: inter-boundary-component-information-type-has-class-attribute
-    result: pass

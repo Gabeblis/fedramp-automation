@@ -1,0 +1,7 @@
+test-case:
+  name: Negative Test for frr183
+  description: Test that a SSP data-flow diagram element does not have a link element.
+  content: ../content/ssp-frr183-INVALID.xml
+  expectations:
+    - constraint-id: frr183
+      result: fail

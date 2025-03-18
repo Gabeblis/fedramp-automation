@@ -1,9 +1,0 @@
-test-case:
-  name: Negative Test for validation-reference-has-correct-format
-  description: >-
-    This test case validates the behavior of constraint
-    validation-reference-has-correct-format
-  content: ../content/ssp-validation-reference-has-correct-format-INVALID.xml
-  expectations:
-    - constraint-id: validation-reference-has-correct-format
-      result: fail

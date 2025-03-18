@@ -1,0 +1,9 @@
+test-case:
+  name: Negative Test for frr271
+  description: >-
+    This test case validates the behavior of constraint
+    frr271
+  content: ../content/ssp-frr271-INVALID.xml
+  expectations:
+    - constraint-id: frr271
+      result: fail

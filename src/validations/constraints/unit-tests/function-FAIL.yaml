@@ -1,7 +1,0 @@
-test-case:
-  name: Negative Test for function
-  description: This test case validates the behavior of constraint function
-  content: ../content/ssp-function-INVALID.xml
-  expectations:
-    - constraint-id: function
-      result: fail

@@ -1,9 +1,0 @@
-test-case:
-  name: Negative Test for has-identity-assurance-level
-  description: Test that a SSP system-characteristics element does not have exactly one prop with a name equal to "identity-assurance-level".
-  content: 
-    - ../content/ssp-has-identity-assurance-level-INVALID.xml
-    - ../content/ssp-has-identity-assurance-level-INVALID-1.xml
-  expectations:
-    - constraint-id: has-identity-assurance-level
-      result: fail

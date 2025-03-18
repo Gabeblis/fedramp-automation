@@ -1,0 +1,8 @@
+# Driver for the invalid frr157 constraint unit test.
+test-case:
+  name: The invalid frr157 constraint unit test.
+  description: Test that the FedRAMP SSP contains an invalid nature-of-agreement value for an external system.
+  content: ../content/ssp-frr157-INVALID.xml
+  expectations:
+  - constraint-id: frr157
+    result: fail

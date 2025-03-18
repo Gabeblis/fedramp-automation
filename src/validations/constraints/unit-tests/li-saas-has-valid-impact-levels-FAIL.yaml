@@ -1,9 +1,0 @@
-test-case:
-  name: Negative Test for li-saas-has-valid-impact-levels
-  description: >-
-    This test case validates the behavior of constraint
-    li-saas-has-valid-impact-levels
-  content: ../content/ssp-li-saas-has-valid-impact-levels-INVALID.xml
-  expectations:
-    - constraint-id: li-saas-has-valid-impact-levels
-      result: fail

@@ -1,0 +1,7 @@
+test-case:
+  name: Negative Test for frr177
+  description: Test that a SSP back-matter resource element does not have a configuration-management-plan element.
+  content: ../content/ssp-frr177-INVALID.xml
+  expectations:
+    - constraint-id: frr177
+      result: fail

@@ -1,0 +1,7 @@
+test-case:
+  name: Negative Test for frr222
+  description: Test that an SSP system-characteristics system-information information-type element does not have an availability-impact element.
+  content: ../content/ssp-frr222-INVALID.xml
+  expectations:
+    - constraint-id: frr222
+      result: fail

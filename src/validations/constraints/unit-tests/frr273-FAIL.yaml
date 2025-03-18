@@ -1,0 +1,13 @@
+test-case:
+  name: Negative Test for frr273
+  description: >-
+    This test case validates the behavior of constraint
+    frr273
+  content: 
+    - ../content/ssp-frr273-INVALID.xml
+    - ../content/ssp-frr273-INVALID-2.xml
+  expectations:
+    - constraint-id: frr273
+      fail_count:
+        type: "exact"
+        value: 2

@@ -1,8 +1,0 @@
-# Driver for the valid scan-type constraint unit test.
-test-case:
-  name: The valid scan type test.
-  description: Test that the specified scan type is valid.
-  content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
-  expectations:
-  - constraint-id: scan-type
-    result: pass

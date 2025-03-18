@@ -1,0 +1,7 @@
+test-case:
+  name: Negative Test for frr195
+  description: Test that a SSP system-characteristics element does not have a network-architecture element.
+  content: ../content/ssp-frr195-INVALID.xml
+  expectations:
+    - constraint-id: frr195
+      result: fail

@@ -1,0 +1,8 @@
+# Driver for the invalid frr229 constraint unit test.
+test-case:
+  name: The invalid frr229 constraint unit test.
+  description: Test that the FedRAMP SSP interconnection "used-by" linked component does not have a protocol assembly.
+  content: ../content/ssp-frr229-INVALID.xml
+  expectations:
+  - constraint-id: frr229
+    result: fail

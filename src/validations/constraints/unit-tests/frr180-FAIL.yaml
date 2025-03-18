@@ -1,0 +1,7 @@
+test-case:
+  name: Negative Test for frr180
+  description: Test that a SSP data-flow element does not have a diagram element.
+  content: ../content/ssp-frr180-INVALID.xml
+  expectations:
+    - constraint-id: frr180
+      result: fail

@@ -1,0 +1,7 @@
+test-case:
+  name: Negative Test for frr198
+  description: Test that a SSP network-architecture diagram element does not have a description element.
+  content: ../content/ssp-frr198-INVALID.xml
+  expectations:
+    - constraint-id: frr198
+      result: fail

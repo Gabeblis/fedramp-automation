@@ -1,0 +1,7 @@
+test-case:
+  name: Negative Test for frr197
+  description: Test that a SSP network-architecture diagram element does not have a caption element.
+  content: ../content/ssp-frr197-INVALID.xml
+  expectations:
+    - constraint-id: frr197
+      result: fail

@@ -1,0 +1,8 @@
+# Driver for the invalid frr268 constraint unit test.
+test-case:
+  name: The invalid frr268 constraint unit test.
+  description: Test that the SSP metadata does not contain the "frr268" property.
+  content: ../content/ssp-frr268-INVALID.xml
+  expectations:
+  - constraint-id: frr268
+    result: fail

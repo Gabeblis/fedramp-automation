@@ -1,0 +1,12 @@
+test-case:
+  name: Negative Test for frr282
+  description: >-
+    This test case validates the behavior of constraint frr282.
+    Scenario 1: Tests the case of an invalid location assembly.
+    Scenario 2: Tests the case of an invalid address directly in the party itself.
+  content:
+    - ../content/ssp-frr282-INVALID.xml
+    - ../content/ssp-frr282-INVALID-1.xml
+  expectations:
+    - constraint-id: frr282
+      result: fail

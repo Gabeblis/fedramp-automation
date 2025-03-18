@@ -1,0 +1,7 @@
+test-case:
+  name: Positive Test for frr279
+  description: Test that a SSP back-matter resource element has a title element.
+  content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
+  expectations:
+    - constraint-id: frr279
+      result: pass

@@ -1,0 +1,12 @@
+test-case:
+  name: Positive Test for frr282
+  description: >-
+    This test case validates the behavior of constraint frr282.
+    Scenario 1: Tests when a party references a location assembly.
+    Scenario 2: Tests when a party has an address assembly embedded.
+  content: 
+    - ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
+    - ../content/ssp-frr282-VALID-1.xml
+  expectations:
+    - constraint-id: frr282
+      result: pass

@@ -1,9 +1,0 @@
-test-case:
-  name: Positive Test for leveraged-authorization-has-authorized-users
-  description: >-
-    This test case validates the behavior of constraint
-    leveraged-authorization-has-authorized-users
-  content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
-  expectations:
-    - constraint-id: leveraged-authorization-has-authorized-users
-      result: pass

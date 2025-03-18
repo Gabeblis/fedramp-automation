@@ -1,7 +1,0 @@
-test-case:
-  name: Negative Test for has-authorization-boundary-diagram-description
-  description: Test that a SSP authorization-boundary diagram element does not have a description element.
-  content: ../content/ssp-has-authorization-boundary-diagram-description-INVALID.xml
-  expectations:
-    - constraint-id: has-authorization-boundary-diagram-description
-      result: fail

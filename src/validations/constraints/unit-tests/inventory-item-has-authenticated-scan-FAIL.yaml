@@ -1,9 +1,0 @@
-test-case:
-  name: Negative Test for inventory-item-has-authenticated-scan
-  description: >-
-    This test case validates the behavior of constraint
-    inventory-item-has-authenticated-scan
-  content: ../content/ssp-inventory-item-has-authenticated-scan-INVALID.xml
-  expectations:
-    - constraint-id: inventory-item-has-authenticated-scan
-      result: fail

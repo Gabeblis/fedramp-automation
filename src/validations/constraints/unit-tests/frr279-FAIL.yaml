@@ -1,0 +1,7 @@
+test-case:
+  name: Negative Test for frr279
+  description: Test that a SSP back-matter resource element does not have a title element.
+  content: ../content/ssp-frr279-INVALID.xml
+  expectations:
+    - constraint-id: frr279
+      result: fail

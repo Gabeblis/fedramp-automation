@@ -1,9 +1,0 @@
-test-case:
-  name: Negative Test for aggregate-parameters-warning
-  description: >-
-    This test case validates the behavior of constraint
-    aggregate-parameters-warning
-  content: ../content/ssp-aggregate-parameters-warning-INVALID.xml
-  expectations:
-    - constraint-id: aggregate-parameters-warning
-      result: fail

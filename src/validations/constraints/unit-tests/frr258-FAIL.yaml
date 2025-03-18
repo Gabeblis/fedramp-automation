@@ -1,0 +1,8 @@
+test-case:
+  name: Negative Test for frr258
+  description: >-
+    This test case validates the behavior of constraint frr258
+  content: ../content/ssp-frr258-INVALID.xml
+  expectations:
+    - constraint-id: frr258
+      result: fail

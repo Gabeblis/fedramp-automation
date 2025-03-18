@@ -1,0 +1,12 @@
+test-case:
+  name: Positive Test for frr207
+  description: >-
+    This test case validates the behavior of constraint
+    frr207
+  content: 
+    - ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
+    - ../content/ssp-frr207-VALID.xml
+    - ../content/ssp-frr207-VALID-nested.xml
+  expectations:
+    - constraint-id: frr207
+      result: pass

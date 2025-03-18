@@ -1,7 +1,0 @@
-test-case:
-  name: Negative Test for has-network-architecture-diagram
-  description: Test that a SSP network-architecture element does not have a diagram element.
-  content: ../content/ssp-has-network-architecture-diagram-INVALID.xml
-  expectations:
-    - constraint-id: has-network-architecture-diagram
-      result: fail

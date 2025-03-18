@@ -1,0 +1,7 @@
+test-case:
+  name: Negative Test for frr199
+  description: Test that a SSP network-architecture diagram element does not have a link element.
+  content: ../content/ssp-frr199-INVALID.xml
+  expectations:
+    - constraint-id: frr199
+      result: fail

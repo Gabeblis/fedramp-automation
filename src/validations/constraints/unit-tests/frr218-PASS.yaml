@@ -1,0 +1,16 @@
+test-case:
+  name: Positive Test for frr218
+  description: >-
+    This test case validates the behavior of constraint frr218.
+    Scenario 1 tests: a URI reference to a resolved profile catalog.
+    Scenario 2 tests: a URI reference to a profile.
+    Scenario 3 tests: a fragment that points to a resolved profile catalog in the back-matter.
+    Scenario 4 tests: a fragment that points to a profile in the back-matter.
+  content: 
+    - ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
+    - ../content/ssp-frr218-VALID-1.xml
+    - ../content/ssp-frr218-VALID-2.xml
+    - ../content/ssp-frr218-VALID-3.xml
+  expectations:
+    - constraint-id: frr218
+      result: pass

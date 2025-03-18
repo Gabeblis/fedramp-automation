@@ -1,9 +1,0 @@
-test-case:
-  name: Negative Test for inventory-item-not-system-or-validation
-  description: >-
-    This test case validates the behavior of constraint
-    inventory-item-not-system-or-validation
-  content: ../content/ssp-inventory-item-not-system-or-validation-INVALID.xml
-  expectations:
-    - constraint-id: inventory-item-not-system-or-validation
-      result: fail

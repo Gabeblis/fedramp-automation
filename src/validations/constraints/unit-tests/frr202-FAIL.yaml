@@ -1,0 +1,7 @@
+test-case:
+  name: Negative Test for frr202
+  description: Test that a SSP network-architecture diagram link rel attribute does not equal "diagram".
+  content: ../content/ssp-frr202-INVALID.xml
+  expectations:
+    - constraint-id: frr202
+      result: fail

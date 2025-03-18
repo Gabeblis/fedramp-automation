@@ -1,0 +1,9 @@
+test-case:
+  name: Negative Test for frr135
+  description: >-
+    This test case validates the behavior of constraint
+    frr135
+  content: ../content/ssp-frr135-INVALID.xml
+  expectations:
+    - constraint-id: frr135
+      result: fail

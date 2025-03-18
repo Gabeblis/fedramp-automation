@@ -1,0 +1,7 @@
+test-case:
+  name: Negative Test for frr182
+  description: Test that a SSP data-flow diagram element does not have a description element.
+  content: ../content/ssp-frr182-INVALID.xml
+  expectations:
+    - constraint-id: frr182
+      result: fail

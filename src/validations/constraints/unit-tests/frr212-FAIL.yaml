@@ -1,0 +1,7 @@
+test-case:
+  name: Negative Test for frr212
+  description: Test that an SSP system-characteristics element does not have a system-name-short element.
+  content: ../content/ssp-frr212-INVALID.xml
+  expectations:
+    - constraint-id: frr212
+      result: fail

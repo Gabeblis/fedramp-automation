@@ -1,7 +1,0 @@
-test-case:
-  name: Negative Test for resource-has-title
-  description: Test that a SSP back-matter resource element does not have a title element.
-  content: ../content/ssp-resource-has-title-INVALID.xml
-  expectations:
-    - constraint-id: resource-has-title
-      result: fail

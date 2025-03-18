@@ -1,7 +1,0 @@
-test-case:
-  name: Negative Test for has-user-guide
-  description: Test that a SSP back-matter resource element does not have a user-guide element.
-  content: ../content/ssp-has-user-guide-INVALID.xml
-  expectations:
-    - constraint-id: has-user-guide
-      result: fail

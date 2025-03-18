@@ -1,0 +1,8 @@
+# Driver for the valid frr289 constraint unit test.
+test-case:
+  name: The valid frr289 constraint unit test.
+  description: Test that SSP metadata contains the system-owner role.
+  content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
+  expectations:
+  - constraint-id: frr289
+    result: pass

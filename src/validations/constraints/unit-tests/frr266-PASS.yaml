@@ -1,0 +1,9 @@
+test-case:
+  name: Positive Test for frr266
+  description: >-
+    This test case validates the behavior of constraint
+    frr266
+  content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-li-saas-example.xml
+  expectations:
+    - constraint-id: frr266
+      result: pass

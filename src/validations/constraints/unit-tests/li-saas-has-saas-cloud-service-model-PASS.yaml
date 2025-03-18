@@ -1,9 +1,0 @@
-test-case:
-  name: Positive Test for li-saas-has-saas-cloud-service-model
-  description: >-
-    This test case validates the behavior of constraint
-    li-saas-has-saas-cloud-service-model
-  content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-li-saas-example.xml
-  expectations:
-    - constraint-id: li-saas-has-saas-cloud-service-model
-      result: pass

@@ -1,0 +1,7 @@
+test-case:
+  name: Negative Test for frr205
+  description: This test case validates the behavior of constraint frr205
+  content: ../content/ssp-frr205-INVALID.xml
+  expectations:
+    - constraint-id: frr205
+      result: fail

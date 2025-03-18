@@ -1,6 +1,6 @@
 # driver for the frr155 unit test
 test-case:
-  name: Test Valid Deployment Model Use
+  name: Positive test for frr155
   description: Test that the specified deployment model is valid.
   content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml # the content to run
   expectations: # check the constraint result

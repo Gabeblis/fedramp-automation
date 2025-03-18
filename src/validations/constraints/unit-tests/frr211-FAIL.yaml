@@ -1,5 +1,5 @@
 test-case:
-  name: Negative Test for frr211
+  name: Negative test for frr211
   description: Test that a SSP system-characteristics system-id identifier-type attribute is not equal to 'http://fedramp.gov/ns/oscal'.
   content: ../content/ssp-frr211-INVALID.xml
   expectations:

@@ -1,6 +1,6 @@
 # Driver for the valid frr294 constraint unit test.
 test-case:
-  name: The valid frr294 constraint unit test.
+  name: Positive test for frr294
   description: Test that the SSP "security-sensitivity-level" element value matches "security-impact-level" values.
   content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
   expectations:

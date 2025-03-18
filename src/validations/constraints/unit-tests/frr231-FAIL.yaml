@@ -1,6 +1,6 @@
 # Driver for the invalid frr231 constraint unit test.
 test-case:
-  name: The invalid interconnection security test.
+  name: Negative test for frr231
   description: Test that the specified interconnection security is invalid.
   content: ../content/ssp-frr231-INVALID.xml
   expectations:

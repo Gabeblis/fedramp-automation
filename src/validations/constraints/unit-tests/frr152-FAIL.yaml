@@ -1,5 +1,5 @@
 test-case:
-  name: Negative Test for frr152
+  name: Negative test for frr152
   description: This test case validates the behavior of constraint frr152
   content: ../content/ssp-frr152-INVALID.xml
   expectations:

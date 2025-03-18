@@ -1,5 +1,5 @@
 test-case:
-  name: Test for frr132
+  name: Positive test for frr132
   description: This test case validates the behavior of constraint frr132
   content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
   expectations:

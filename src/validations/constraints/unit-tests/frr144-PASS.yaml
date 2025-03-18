@@ -1,6 +1,6 @@
 # Driver for the positive frr144 constraint unit test.
 test-case:
-  name: The positive frr144 constraint unit test.
+  name: Positive test for frr144
   description: Test that the FedRAMP SSP frr144 properties contain FedRAMP-approved values.
   content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
   expectations:

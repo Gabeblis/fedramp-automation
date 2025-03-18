@@ -1,5 +1,5 @@
 test-case:
-  name: Negative Test for frr165
+  name: Negative test for frr165
   description: Test that a SSP system-characteristics element does not have exactly one prop with a name equal to "authenticator-assurance-level".
   content: 
     - ../content/ssp-frr165-INVALID.xml

@@ -1,5 +1,5 @@
 test-case:
-  name: Negative Test for frr260
+  name: Negative test for frr260
   description: >-
     This test case validates the behavior of constraint frr260
     Scenario 1: missing system component for a leveraged authorization.

@@ -1,6 +1,6 @@
 # Driver for the invalid virtual constraint unit test.
 test-case:
-  name: The invalid virtual asset test.
+  name: Negative test for frr251
   description: Test that the specified virtual asset is invalid.
   content: ../content/ssp-frr251-INVALID.xml
   expectations:

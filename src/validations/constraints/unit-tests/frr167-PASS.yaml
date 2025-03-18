@@ -1,5 +1,5 @@
 test-case:
-  name: Positive Test for frr167
+  name: Positive test for frr167
   description: Test that a SSP authorization-boundary diagram element has a caption element.
   content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
   expectations:

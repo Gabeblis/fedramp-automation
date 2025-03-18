@@ -1,5 +1,5 @@
 test-case:
-  name: Negative Test for frr276
+  name: Negative test for frr276
   description: This test case validates the behavior of constraint frr276
   content: ssp-frr276-INVALID.xml
   expectations:

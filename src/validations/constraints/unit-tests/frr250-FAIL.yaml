@@ -1,6 +1,6 @@
 # Driver for the invalid public constraint unit test.
 test-case:
-  name: The invalid public asset test.
+  name: Negative test for frr250
   description: Test that the specified public asset is invalid.
   content: ../content/ssp-frr250-INVALID.xml
   expectations:

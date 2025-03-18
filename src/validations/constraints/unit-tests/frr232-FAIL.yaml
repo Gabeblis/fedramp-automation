@@ -1,6 +1,6 @@
 # Driver for the invalid allows-authenticated-scan constraint unit test.
 test-case:
-  name: The invalid authenticated scan test.
+  name: Negative test for frr232
   description: Test that the specified authenticated scan is invalid.
   content: ../content/ssp-frr232-INVALID.xml
   expectations:

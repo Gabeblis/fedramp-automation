@@ -1,6 +1,6 @@
 # Driver for the invalid frr123 constraint unit test.
 test-case:
-  name: The invalid attachment type test.
+  name: Negative test for frr123
   description: Test that the specified attachment type is invalid.
   content: ../content/ssp-frr123-INVALID.xml
   expectations:

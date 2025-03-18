@@ -1,5 +1,5 @@
 test-case:
-  name: Negative Test for frr253
+  name: Negative test for frr253
   description: >-
     This test case validates the behavior of constraint frr253
   content: ../content/ssp-frr253-INVALID.xml

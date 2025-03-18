@@ -1,5 +1,5 @@
 test-case:
-  name: Positive Test for frr302
+  name: Positive test for frr302
   description: This test case validates the behavior of constraint frr302
   content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
   expectations:

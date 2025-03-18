@@ -1,5 +1,5 @@
 test-case:
-  name: Positive Test for frr264
+  name: Positive test for frr264
   description: >-
     This test case validates the behavior of constraint
     frr264

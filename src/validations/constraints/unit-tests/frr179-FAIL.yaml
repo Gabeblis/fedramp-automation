@@ -1,5 +1,5 @@
 test-case:
-  name: Negative Test for frr179
+  name: Negative test for frr179
   description: Test that a SSP data-flow element does not have a description element.
   content: ../content/ssp-frr179-INVALID.xml
   expectations:

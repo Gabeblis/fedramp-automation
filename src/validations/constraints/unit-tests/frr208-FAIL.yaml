@@ -1,5 +1,5 @@
 test-case:
-  name: Negative Test for frr208
+  name: Negative test for frr208
   description: Test that a SSP back-matter resource element does not have a rules-of-behavior element.
   content: ../content/ssp-frr208-INVALID.xml
   expectations:

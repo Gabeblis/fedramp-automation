@@ -1,5 +1,5 @@
 test-case:
-  name: Negative Test for frr129
+  name: Negative test for frr129
   description: Test that a SSP system-characteristics categorization element does not have an information-type-id element.
   content: ../content/ssp-frr129-INVALID.xml
   expectations:

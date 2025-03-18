@@ -1,6 +1,6 @@
 # driver for the response-point unit test
 test-case:
-  name: Test Valid Response Point Use
+  name: Positive test for frr277
   description: Test that the resolved profile contains valid response-points.
   content: ../content/ssp-frr277-VALID.xml # the content to run
   pipeline:

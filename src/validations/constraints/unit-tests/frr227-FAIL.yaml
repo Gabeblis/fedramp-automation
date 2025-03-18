@@ -1,6 +1,6 @@
 # Driver for the invalid frr227 constraint unit test.
 test-case:
-  name: The invalid frr227 constraint unit test.
+  name: Negative test for frr227
   description: Test that the FedRAMP SSP inter-boundary communication component does not have the "information-type" property.
   content: ../content/ssp-frr227-INVALID.xml
   expectations:

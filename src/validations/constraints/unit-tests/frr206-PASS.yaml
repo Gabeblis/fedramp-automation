@@ -1,5 +1,5 @@
 test-case:
-  name: Positive Test for required-parameters
+  name: Positive test for frr206
   description: This test case validates the behavior of constraint required-parameters
   content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
   expectations:

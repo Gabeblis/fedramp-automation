@@ -1,6 +1,6 @@
 # driver for the frr126 unit test
 test-case:
-  name: Test Invalid Authorization Type Use
+  name: Negative test for frr126
   description: Test that the specified authorization type is invalid.
   content: ../content/ssp-frr126-INVALID.xml # the content to run
   expectations: # check the constraint result

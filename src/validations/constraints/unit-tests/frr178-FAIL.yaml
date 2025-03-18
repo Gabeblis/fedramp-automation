@@ -1,5 +1,5 @@
 test-case:
-  name: Negative Test for frr178
+  name: Negative test for frr178
   description: Test that a SSP system-characteristics element does not have a data-flow element.
   content: ../content/ssp-frr178-INVALID.xml
   expectations:

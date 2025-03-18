@@ -1,6 +1,6 @@
 # Driver for the valid "frr123" constraint unit test.
 test-case:
-  name: The valid attachment type test.
+  name: Positive test for frr123
   description: Test that the specified attachment type is valid.
   content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
   expectations:

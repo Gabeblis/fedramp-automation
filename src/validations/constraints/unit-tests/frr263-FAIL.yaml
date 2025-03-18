@@ -1,6 +1,6 @@
 # Driver for the invalid frr263 constraint unit test.
 test-case:
-  name: The invalid frr263 constraint unit test.
+  name: Negative test for frr263
   description: Test that the FedRAMP SSP contains invalid nature-of-agreement value for an external leveraged system.
   content: ../content/ssp-frr263-INVALID.xml
   expectations:

@@ -1,5 +1,5 @@
 test-case:
-  name: Positive Test for frr260
+  name: Positive test for frr260
   description: >-
     This test case validates the behavior of constraint
     frr260

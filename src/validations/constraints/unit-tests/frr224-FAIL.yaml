@@ -1,5 +1,5 @@
 test-case:
-  name: Negative Test for frr224
+  name: Negative test for frr224
   description: Test that an SSP system-characteristics system-information information-type element does not have a confidentiality-impact element.
   content: ../content/ssp-frr224-INVALID.xml
   expectations:

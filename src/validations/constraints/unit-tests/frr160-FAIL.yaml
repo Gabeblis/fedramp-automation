@@ -1,6 +1,6 @@
 # Driver for the invalid frr160 constraint unit test.
 test-case:
-  name: The invalid frr160 constraint unit test.
+  name: Negative test for frr160
   description: Test that the SSP metadata does not contain the "frr160" property.
   content: ../content/ssp-frr160-INVALID.xml
   expectations:

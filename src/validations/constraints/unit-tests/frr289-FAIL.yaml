@@ -1,6 +1,6 @@
 # Driver for the invalid frr289 constraint unit test.
 test-case:
-  name: The invalid frr289 constraint unit test.
+  name: Negative test for frr289
   description: Test that SSP metadata does not contain the system-owner role.
   content: ../content/ssp-frr289-INVALID.xml
   expectations:

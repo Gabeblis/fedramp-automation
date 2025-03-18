@@ -1,6 +1,6 @@
 # Driver for the valid frr228 constraint unit test.
 test-case:
-  name: The valid frr228 constraint unit test.
+  name: Positive test for frr228
   description: Test that the FedRAMP SSP inter-boundary communication component's information-type property has the @class attribute.
   content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
   expectations:

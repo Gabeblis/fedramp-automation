@@ -1,5 +1,5 @@
 test-case:
-  name: Negative Test for frr137
+  name: Negative test for frr137
   description: >-
     This test case validates the behavior of constraint
     frr137

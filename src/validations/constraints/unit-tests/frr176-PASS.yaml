@@ -1,5 +1,5 @@
 test-case:
-  name: Positive Test for frr176
+  name: Positive test for frr176
   description: Test that every SSP system-characteristics prop element with a name attribute equal to "cloud-service-model" and a value attribute equal to "other" has a remarks element.
   content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
   expectations:

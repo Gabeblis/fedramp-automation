@@ -1,5 +1,5 @@
 test-case:
-  name: Negative Test for frr186
+  name: Negative test for frr186
   description: Test that a SSP data-flow diagram link rel attribute does not equal "diagram".
   content: ../content/ssp-frr186-INVALID.xml
   expectations:

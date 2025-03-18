@@ -1,6 +1,6 @@
 # Driver for the invalid frr230 constraint unit test.
 test-case:
-  name: The invalid interconnection direction test.
+  name: Negative test for frr230
   description: Test that the specified interconnection direction is invalid.
   content: ../content/ssp-frr230-INVALID.xml
   expectations:

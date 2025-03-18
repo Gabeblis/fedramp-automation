@@ -1,5 +1,5 @@
 test-case:
-  name: Negative Test for frr191
+  name: Negative test for frr191
   description: Test that a SSP system-characteristics element does not have exactly one prop with a name equal to "identity-assurance-level".
   content: 
     - ../content/ssp-frr191-INVALID.xml

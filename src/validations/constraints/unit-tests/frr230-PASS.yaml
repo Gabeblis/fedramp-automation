@@ -1,6 +1,6 @@
 # Driver for the valid frr230 constraint unit test.
 test-case:
-  name: The valid interconnection direction test.
+  name: Positive test for frr230
   description: Test that the specified interconnection direction is valid.
   content: ../content/ssp-frr230-VALID.xml
   expectations:

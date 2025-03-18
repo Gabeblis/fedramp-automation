@@ -1,5 +1,5 @@
 test-case:
-  name: Negative Test for frr168
+  name: Negative test for frr168
   description: Test that a SSP authorization-boundary diagram element does not have a description element.
   content: ../content/ssp-frr168-INVALID.xml
   expectations:

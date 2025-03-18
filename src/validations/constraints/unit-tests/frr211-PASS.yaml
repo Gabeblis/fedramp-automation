@@ -1,5 +1,5 @@
 test-case:
-  name: Positive Test for frr211
+  name: Positive test for frr211
   description: Test that a SSP system-characteristics system-id identifier-type attribute is equal to 'http://fedramp.gov/ns/oscal'.
   content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
   expectations:

@@ -1,6 +1,6 @@
 # Driver for the invalid frr194 constraint unit test.
 test-case:
-  name: The invalid frr194 constraint unit test.
+  name: Negative test for frr194
   description: Test that the FedRAMP SSP contains only one inventory item.
   content: ../content/ssp-frr194-INVALID.xml
   expectations:

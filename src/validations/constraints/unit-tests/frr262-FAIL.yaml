@@ -1,5 +1,5 @@
 test-case:
-  name: Negative Test for frr262
+  name: Negative test for frr262
   description: >-
     This test case validates the behavior of constraint
     leveraged-authorization-matches-impact-level

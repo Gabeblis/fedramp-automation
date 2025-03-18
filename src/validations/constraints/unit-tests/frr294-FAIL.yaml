@@ -1,6 +1,6 @@
 # Driver for the invalid frr294 constraint unit test.
 test-case:
-  name: The invalid frr294 constraint unit test.
+  name: Negative test for frr294
   description: Test that the SSP "security-sensitivity-level" element value does not match "security-impact-level" values.
   content: ../content/ssp-frr294-INVALID.xml
   expectations:

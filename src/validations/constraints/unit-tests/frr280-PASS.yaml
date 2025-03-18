@@ -1,6 +1,6 @@
 # driver for the responsible party is person unit test
 test-case:
-  name: Positive Test for frr280
+  name: Positive test for frr280
   description: This test case validates the behavior of constraint frr280
   content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
   expectations:

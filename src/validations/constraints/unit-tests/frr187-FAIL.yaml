@@ -1,5 +1,5 @@
 test-case:
-  name: Negative Test for frr187
+  name: Negative test for frr187
   description: Test that a SSP data-flow diagram element does not have a uuid attribute.
   content: ../content/ssp-frr187-INVALID.xml
   expectations:

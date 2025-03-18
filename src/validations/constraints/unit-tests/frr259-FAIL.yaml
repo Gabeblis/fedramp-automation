@@ -1,5 +1,5 @@
 test-case:
-  name: Negative Test for frr259
+  name: Negative test for frr259
   description: >-
     This test case validates the behavior of constraint frr259
     Scenario 1: leveraged authorization "system" component without "nature of agreement".

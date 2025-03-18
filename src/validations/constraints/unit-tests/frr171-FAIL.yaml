@@ -1,5 +1,5 @@
 test-case:
-  name: Negative Test for frr171
+  name: Negative test for frr171
   description: Test that a SSP authorization-boundary diagram link element does not have a rel attribute.
   content: ../content/ssp-frr171-INVALID.xml
   expectations:

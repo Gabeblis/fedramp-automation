@@ -1,5 +1,5 @@
 test-case:
-  name: Positive Test for frr210
+  name: Positive test for frr210
   description: Test that an SSP system-characteristics element has a security-sensitivity-level element.
   content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
   expectations:

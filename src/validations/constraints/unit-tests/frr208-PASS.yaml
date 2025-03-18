@@ -1,5 +1,5 @@
 test-case:
-  name: Positive Test for frr208
+  name: Positive test for frr208
   description: Test that a SSP back-matter resource element has a rules-of-behavior element.
   content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
   expectations:

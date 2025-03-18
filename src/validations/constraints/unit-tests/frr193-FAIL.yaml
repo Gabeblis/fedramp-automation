@@ -1,5 +1,5 @@
 test-case:
-  name: Negative Test for frr193
+  name: Negative test for frr193
   description: Test that a SSP back-matter resource element does not have an information-system-contigency-plan element.
   content: ../content/ssp-frr193-INVALID.xml
   expectations:

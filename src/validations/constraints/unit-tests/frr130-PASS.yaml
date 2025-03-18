@@ -1,5 +1,5 @@
 test-case:
-  name: Positive Test for frr130
+  name: Positive test for frr130
   description: Test that if an SSP system-characteristics system-information information-type (confidentiality-impact/integrity-impact/availability-impact) base element is not equal to the selected element, then an adjustment-justification element exists. If the base element equals the selected element, then it returns true.
   content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
   expectations:

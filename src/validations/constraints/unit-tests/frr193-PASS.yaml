@@ -1,5 +1,5 @@
 test-case:
-  name: Positive Test for frr193
+  name: Positive test for frr193
   description: Test that a SSP back-matter resource element has a information-system-contigency-plan element.
   content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
   expectations:

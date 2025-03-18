@@ -1,5 +1,5 @@
 test-case:
-  name: Negative Test for frr188
+  name: Negative test for frr188
   description: Test that a SSP system-characteristics element does not have exactly one prop with a name equal to "federation-assurance-level".
   content: 
     - ../content/ssp-frr188-INVALID.xml

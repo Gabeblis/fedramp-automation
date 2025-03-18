@@ -1,6 +1,6 @@
 # Driver for the valid public constraint unit test.
 test-case:
-  name: The valid public asset test.
+  name: Positive test for frr250
   description: Test that the specified public asset is valid.
   content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
   expectations:

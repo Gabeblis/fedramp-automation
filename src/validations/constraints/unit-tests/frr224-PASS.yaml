@@ -1,5 +1,5 @@
 test-case:
-  name: Positive Test for frr224
+  name: Positive test for frr224
   description: Test that an SSP system-characteristics system-information information-type element has a confidentiality-impact element.
   content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
   expectations:

@@ -1,5 +1,5 @@
 test-case:
-  name: Positive Test for frr173
+  name: Positive test for frr173
   description: Test that an SSP system-characteristics element has a prop element with a name attribute equal to "cloud-deployment-model".
   content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
   expectations:

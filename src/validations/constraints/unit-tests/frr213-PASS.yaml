@@ -1,5 +1,5 @@
 test-case:
-  name: Positive Test for frr213
+  name: Positive test for frr213
   description: Test that a SSP back-matter resource element has a user-guide element.
   content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
   expectations:

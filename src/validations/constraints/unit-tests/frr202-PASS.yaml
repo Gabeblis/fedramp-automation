@@ -1,5 +1,5 @@
 test-case:
-  name: Positive Test for frr202
+  name: Positive test for frr202
   description: Test that a SSP network-architecture diagram link rel attribute equals "diagram".
   content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
   expectations:

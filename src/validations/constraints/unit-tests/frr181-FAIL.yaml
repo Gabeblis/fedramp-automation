@@ -1,5 +1,5 @@
 test-case:
-  name: Negative Test for frr181
+  name: Negative test for frr181
   description: Test that a SSP data-flow diagram element does not have a caption element.
   content: ../content/ssp-frr181-INVALID.xml
   expectations:

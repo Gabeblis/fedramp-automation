@@ -1,5 +1,5 @@
 test-case:
-  name: Positive Test for frr128
+  name: Positive test for frr128
   description: Test that a SSP system-characteristics categorization element has a system attribute equal to "https://doi.org/10.6028/NIST.SP.800-60v2r1".
   content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
   expectations:

@@ -1,5 +1,5 @@
 test-case:
-  name: Negative Test for frr201
+  name: Negative test for frr201
   description: Test that a SSP network-architecture diagram link element does not have a rel attribute.
   content: ../content/ssp-frr201-INVALID.xml
   expectations:

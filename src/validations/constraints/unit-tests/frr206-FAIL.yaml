@@ -1,5 +1,5 @@
 test-case:
-  name: Negative Test for required-parameters
+  name: Negative test for frr206
   description: This test case validates the behavior of constraint required-parameters
   content: ../content/ssp-frr206-INVALID.xml
   expectations:

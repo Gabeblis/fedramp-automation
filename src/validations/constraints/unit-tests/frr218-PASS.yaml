@@ -1,5 +1,5 @@
 test-case:
-  name: Positive Test for frr218
+  name: Positive test for frr218
   description: >-
     This test case validates the behavior of constraint frr218.
     Scenario 1 tests: a URI reference to a resolved profile catalog.

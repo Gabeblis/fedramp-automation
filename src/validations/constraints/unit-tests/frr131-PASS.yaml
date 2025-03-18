@@ -1,5 +1,5 @@
 test-case:
-  name: Positive Test for frr131
+  name: Positive test for frr131
   description: Test that an SSP system-characteristics system-information information-type (confidentiality-impact/integrity-impact/availability-impact) element has selected element.
   content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
   expectations:

@@ -1,6 +1,6 @@
 # driver for the frr121 unit test
 test-case:
-  name: Test Valid Address Type Use
+  name: Positive test for frr121
   description: Test that the specified address type is valid.
   content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml # the content to run
   expectations: # check the constraint result

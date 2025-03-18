@@ -1,6 +1,6 @@
 # Driver for the invalid frr291 constraint unit test.
 test-case:
-  name: The invalid scan type test.
+  name: Negative test for frr291
   description: Test that the specified scan type is invalid.
   content: ../content/ssp-frr291-INVALID.xml
   expectations:

@@ -1,5 +1,5 @@
 test-case:
-  name: Positive Test for frr179
+  name: Positive test for frr179
   description: Test that a SSP data-flow element does not have a description element.
   content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
   expectations:

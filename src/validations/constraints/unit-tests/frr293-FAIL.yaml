@@ -1,6 +1,6 @@
 # driver for the frr293 unit test
 test-case:
-  name: Test Invalid Security Level Use
+  name: Negative test for frr293
   description: Test that the specified security level is invalid.
   content: ../content/ssp-frr293-INVALID.xml # the content to run
   expectations: # check the constraint result

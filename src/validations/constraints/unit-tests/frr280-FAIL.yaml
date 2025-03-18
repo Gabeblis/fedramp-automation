@@ -1,6 +1,6 @@
 # driver for the responsible party is person unit test
 test-case:
-  name: Negative Test for frr280
+  name: Negative test for frr280
   description: This test case validates the behavior of constraint frr280
   content: ssp-frr280-INVALID.xml
   expectations:

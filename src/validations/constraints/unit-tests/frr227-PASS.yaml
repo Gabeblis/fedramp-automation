@@ -1,6 +1,6 @@
 # Driver for the valid frr227 constraint unit test.
 test-case:
-  name: The valid frr227 constraint unit test.
+  name: Positive test for frr227
   description: Test that the FedRAMP SSP inter-boundary communication component has at least one "information-type" property.
   content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
   expectations:

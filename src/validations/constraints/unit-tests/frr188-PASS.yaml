@@ -1,5 +1,5 @@
 test-case:
-  name: Positive Test for frr188
+  name: Positive test for frr188
   description: Test that a SSP system-characteristics element has a prop with a name equal to "federation-assurance-level".
   content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
   expectations:

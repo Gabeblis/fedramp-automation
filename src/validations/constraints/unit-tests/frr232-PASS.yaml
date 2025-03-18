@@ -1,6 +1,6 @@
 # Driver for the valid allows-authenticated-scan constraint unit test.
 test-case:
-  name: The valid authenticated scan test.
+  name: Positive test for frr232
   description: Test that the specified authenticated scan is valid.
   content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
   expectations:

@@ -1,5 +1,5 @@
 test-case:
-  name: Negative Test for frr282
+  name: Negative test for frr282
   description: >-
     This test case validates the behavior of constraint frr282.
     Scenario 1: Tests the case of an invalid location assembly.

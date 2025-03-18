@@ -1,5 +1,5 @@
 test-case:
-  name: Positive Test for frr134
+  name: Positive test for frr134
   description: >-
     This test case validates the behavior of constraint
     frr134

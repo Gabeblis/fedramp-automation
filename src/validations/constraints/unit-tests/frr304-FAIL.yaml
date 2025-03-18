@@ -1,5 +1,5 @@
 test-case:
-  name: Negative Test for frr304
+  name: Negative test for frr304
   description: This test case validates the behavior of constraint frr304
   content: ../content/ssp-frr304-INVALID.xml
   expectations:

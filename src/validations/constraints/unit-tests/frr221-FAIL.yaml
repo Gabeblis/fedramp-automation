@@ -1,6 +1,6 @@
 # Driver for the frr221 constraint unit test.
 test-case:
-  name: The frr221 constraint unit test.
+  name: Negative test for frr221
   description: Test that the SSP "information-type-id" element contains an invalid value.
   content: ../content/ssp-frr221-INVALID.xml
   expectations:

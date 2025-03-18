@@ -1,6 +1,6 @@
 # driver for the frr155 unit test
 test-case:
-  name: Test Invalid Deployment Model Use
+  name: Negative test for frr155
   description: Test that the specified deployment model is invalid.
   content: ../content/ssp-frr155-INVALID.xml # the content to run
   expectations: # check the constraint result

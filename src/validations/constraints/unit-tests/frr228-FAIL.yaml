@@ -1,6 +1,6 @@
 # Driver for the invalid frr228 constraint unit test.
 test-case:
-  name: The invalid frr228 constraint unit test.
+  name: Negative test for frr228
   description: Test that the FedRAMP SSP inter-boundary communication component's information-type property does not have the @class attribute.
   content: ../content/ssp-frr228-INVALID.xml
   expectations:

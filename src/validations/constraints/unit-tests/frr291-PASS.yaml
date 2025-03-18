@@ -1,6 +1,6 @@
 # Driver for the valid frr291 constraint unit test.
 test-case:
-  name: The valid scan type test.
+  name: Positive test for frr291
   description: Test that the specified scan type is valid.
   content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
   expectations:

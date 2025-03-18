@@ -1,5 +1,5 @@
 test-case:
-  name: Positive Test for frr129
+  name: Positive test for frr129
   description: Test that a SSP system-characteristics categorization element has an information-type-id element.
   content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
   expectations:

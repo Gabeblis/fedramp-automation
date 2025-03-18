@@ -1,5 +1,5 @@
 test-case:
-  name: Positive Test for frr262
+  name: Positive test for frr262
   description: >-
     This test case validates the behavior of constraint frr262.
     Scenario 1: Security-sensitivity-level = 'fips-199-moderate' and leveraged-authorization impact-level = 'fips-199-moderate'.

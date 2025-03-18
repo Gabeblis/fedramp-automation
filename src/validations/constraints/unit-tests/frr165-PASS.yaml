@@ -1,5 +1,5 @@
 test-case:
-  name: Positive Test for frr165
+  name: Positive test for frr165
   description: Test that a SSP system-characteristics element does not have a prop with a name equal to "authenticator-assurance-level".
   content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
   expectations:

@@ -1,5 +1,5 @@
 test-case:
-  name: Positive Test for frr166
+  name: Positive test for frr166
   description: Test that a SSP system-characteristics element has an authorization-boundary diagram element.
   content: ../../../content/rev5/examples/ssp/xml/fedramp-ssp-example.oscal.xml
   expectations:

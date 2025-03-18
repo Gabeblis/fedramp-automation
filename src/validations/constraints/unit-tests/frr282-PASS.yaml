@@ -1,5 +1,5 @@
 test-case:
-  name: Positive Test for frr282
+  name: Positive test for frr282
   description: >-
     This test case validates the behavior of constraint frr282.
     Scenario 1: Tests when a party references a location assembly.

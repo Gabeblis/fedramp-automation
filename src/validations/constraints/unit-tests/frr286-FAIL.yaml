@@ -1,6 +1,6 @@
 # Driver for the invalid frr286 constraint unit test.
 test-case:
-  name: The invalid frr286 constraint unit test.
+  name: Negative test for frr286
   description: Test that SSP metadata does not contain the information-system-security-officer role.
   content: ../content/ssp-frr286-INVALID.xml
   expectations:

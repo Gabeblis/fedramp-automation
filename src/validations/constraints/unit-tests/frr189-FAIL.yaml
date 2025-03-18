@@ -1,5 +1,5 @@
 test-case:
-  name: Negative Test for frr189
+  name: Negative test for frr189
   description: This test case validates the behavior of constraint frr189
   content: ../content/ssp-frr189-INVALID.xml
   expectations:

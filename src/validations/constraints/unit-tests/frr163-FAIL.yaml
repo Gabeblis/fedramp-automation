@@ -1,5 +1,5 @@
 test-case:
-  name: Negative Test for frr163
+  name: Negative test for frr163
   description: >-
     This test case validates the behavior of constraint frr163. 
     Scenario 1 test: just year, not a full date.

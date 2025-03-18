@@ -1,5 +1,5 @@
 test-case:
-  name: Positive Test for frr184
+  name: Positive test for frr184
   description: >-
     This test case validates the behavior of constraint frr184.
     Scenario 1: Tests an @href that references a resource in the back-matter.

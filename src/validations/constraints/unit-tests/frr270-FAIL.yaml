@@ -1,5 +1,5 @@
 test-case:
-  name: Negative Test for frr270
+  name: Negative test for frr270
   description: >-
     This test case validates the behavior of constraint
     frr270

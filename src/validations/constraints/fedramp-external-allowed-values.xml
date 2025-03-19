@@ -659,6 +659,14 @@
                 <enum value="privileged">Privileged</enum>
             </allowed-values>
 
+            <allowed-values id="frr306" target="control-implementation/implemented-requirement/prop[@name='control-origination'][@ns='http://fedramp.gov/ns/oscal']/@value" allow-other="no" level="ERROR">
+                <formal-name>Control Origination</formal-name>
+                <description>Identifies the control origination of an implemented requirement.</description>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/oscal-representation/security-controls/control-origination/#control-origination"/>
+                <enum value="sp-corporate">Service Provider (Corporate)</enum>
+                <enum value="sp-system">Service Provider (System Specific)</enum>
+            </allowed-values>
+
         </constraints>
     </context>
 

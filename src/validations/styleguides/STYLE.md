@@ -13,7 +13,7 @@ This document is to instruct FedRAMP developers and community members on mandato
 | [FRR103](#frr103) | Constraints in the Context Sorted Alphabetically by ID | Required | ID; Sorting |
 | [FRR104](#frr104) | Constraints Have a Help URL Property | Required | Structure; Metadata |
 | [FRR105](#frr105) | Constraints Have a Unique ID | Required | ID; Metadata |
-| [FRR106](#frr106) | Constraints Have IDs with Lower Case Letters, Numbers, and Dashes | Required | ID |
+| [FRR106](#frr106) | Constraints Have IDs with Lowercase String "frr" Followed By Numbers | Required | ID |
 | [FRR107](#frr107) | Constraints Have an Explicit Severity Level | Required | Structure; Metadata |
 | [FRR108](#frr108) | Constraints with Critical Severity Level Used only for Runtime Failures | Required | Structure; Metadata |
 | [FRR109](#frr109) | Expect Constraint Message Field Required | Required | Structure; Metadata |
@@ -64,7 +64,7 @@ Below is a conformant example for FRR1.
     <context>
         <metapath target="/system-security-plan"/>
         <constraints>
-            <expect id="resource-has-title" target="back-matter/resource" test="title" level="WARNING">
+            <expect id="frr279" target="back-matter/resource" test="title" level="WARNING">
                 <message>Every supporting artifact found in a citation should have a title.</message>
             </expect>
     </context>
@@ -176,7 +176,7 @@ Below is a conformant example.
     <context>
         <metapath target="/catalog//control"/>
         <constraints>
-            <expect id="prop-response-point-has-cardinality-one" target=".//part" test="count(prop[@ns='http://fedramp.gov/ns/oscal' and @name='response-point']) &lt;= 1" level="WARNING">
+            <expect id="frr277" target=".//part" test="count(prop[@ns='http://fedramp.gov/ns/oscal' and @name='response-point']) &lt;= 1" level="WARNING">
                 <message>Duplicate response point at '{ path(.) }'.</message>
             </expect>
         </constraints>
@@ -184,10 +184,10 @@ Below is a conformant example.
     <context>
         <metapath target="/system-security-plan/metadata/location"/>
         <constraints>
-            <expect id="data-center-country-code" target="." test="count(address/country) eq 1">
+            <expect id="frr152" target="." test="count(address/country) eq 1">
                 <message>Each data center address must contain a country code.</message>
             </expect>
-            <expect id="data-center-US" target="." test="address/country eq 'US'">
+            <expect id="frr154" target="." test="address/country eq 'US'">
                 <message>Each data center must have an address that is within the United States.</message>
             </expect>
         </constraints>
@@ -211,10 +211,10 @@ Below is a non-conformant example.
         -->
         <metapath target="/system-security-plan/metadata/location"/>
         <constraints>
-            <expect id="data-center-country-code" target="." test="count(address/country) eq 1" level="WARNING">
+            <expect id="frr152" target="." test="count(address/country) eq 1" level="WARNING">
                 <message>Each data center address must contain a country code.</message>
             </expect>
-            <expect id="data-center-US" target="." test="address/country eq 'US'">
+            <expect id="frr154" target="." test="address/country eq 'US'">
                 <message>Each data center must have an address that is within the United States.</message>
             </expect>
         </constraints>
@@ -228,7 +228,7 @@ Below is a non-conformant example.
         -->
         <metapath target="/catalog//control"/>
         <constraints>
-            <expect id="prop-response-point-has-cardinality-one" target=".//part" test="count(prop[@ns='http://fedramp.gov/ns/oscal' and @name='response-point']) &lt;= 1" level="WARNING">
+            <expect id="frr277" target=".//part" test="count(prop[@ns='http://fedramp.gov/ns/oscal' and @name='response-point']) &lt;= 1" level="WARNING">
                 <message>Duplicate response point at '{ path(.) }'.</message>
             </expect>
             <remarks>
@@ -266,16 +266,16 @@ Below is a conformant example:
     <context>
         <metapath target="/system-security-plan/metadata/location"/>
         <constraints>
-            <expect id="A" target="." test="count(address/country) eq 1" level="WARNING">
+            <expect id="frr10" target="." test="count(address/country) eq 1" level="WARNING">
                 <message>Example of sorting.</message>
             </expect>            
-            <expect id="a" target="." test="count(address/country) eq 2">
+            <expect id="frr22" target="." test="count(address/country) eq 2">
                 <message>Example of sorting.</message>
             </expect>
-            <expect id="b" target="." test="count(address/country) eq 3">
+            <expect id="frr100" target="." test="count(address/country) eq 3">
                 <message>Example of sorting.</message>
             </expect>
-            <expect id="c" target="." test="count(address/country) eq 4">
+            <expect id="frr105" target="." test="count(address/country) eq 4">
                 <message>Example of sorting.</message>
             </expect>            
         </constraints>
@@ -295,16 +295,16 @@ Below is a non-conformant example.
         <metapath target="/system-security-plan/metadata/location"/>
         <constraints>
             <!-- Constraints MUST be sorted alphabetically by @id, these are not.  -->
-            <expect id="c" target="." test="count(address/country) eq 4" level="WARNING">
+            <expect id="frr105" target="." test="count(address/country) eq 4" level="WARNING">
                 <message>Example of sorting.</message>
             </expect>
-            <expect id="A" target="." test="count(address/country) eq 1" level="WARNING">
+            <expect id="frr22" target="." test="count(address/country) eq 1" level="WARNING">
                 <message>Example of sorting.</message>
             </expect>
-            <expect id="b" target="." test="count(address/country) eq 3" level="WARNING">
+            <expect id="frr10" target="." test="count(address/country) eq 3" level="WARNING">
                 <message>Example of sorting.</message>
             </expect>                      
-            <expect id="a" target="." test="count(address/country) eq 2" level="WARNING">
+            <expect id="frr100" target="." test="count(address/country) eq 2" level="WARNING">
                 <message>Example of sorting.</message>
             </expect>
         </constraints>
@@ -345,7 +345,7 @@ Below is a conformant example.
     <context>
         <metapath target="/system-security-plan/metadata/location"/>
         <constraints>
-            <expect id="data-center-country-code" target="." test="count(address/country) eq 1">
+            <expect id="frr152" target="." test="count(address/country) eq 1">
                 <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#data-center"/>
                 <message>Each data center address must contain a country code.</message>
             </expect>
@@ -365,7 +365,7 @@ Below is a non-conformant example.
     <context>
         <metapath target="/system-security-plan/metadata/location"/>
         <constraints>
-            <expect id="data-center-country-code" target="." test="count(address/country) eq 1" level="WARNING">
+            <expect id="frr152" target="." test="count(address/country) eq 1" level="WARNING">
                 <!-- This constraint MUST have a help-url prop. It is missing and non-conformant. -->
                 <message>Each data center address must contain a country code.</message>
             </expect>
@@ -400,7 +400,7 @@ Below is a conformant example.
     <context>
         <metapath target="/catalog//control"/>
         <constraints>
-            <expect id="prop-response-point-has-cardinality-one" target=".//part" test="count(prop[@ns='http://fedramp.gov/ns/oscal' and @name='response-point']) &lt;= 1" level="WARNING">
+            <expect id="frr277" target=".//part" test="count(prop[@ns='http://fedramp.gov/ns/oscal' and @name='response-point']) &lt;= 1" level="WARNING">
                 <message>Duplicate response point at '{ path(.) }'.</message>
             </expect>
         </constraints>
@@ -435,7 +435,7 @@ Below is a non-conformant example.
 
 ID: `frr106`
 
-Formal Name: Constraints Have IDs with Lower Case Letters, Numbers, and Dashes
+Formal Name: Constraints Have IDs with Lowercase String "frr" Followed By Numbers
 
 State: Required
 
@@ -443,8 +443,7 @@ Categories: ID
 
 Guidance: Developers MUST define a Metaschema constraint with an `id` flag with the following structure.
 
-1. all lowercase letters (`a-z`) and numbers (`0-9`)
-1. dashes (`-`) separating words and phrases of letters and numbers above
+1. lowercase string "frr" followed by numbers (`0-9`)
 
 [back to top](#summary)
 
@@ -457,7 +456,7 @@ Below is a conformant example.
     <context>
         <metapath target="/system-security-plan/metadata/location"/>
         <constraints>
-            <expect id="data-center-country-code-us" target="." test="count(address/country) eq 'US'" level="WARNING">
+            <expect id="frr152" target="." test="count(address/country) eq 'US'" level="WARNING">
                 <formal-name>Data Center Locations in the United States</formal-name>
                 <message>A FedRAMP SSP must define locations for data centers that are explicitly in the United States.</message>
             </expect>
@@ -478,7 +477,7 @@ Below is a non-conformant example.
         <metapath target="/system-security-plan/metadata/location"/>
         <constraints>
             <!-- 
-                This constraint's @id does not use lowercase letters, numbers, and dashes only.
+                This constraint's @id does not use lowercase letters "frr" followed by numbers only.
                 This example does not conform to the developer guide.
             -->
             <expect id="DataCenterUSOnly" target="." test="count(address/country) eq 'US'" level="WARNING">
@@ -516,7 +515,7 @@ Below is a conformant example.
     <context>
         <metapath target="/catalog//control"/>
         <constraints>
-            <expect id="duplicate-response-point" target=".//part" test="count(prop[@ns='http://fedramp.gov/ns/oscal' and @name='response-point']) &lt;= 1" level="ERROR">
+            <expect id="frr277" target=".//part" test="count(prop[@ns='http://fedramp.gov/ns/oscal' and @name='response-point']) &lt;= 1" level="ERROR">
                 <message>Duplicate response point at '{ path(.) }'.</message>
             </expect>
         </constraints>
@@ -537,7 +536,7 @@ Below is a non-conformant example.
         <metapath target="/catalog//control"/>
         <constraints>
             <!-- This constraint is missing an @level flag, it does not meet FedRAMP developer style requirements. -->
-            <expect target=".//part" test="count(prop[@ns='http://fedramp.gov/ns/oscal' and @name='response-point']) &lt;= 1">
+            <expect id="frr277" target=".//part" test="count(prop[@ns='http://fedramp.gov/ns/oscal' and @name='response-point']) &lt;= 1">
                 <message>Duplicate response point at '{ path(.) }'.</message>
             </expect>
         </constraints>
@@ -571,7 +570,7 @@ Below is a conformant example.
     <context>
         <metapath target="/system-security-plan"/>
         <constraints>
-            <expect id="ssp-needs-valid-control-source" target="./import-profile" test="@href" level="CRITICAL">
+            <expect id="frr218" target="./import-profile" test="@href" level="CRITICAL">
                 <message>A FedRAMP SSP MUST define a valid URL to the catalog that identifies the controls' requirements it implements. This error indicates the referenced catalog or profile is invalid, so many constraints are unable to process. The resulting validations from constraint check are inaccurate, incomplete, or both.</message>
             </expect>
         </constraints>
@@ -592,7 +591,7 @@ Below is a non-conformant example.
         <metapath target="/catalog//control"/>
         <constraints>
             <!-- This constraint defines a CRITICAL severity level for a violation that does not cause an irrecoverable error or undefined behavior. This example does not conform with the FedRAMP developer's guide. -->
-            <expect target=".//part" test="count(prop[@ns='http://fedramp.gov/ns/oscal' and @name='response-point']) &lt;= 1" level="CRITICAL">
+            <expect id="frr277" target=".//part" test="count(prop[@ns='http://fedramp.gov/ns/oscal' and @name='response-point']) &lt;= 1" level="CRITICAL">
                 <message>Duplicate response point at '{ path(.) }'.</message>
             </expect>
         </constraints>
@@ -626,7 +625,7 @@ Below is a conformant example.
     <context>
         <metapath target="/system-security-plan"/>
         <constraints>
-            <matches id="ssp-needs-valid-control-source" target="./import-profile" test="@href" datatype="uri-reference" level="CRITICAL">
+            <matches id="frr218" target="./import-profile" test="@href" datatype="uri-reference" level="CRITICAL">
                 <message>A FedRAMP SSP MUST define a valid URL to the catalog that identifies the controls' requirements it implements. This error indicates the referenced catalog or profile is invalid, so many constraints are unable to process. The resulting validations from constraint check are inaccurate, incomplete, or both.</message>
             </expect>
         </constraints>
@@ -646,7 +645,7 @@ Below is a non-conformant example.
     <context>
         <metapath target="/system-security-plan"/>
         <constraints>
-            <expect id="ssp-needs-valid-control-source" target="./import-profile" test="@href" level="CRITICAL">
+            <expect id="frr218" target="./import-profile" test="@href" level="CRITICAL">
                 <!-- This constraint does not provide a meaningful message for data violates the constraint. It is not conformant with the developer guide. -->
             </expect>
         </constraints>
@@ -680,7 +679,7 @@ Below is a conformant example.
     <context>
         <metapath target="/system-security-plan"/>
         <constraints>
-            <matches id="ssp-needs-valid-control-source" target="./import-profile" test="@href" datatype="uri-reference" level="CRITICAL">
+            <matches id="frr218" target="./import-profile" test="@href" datatype="uri-reference" level="CRITICAL">
                 <message>A FedRAMP SSP MUST define a valid URL to the catalog that identifies the controls' requirements it implements.</message>
                 <remarks>
                     <p>The control requirements a SSP must implement and support are defined in the profile or catalog referenced in b a URL to a file on a computer's filesystem or remote URL.</p>
@@ -704,7 +703,7 @@ Below is a conformant example.
         <metapath target="/system-security-plan"/>
         <constraints>
             <!-- This constraint has too long of an explanation of the positive requirement for a message. This example does not conform with the developer guide. -->
-            <matches id="ssp-needs-valid-control-source" target="./import-profile" test="@href" datatype="uri-reference" level="CRITICAL">
+            <matches id="frr218" target="./import-profile" test="@href" datatype="uri-reference" level="CRITICAL">
                 <message>A FedRAMP SSP MUST define a valid URL to the catalog that identifies the controls' requirements it implements. The control requirements a SSP must implement and support are defined in the profile or catalog referenced in b a URL to a file on a computer's filesystem or remote URL. More than other constraints, a valid profile URL is integral for processing of other constraints in this document. Users and intervening software developers should clearly mark that validation failed if this constraint is violated regardless of all others.</message>
             </expect>
         </constraints>
@@ -738,7 +737,7 @@ Below is a conformant example.
         <metapath target="/system-security-plan/metadata/location"/>
         <constraints>
             <!-- This message begins with 'A FedRAMP document ...' because the metadata assembly is in all OSCAL models. -->
-            <expect id="data-center-country-code" target="." test="count(address/country) eq 1" level="WARNING">
+            <expect id="frr152" target="." test="count(address/country) eq 1" level="WARNING">
                 <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#data-center"/>
                 <message>A FedRAMP document MUST define a data center location with an explicit country code.</message>
             </expect>
@@ -758,7 +757,7 @@ Below is a non-conformant example.
     <context>
         <metapath target="/system-security-plan/metadata/location"/>
         <constraints>
-            <expect id="data-center-country-code" target="." test="count(address/country) eq 1" level="WARNING">
+            <expect id="frr152" target="." test="count(address/country) eq 1" level="WARNING">
                 <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#data-center"/>
                 <!-- The message for this constraint is written in passive voice. It does not conform to the developer guide. -->
                 <message>An explicit country code must be defined here.</message>
@@ -793,7 +792,7 @@ Below is a conformant example.
     <context>
         <metapath target="/system-security-plan/metadata/location"/>
         <constraints>
-            <expect id="data-center-country-code" target="." test="count(address/country) eq 1" level="WARNING">
+            <expect id="frr152" target="." test="count(address/country) eq 1" level="WARNING">
                 <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#data-center"/>
                 <message>A FedRAMP document MUST define a data center location with an explicit country code.</message>
             </expect>
@@ -813,7 +812,7 @@ Below is a non-conformant example.
     <context>
         <metapath target="/system-security-plan/metadata/location"/>
         <constraints>
-            <expect id="data-center-country-code" target="." test="count(address/country) eq 1" level="WARNING">
+            <expect id="frr152" target="." test="count(address/country) eq 1" level="WARNING">
                 <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#data-center"/>
                 <message>What's wrong with you, no country code for data center!?</message>
             </expect>
@@ -847,7 +846,7 @@ Below is a conformant example.
     <context>
         <metapath target="/system-security-plan/metadata/location"/>
         <constraints>
-            <expect id="data-center-country-code" target="." test="count(address/country) eq 1" level="WARNING">
+            <expect id="frr152" target="." test="count(address/country) eq 1" level="WARNING">
                 <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#data-center"/>
                 <message>A FedRAMP document MUST define a data center location with an explicit country code.</message>
             </expect>
@@ -867,7 +866,7 @@ Below is a non-conformant example.
     <context>
         <metapath target="/system-security-plan/metadata/location"/>
         <constraints>
-            <expect id="data-center-country-code" target="." test="count(address/country) eq 1" level="WARNING">
+            <expect id="frr152" target="." test="count(address/country) eq 1" level="WARNING">
                 <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/4-ssp-template-to-oscal-mapping/#data-center"/>
                 <!-- The message for this constraint is written with Metaschema and OSCAL jargon. It does not conform to the developer guide. -->
                 <message>The value of this field in the address assembly within the abstract metadata module, with a cardinality of 0 to 1, must result with a value of 1 when evaluated by the Metapath function count.</message>
@@ -902,7 +901,7 @@ Below is a conformant example.
     <context>
         <metapath target="/system-security-plan/metadata/location"/>
         <constraints>
-            <expect id="data-center-country-code" target="." test="count(address/country) eq 1" level="WARNING">
+            <expect id="frr152" target="." test="count(address/country) eq 1" level="WARNING">
                 <message>A FedRAMP SSP must define a location for a data center with an explicit country code.</message>
             </expect>
         </constraints>
@@ -924,7 +923,7 @@ Below is a non-conformant example.
             <!--
                 This constraint queries a document higher in the document to analyze and report on a sequence, not an item. This is not conformant with the developer guide.
             -->
-            <expect id="data-center-country-code" target="." test="count(location/address/country) eq count(location)" level="WARNING">
+            <expect id="frr152" target="." test="count(location/address/country) eq count(location)" level="WARNING">
                 <message>A FedRAMP SSP needs data centers to indicate a country code.</message>
             </expect>
         </constraints>
@@ -957,7 +956,7 @@ Below is a conformant example.
     <context>
         <metapath target="/system-security-plan/metadata/location"/>
         <constraints>
-            <expect id="data-center-country-code-us" target="." test="count(address/country) eq 'US'" level="WARNING">
+            <expect id="frr152" target="." test="count(address/country) eq 'US'" level="WARNING">
                 <message>A FedRAMP SSP must define a location for a data center with the country code US for the United States, not {if empty(.) then 'not an empty value' else string(.)}.</message>
             </expect>
         </constraints>
@@ -977,7 +976,7 @@ Below is a non-conformant example.
         <metapath target="/system-security-plan/metadata/location"/>
         <constraints>
             <!-- This constraint does not provide a contextual hint when it can. It does not conform with the developer guide. -->
-            <expect id="data-center-country-code-us" target="." test="count(address/country) eq 'US'" level="WARNING">
+            <expect id="frr152" target="." test="count(address/country) eq 'US'" level="WARNING">
                 <message>Bad country code, pick the right one next time, fool!</message>
             </expect>
         </constraints>
@@ -1010,7 +1009,7 @@ Below is a conformant example.
     <context>
         <metapath target="/system-security-plan/metadata/location"/>
         <constraints>
-            <expect id="data-center-country-code-us" target="." test="count(address/country) eq 'US'" level="WARNING">
+            <expect id="frr152" target="." test="count(address/country) eq 'US'" level="WARNING">
                 <formal-name>Data Center Locations in the United States</formal-name>
                 <message>A FedRAMP SSP must define locations for data centers that are explicitly in the United States.</message>
             </expect>
@@ -1031,7 +1030,7 @@ Below is a non-conformant example.
         <metapath target="/system-security-plan/metadata/location"/>
         <constraints>
             <!-- This constraint does not have a formal name. It does not conform with the developer guide. -->
-            <expect id="data-center-country-code-us" target="." test="count(address/country) eq 'US'" level="WARNING">
+            <expect id="frr152" target="." test="count(address/country) eq 'US'" level="WARNING">
                 <message>Bad country code, pick the right one next time, fool!</message>
             </expect>
         </constraints>
@@ -1071,7 +1070,7 @@ Below is a conformant example.
                 For the purpose of this example, presume an issue at github.com/GSA/fedramp-automation/issues/XYZ justifies the need.
             -->
             <let var="data-centers-us-count" expression="count(location/prop[@name = 'data-center'])"/>
-            <expect id="data-center-country-code-us" target="." test="$data-centers-us-count = 0" level="INFORMATIONAL">
+            <expect id="frr151" target="." test="$data-centers-us-count = 0" level="INFORMATIONAL">
                 <message>This FedRAMP SSP has {$data-centers-us-count} {if $data-centers-us-count = 1 then 'data center' else 'data centers' }. This notional example assumes is important for a reviewer to know for XYZ reason.</message>
             </expect>
         </constraints>
@@ -1094,7 +1093,7 @@ Below is a non-conformant example.
                 This constraint is a simple informational constraint that inverts an expect constraint. 
                 It does not conform to the developer guide.
             -->
-            <expect id="data-center-country-code-us" target="./address/country" test=". != 'US'" level="INFORMATIONAL">
+            <expect id="frr151" target="./address/country" test=". != 'US'" level="INFORMATIONAL">
                 <message>This informational constraint is in the report because it is in the United States.</message>
             </expect>
         </constraints>
@@ -1131,16 +1130,16 @@ Below is a conformant example.
             <let var="two" expression="$one + 1"/>
             <let var="three" expression="3"/>
             <let var="four" expression="4"/>           
-            <expect id="A" target="." test="count(address/country) eq $one" level="WARNING">
+            <expect id="frr10" target="." test="count(address/country) eq $one" level="WARNING">
                 <message>Example of sorting.</message>
             </expect>
-            <expect id="a" target="." test="count(address/country) eq $two">
+            <expect id="frr22" target="." test="count(address/country) eq $two">
                 <message>Example of sorting.</message>
             </expect>
-            <expect id="b" target="." test="count(address/country) eq $three">
+            <expect id="frr100" target="." test="count(address/country) eq $three">
                 <message>Example of sorting.</message>
             </expect>
-            <expect id="c" target="." test="count(address/country) eq $four">
+            <expect id="frr105" target="." test="count(address/country) eq $four">
                 <message>Example of sorting.</message>
             </expect>            
         </constraints>
@@ -1168,16 +1167,16 @@ Below are non-conformant examples.
             <let var="one" expression="1"/>
             <let var="three" expression="3"/>
             <let var="four" expression="4"/>           
-            <expect id="A" target="." test="count(address/country) eq $one" level="WARNING">
+            <expect id="frr10" target="." test="count(address/country) eq $one" level="WARNING">
                 <message>Example of sorting.</message>
             </expect>
-            <expect id="a" target="." test="count(address/country) eq $two">
+            <expect id="frr22" target="." test="count(address/country) eq $two">
                 <message>Example of sorting.</message>
             </expect>
-            <expect id="b" target="." test="count(address/country) eq $three">
+            <expect id="frr100" target="." test="count(address/country) eq $three">
                 <message>Example of sorting.</message>
             </expect>
-            <expect id="c" target="." test="count(address/country) eq $four">
+            <expect id="frr105" target="." test="count(address/country) eq $four">
                 <message>Example of sorting.</message>
             </expect>            
         </constraints>
@@ -1200,16 +1199,16 @@ Below are non-conformant examples.
                 developer guide.
             -->            
             <let var="two" expression="$one + 1"/>
-            <expect id="A" target="." test="count(address/country) eq $one" level="WARNING">
+            <expect id="frr10" target="." test="count(address/country) eq $one" level="WARNING">
                 <message>Example of sorting.</message>
             </expect>
-            <expect id="a" target="." test="count(address/country) eq $two">
+            <expect id="frr22" target="." test="count(address/country) eq $two">
                 <message>Example of sorting.</message>
             </expect>
-            <expect id="b" target="." test="count(address/country) eq $three">
+            <expect id="frr100" target="." test="count(address/country) eq $three">
                 <message>Example of sorting.</message>
             </expect>
-            <expect id="c" target="." test="count(address/country) eq $four">
+            <expect id="frr105" target="." test="count(address/country) eq $four">
                 <message>Example of sorting.</message>
             </expect>            
         </constraints>
@@ -1289,7 +1288,7 @@ Below is a conformant example.
             <let var="data-center-count" expression="count(location/prop[@name = 'data-center'])"/>
             <let var="us-data-center-count" expression="count(location[address/country = 'US'])"/>
             <let var="total-locations" expression="count(location)"/>
-            <expect id="data-center-analysis" target="." test="$data-center-count > 0" level="WARNING">
+            <expect id="frr150" target="." test="$data-center-count > 0" level="WARNING">
                 <message>A FedRAMP SSP must define at least one data center location.</message>
             </expect>
         </constraints>
@@ -1310,7 +1309,7 @@ Below is a non-conformant example.
         <constraints>
             <!-- This example does not conform because it uses the same variable name twice -->
             <let var="count" expression="count(location/prop[@name = 'data-center'])"/>
-            <expect id="data-center-analysis" target="." test="$count > 0" level="WARNING">
+            <expect id="frr150" target="." test="$count > 0" level="WARNING">
                 <message>A FedRAMP SSP must define at least one data center location.</message>
             </expect>
         </constraints>
@@ -1320,7 +1319,7 @@ Below is a non-conformant example.
         <constraints>
             <!-- This example does not conform because it uses the same variable name twice -->
             <let var="count" expression="count(location[address/country = 'US'])"/>
-            <expect id="data-center-analysis" target="." test="$count > 0" level="WARNING">
+            <expect id="frr150" target="." test="$count > 0" level="WARNING">
                 <message>A FedRAMP SSP must define at least one data center location.</message>
             </expect>
         </constraints>

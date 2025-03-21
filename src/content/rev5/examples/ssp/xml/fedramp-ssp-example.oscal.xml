@@ -3202,7 +3202,6 @@
       </statement>
     </implemented-requirement>
     <implemented-requirement control-id="ia-1" uuid="11111111-2222-4000-8000-012000030000">
-      <prop ns="http://fedramp.gov/ns/oscal" name="control-origination" value="sp-system"/>
       <set-parameter param-id="ia-01_odp.08">
         <value>merger or acquisition, change in organizational structure, or update to identity and access management system</value>
       </set-parameter><set-parameter param-id="ia-01_odp.07">
@@ -3249,6 +3248,7 @@
             <p>That component contains a link to the policy, so it does not have to be linked here
               too.</p>
           </description>
+          <prop ns="http://fedramp.gov/ns/oscal" name="control-origination" value="sp-system"/>
           <implementation-status state="implemented"/>
           <responsible-role role-id="isso">
             <party-uuid>11111111-2222-4000-8000-004000000008</party-uuid>
@@ -3263,6 +3263,7 @@
             <p>That component contains a link to the policy, so it does not have to be linked here
               too.</p>
           </description>
+          <prop ns="http://fedramp.gov/ns/oscal" name="control-origination" value="customer-provided"/>
           <implementation-status state="implemented"/>
           <responsible-role role-id="isso">
             <party-uuid>11111111-2222-4000-8000-004000000008</party-uuid>

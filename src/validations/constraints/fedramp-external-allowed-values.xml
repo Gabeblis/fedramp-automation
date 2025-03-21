@@ -659,12 +659,28 @@
                 <enum value="privileged">Privileged</enum>
             </allowed-values>
 
-            <allowed-values id="frr306" target="control-implementation/implemented-requirement/prop[@name='control-origination'][@ns='http://fedramp.gov/ns/oscal']/@value" allow-other="no" level="ERROR">
-                <formal-name>Control Origination</formal-name>
-                <description>Identifies the control origination of an implemented requirement.</description>
-                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/documentation/ssp/oscal-representation/security-controls/control-origination/#control-origination"/>
+        </constraints>
+    </context>
+
+    <context>
+        <metapath target="/system-security-plan/control-implementation/implemented-requirement/statement/by-component"/>
+        <constraints>
+            <let var="component-uuid" expression="@component-uuid"/>
+            <allowed-values id="frr306" target=".[../../../../system-implementation/component[@uuid=$component-uuid and @type='policy']]/prop[@name='control-origination' and @ns='http://fedramp.gov/ns/oscal']/@value" allow-other="no" level="ERROR">
+                <formal-name>Control Origination Policy</formal-name>
+                <description>Identifies the control origination of a "policy" control.</description>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/help/constraint/frr306"/>
                 <enum value="sp-corporate">Service Provider (Corporate)</enum>
                 <enum value="sp-system">Service Provider (System Specific)</enum>
+            </allowed-values>
+
+            <allowed-values id="frr307" target=".[../../../../system-implementation/component[@uuid=$component-uuid and not(@type='policy')]]/prop[@name='control-origination' and @ns='http://fedramp.gov/ns/oscal']/@value" allow-other="no" level="ERROR">
+                <formal-name>Control Origination Non-Policy</formal-name>
+                <description>Identifies the control origination of a "non-policy" control.</description>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/help/constraint/frr307"/>
+                <enum value="customer-configured">Configured by Customer</enum>
+                <enum value="customer-provided">Provided by Customer</enum>
+                <enum value="inherited">Inherited from pre-existing FedRAMP Authorization</enum>
             </allowed-values>
 
         </constraints>

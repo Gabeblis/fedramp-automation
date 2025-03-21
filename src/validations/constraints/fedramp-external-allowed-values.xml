@@ -678,6 +678,8 @@
                 <formal-name>Control Origination Non-Policy</formal-name>
                 <description>Identifies the control origination of a "non-policy" control.</description>
                 <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/help/constraint/frr307"/>
+                <enum value="sp-corporate">Service Provider (Corporate)</enum>
+                <enum value="sp-system">Service Provider (System Specific)</enum>
                 <enum value="customer-configured">Configured by Customer</enum>
                 <enum value="customer-provided">Provided by Customer</enum>
                 <enum value="inherited">Inherited from pre-existing FedRAMP Authorization</enum>

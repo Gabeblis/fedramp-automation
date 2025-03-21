@@ -25,7 +25,7 @@
                 <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://github.com/GSA/fedramp-automation/blob/develop/src/validations/styleguides/README.md#frr102"/>
                 <message>A context element with a single metapath MUST NOT have the same target as another context with a single metapath.</message>
             </expect>
-           <expect id="frr104" target="//expect | //index-has-key" test="count(prop[@namespace = 'https://docs.oasis-open.org/sarif/sarif/v2.1.0' and @name = 'help-url']) eq 1 and doc-available(prop[@namespace = 'https://docs.oasis-open.org/sarif/sarif/v2.1.0' and @name = 'help-url']/@value)" level="ERROR">
+           <expect id="frr104" target="//expect | //index-has-key" test="count(prop[@namespace = 'https://docs.oasis-open.org/sarif/sarif/v2.1.0' and @name = 'help-url']) eq 1 and matches(prop[@namespace = 'https://docs.oasis-open.org/sarif/sarif/v2.1.0' and @name = 'help-url']/@value, '^https:\/\/automate\.fedramp\.gov')" level="ERROR">
                 <formal-name>Constraints Have a Help URL Property</formal-name>
                 <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://github.com/GSA/fedramp-automation/blob/develop/src/validations/styleguides/STYLE.md#frr104"/>
                 <message>A FedRAMP constraint MUST define a valid help URL.</message>

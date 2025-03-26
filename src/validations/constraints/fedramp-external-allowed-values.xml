@@ -18,6 +18,7 @@
             <allowed-values id="frr121" target="metadata/party/address/@type" allow-other="no" level="ERROR">
                 <formal-name>Address Type</formal-name>
                 <description>The type of address for the party</description>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/help/constraint/frr121"/>
                 <enum value="work">Work</enum>
                 <remarks>
                     <p>FedRAMP requires work addresses.</p>
@@ -27,6 +28,7 @@
             <allowed-values id="frr123" target="back-matter/resource/prop[@name='type'][@ns='http://fedramp.gov/ns/oscal']/@value" allow-other="no" level="ERROR">
                 <formal-name>Attachment Type</formal-name>
                 <description>Identifies the type of attachment.</description>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/help/constraint/frr123"/>
                 <enum value="law">Law or Statute</enum>
                 <enum value="regulation">Regulation or Directive</enum>
                 <enum value="standard">Industry Standard</enum>
@@ -69,6 +71,7 @@
             <allowed-values id="frr126" target="(system-characteristics | system-implementation/leveraged-authorization)/prop[@name='authorization-type'][@ns='http://fedramp.gov/ns/oscal']/@value" allow-other="no" level="ERROR">
                 <formal-name>Authorization Type</formal-name>
                 <description>The FedRAMP Authorization Type</description>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/help/constraint/frr126"/>
                 <enum value="fedramp-jab" deprecated="3.0.0-milestone1">**(deprecated)*** The authorization type of 'fedramp-jab' is deprecated. Use it for pre-existing JAB authorizations only.</enum>
                 <enum value="fedramp-agency">FedRAMP Agency ATO</enum>
                 <enum value="fedramp-li-saas">FedRAMP Tailored for LI-SaaS</enum>
@@ -77,6 +80,7 @@
             <allowed-values id="frr132" target="system-characteristics/prop[@name='cloud-service-model']/@value" allow-other="no" level="ERROR">
                 <formal-name>Cloud Service Model</formal-name>
                 <description>The cloud service model used by the system.</description>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/help/constraint/frr132"/>
                 <enum value="iaas">Infrastructure as a Service</enum>
                 <enum value="paas">Platform as a Service</enum>
                 <enum value="saas">Software as a Service</enum>
@@ -86,6 +90,7 @@
             <allowed-values id="frr143" target="system-implementation/component/@type" allow-other="no" level="ERROR">
                 <formal-name>Component Type</formal-name>
                 <description>Identifies the component type.</description>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/help/constraint/frr143"/>
                 <enum value="interconnection">A connection to something outside this system.</enum>
                 <enum value="software">Any software, operating system, or firmware.</enum>
                 <enum value="hardware">A physical device.</enum>
@@ -126,6 +131,7 @@
             <allowed-values id="frr145" target="control-implementation/implemented-requirement/statement/by-component/implementation-status/@state" allow-other="no" level="ERROR">
                 <formal-name>Control Implementation Status</formal-name>
                 <description>The implementation status of the control.</description>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/help/constraint/frr145"/>
                 <enum value="implemented">The control is fully implemented.</enum>
                     <enum value="partial">The control is partially implemented.</enum>
                     <enum value="planned">There is a plan for implementing the control as explained in the remarks.</enum>
@@ -136,6 +142,7 @@
             <allowed-values id="frr155" target="system-characteristics/prop[@name='cloud-deployment-model']/@value" allow-other="no" level="ERROR">
                 <formal-name>Deployment Model</formal-name>
                 <description>The cloud deployment model.</description>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/help/constraint/frr155"/>
                 <enum value="public-cloud">Public Cloud</enum>
                 <enum value="private-cloud">Private Cloud</enum>
                 <enum value="government-only-cloud">U.S. Government Only</enum>
@@ -159,12 +166,14 @@
             <allowed-values id="frr161" target="metadata/prop[@name='fedramp-version'][@ns='http://fedramp.gov/ns/oscal']/@value" allow-other="no" level="ERROR">
                 <formal-name>FedRAMP Version</formal-name>
                 <description>Identifies the FedRAMP version of the document.</description>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/help/constraint/frr161"/>
                 <enum value="fedramp-3.0.0rc1-oscal-1.1.2">FedRAMP Version</enum>
             </allowed-values>
 
             <allowed-values id="frr164" target="//component/prop[@name='function' and @ns='http://fedramp.gov/ns/oscal']/@value" allow-other="no" level="ERROR">
                 <formal-name>Function</formal-name>
                 <description>Identifies the data affected by a component.</description>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/help/constraint/frr164"/>
                 <enum value="data-at-rest">Data at Rest</enum>
                 <enum value="data-in-transit">Data in Transit</enum>
                 <enum value="other">Other</enum>
@@ -181,6 +190,7 @@
             <allowed-values id="frr221" target="(system-characteristics/system-information/information-type/categorization[@system='https://doi.org/10.6028/NIST.SP.800-60v2r1']/information-type-id | //component[(@type='system' and prop[@name='leveraged-authorization-uuid']) or (@type=('service', 'software') and not(prop[@name='leveraged-authorization-uuid']) and prop[@name='implementation-point' and @value='external']) or (@type='interconnection') or (@type=('service', 'software') and prop[@name='implementation-point' and @value='internal'] and prop[@name='communicates-externally' and @value='yes' and @ns='http://fedramp.gov/ns/oscal'])]/prop[@ns='http://fedramp.gov/ns/oscal' and @name='information-type']/@value)" allow-other="no" level="ERROR">
                 <formal-name>NIST SP 800-60 Volume 2 Revision 1 Information Types</formal-name>
                 <description>Contains a list of all supported information types from NIST SP 800-60 Volume 2 Revision 1.</description>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/help/constraint/frr221"/>
                 <enum value="C.2.1.1">Controls and Oversight: Corrective Action Information Type as defined by <a href="https://doi.org/10.6028/NIST.SP.800-60v2r1">NIST.SP.800-60v2r1</a>
                 </enum>
                 <enum value="C.2.1.2">Controls and Oversight: Program Evaluation as defined by <a href="https://doi.org/10.6028/NIST.SP.800-60v2r1">NIST.SP.800-60v2r1</a>
@@ -524,12 +534,14 @@
             <allowed-values id="frr226" target="system-characteristics/system-information/information-type/categorization/@system" allow-other="no" level="ERROR">
                 <formal-name>Information Type Categorization System</formal-name>
                 <description>The system used for categorizing information types.</description>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/help/constraint/frr226"/>
                 <enum value="https://doi.org/10.6028/NIST.SP.800-60v2r1">NIST SP 800-60 Volume 2 Revision 1</enum>
             </allowed-values>
 
             <allowed-values id="frr230" target="system-implementation/component[@type='interconnection']/prop[@name='interconnection-direction'][@ns='http://fedramp.gov/ns/oscal']/@value" allow-other="no" level="ERROR">
                 <formal-name>Interconnection Direction</formal-name>
                 <description>Identifies the direction of information flow for the interconnection.</description>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/help/constraint/frr230"/>
                 <enum value="in">Incoming</enum>
                 <enum value="out">Outgoing</enum>
                 <enum value="in/out">Bi-Directional</enum>
@@ -538,6 +550,7 @@
             <allowed-values id="frr231" target="system-implementation/component[@type='interconnection']/prop[@name='interconnection-security'][@ns='http://fedramp.gov/ns/oscal']/@value" allow-other="no" level="ERROR">
                 <formal-name>Interconnection Security</formal-name>
                 <description>Identifies the type of security applied to the interconnection.</description>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/help/constraint/frr231"/>
                 <enum value="ipsec">IPsec</enum>
                 <enum value="vpn">Virtual Private Network</enum>
                 <enum value="tls">Transport-Layer Security</enum>
@@ -550,6 +563,7 @@
             <allowed-values id="frr232" target="(//inventory-item | //component)/prop[@name='allows-authenticated-scan']/@value" allow-other="no" level="ERROR">
                 <formal-name>Allows Authenticated Scan</formal-name>
                 <description>Indicates if the asset is capable of having an authenticated scan.</description>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/help/constraint/frr232"/>
                 <enum value="yes">Yes</enum>
                 <enum value="no">No</enum>
             </allowed-values>
@@ -567,6 +581,7 @@
             <allowed-values id="frr250" target="(//inventory-item | //component)/prop[@name='public']/@value" allow-other="no" level="ERROR">
                 <formal-name>Public</formal-name>
                 <description>Indicates if the asset is exposed to the public Internet.</description>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/help/constraint/frr250"/>
                 <enum value="yes">Yes</enum>
                 <enum value="no">No</enum>
             </allowed-values>
@@ -574,6 +589,7 @@
             <allowed-values id="frr251" target="(//inventory-item/prop[@name='virtual'] | //component/prop[@name='virtual'])/@value" allow-other="no" level="ERROR">
                 <formal-name>Virtual</formal-name>
                 <description>Indicates if the asset is virtual.</description>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/help/constraint/frr251"/>
                 <enum value="yes">Yes</enum>
                 <enum value="no">No</enum>
             </allowed-values>
@@ -593,6 +609,7 @@
             <allowed-values id="frr269" target="metadata/prop[@name='marking']/@value" allow-other="yes" level="ERROR">
                 <formal-name>FedRAMP Data Sensitivity Classification</formal-name>
                 <description>Identifies the FedRAMP data sensitivity classification of the document.</description>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/help/constraint/frr269"/>
                 <enum value="cui">Controlled Unclassified Information</enum>
             </allowed-values>
 
@@ -609,6 +626,7 @@
             <allowed-values id="frr291" target="system-implementation//prop[@name='scan-type'][@ns='http://fedramp.gov/ns/oscal']/@value" allow-other="no" level="ERROR">
                 <formal-name>Scan Type</formal-name>
                 <description>Identifies the type of scan.</description>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/help/constraint/frr291"/>
                 <enum value="infrastructure">Infrastructure and Operating System Scan</enum>
                 <enum value="database">Database Scan</enum>
                 <enum value="web">Web Scan</enum>
@@ -673,6 +691,7 @@
                 <formal-name>Security Impact Level</formal-name>
                 <description>The security objective level as defined by <a href="https://doi.org/10.6028/NIST.SP.800-60v1r1">NIST SP 800-60</a>.
                 </description>
+                <prop namespace="https://docs.oasis-open.org/sarif/sarif/v2.1.0" name="help-url" value="https://automate.fedramp.gov/help/constraint/frr293"/>
                 <enum value="fips-199-low">Low</enum>
                 <enum value="fips-199-moderate">Moderate</enum>
                 <enum value="fips-199-high">High</enum>
